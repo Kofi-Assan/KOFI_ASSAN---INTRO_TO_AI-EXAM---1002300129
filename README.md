@@ -18,7 +18,7 @@ User query
     → Hybrid: BM25 scores on candidate pool, fused with vector scores
     → Context selection (truncate by char budget, ranked by fused score)
     → Prompt template (anti-hallucination rules + injected context)
-    → LLM (OpenAI API if `OPENAI_API_KEY` is set)
+    → LLM (Groq/OpenAI via provider switch)
     → Response + stage logs
 ```
 
@@ -43,7 +43,7 @@ python -m venv .venv
 pip install -r requirements.txt
 ```
 
-3. Copy `.env.example` to `.env` and add your OpenAI key for real answers (optional for UI testing).
+3. Copy `.env.example` to `.env` and add your LLM key for real answers (optional for UI testing).
    - To force embeddings backend, set: `EMBEDDINGS_BACKEND=openai` (or leave default `auto`).
    - Chat provider options:
      - OpenAI: `LLM_PROVIDER=openai` + `OPENAI_API_KEY=...`
@@ -79,7 +79,7 @@ streamlit run app.py
 
 1. Push this repo to GitHub (see submission repo name above).
 2. In [Render](https://render.com): **New** → **Blueprint** → connect the repository. Render reads `render.yaml` and creates the web service.
-3. In the service **Environment** tab, set **OPENAI_API_KEY** (required for real answers). Optionally set **HF_TOKEN** if Hugging Face throttles the embedding model download during build.
+3. In the service **Environment** tab, set either **GROQ_API_KEY** (if using Groq) or **OPENAI_API_KEY** (if using OpenAI). Optionally set **HF_TOKEN** if Hugging Face throttles the embedding model download during build.
 4. After deploy, copy the **public URL** for your exam email.
 
 The **build** step installs dependencies, downloads the CSV/PDF, and runs `scripts/build_index.py`. If the build exceeds Render’s time limit, build the index on your machine, then force-add the artifacts (they are gitignored by default):
@@ -103,6 +103,33 @@ Document your own runs in `experiment_logs/`. Typical patterns to test:
 
 1. **Exact name or year:** Pure vector retrieval may rank a semantically similar but wrong constituency or section; **hybrid BM25** tends to fix this by matching rare tokens.  
 2. **Ambiguous query:** Short queries can pull generic budget chunks; mitigation: query expansion toggle in `rag/retrieval.py` or stricter `select_context` / user clarification in the UI.
+
+## Final experiment results (observed)
+
+These results are based on actual manual runs documented in the logs below.
+
+- **Part A (chunking):** Final chosen PDF chunking is **900 / 120**. It was slightly better than 600 / 80 for long budget-policy statements and fiscal-target snippets.
+- **Part B (failure and fix):** For ambiguous close-margin election queries, initial retrieval returned low-signal rows (`Others/PNC`, BM25≈0). After applying focused single-query runs and stricter grounding behavior, hallucinated comparisons reduced and responses became conservative/context-bound.
+- **Part C (prompt behavior):** `strict` prompt style consistently reduced unsupported claims and improved refusal behavior when context was insufficient.
+- **Part D (full pipeline):** Query → retrieval → context selection → prompt → generation was logged and displayed in app (chunks, scores, final prompt, answer).
+- **Part E (adversarial):**
+  - Query A: "What was the biggest win?" remained ambiguous; retrieval was mixed/noisy, but responses stayed cautious.
+  - Query B: "The budget reduced all taxes in 2025..." was rejected safely (no fabricated tax-cut amounts), showing low hallucination risk.
+- **Part G (innovation):** Session feedback boost was used to bias retrieval toward user-preferred source corpus.
+
+## Completed manual logs
+
+- `experiment_logs/2026-04-17_chunk_cmp01.md`
+- `experiment_logs/2026-04-17_run01.md`
+- `experiment_logs/2026-04-17_adv01.md`
+
+## Evidence JSON files
+
+- `experiment_logs/auto_runs/evidence_2026-04-17T015159Z.json`
+- `experiment_logs/auto_runs/evidence_2026-04-17T032939Z.json`
+- `experiment_logs/auto_runs/evidence_2026-04-17T033223Z.json`
+
+Note: some evidence JSON runs were executed while OpenAI quota was exhausted, so those files show demo fallback responses despite successful retrieval/prompt generation. Manual logs capture the full Groq-based runs used for evaluation.
 
 ## Experiment evidence runner (Parts B–E)
 
