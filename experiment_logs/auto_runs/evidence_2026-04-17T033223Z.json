@@ -1,0 +1,1503 @@
+{
+  "student": {
+    "name": "Kofi Assan",
+    "index": "1002300129"
+  },
+  "run_id": "2026-04-17T033223Z",
+  "index_dir": "C:\\Users\\HP\\OneDrive\\Documents\\GitHub\\KOFI_ASSAN - INTRO_TO_AI EXAM - 1002300129\\data\\index",
+  "settings": {
+    "top_k": 8,
+    "prompt_style": "strict",
+    "max_context_chars": 6000,
+    "min_score_floor": 0.0,
+    "mode": "hybrid",
+    "query_expansion": true,
+    "llm_only_baseline": true
+  },
+  "queries": [
+    {
+      "query": "What was the total valid votes for NDC and NPP in the latest election results?",
+      "rag": {
+        "expanded_query": "What was the total valid votes for NDC and NPP in the latest election results? constituency candidate party votes",
+        "hits": [
+          {
+            "rank": 1,
+            "source": "ghana_elections",
+            "meta": {
+              "row": 297,
+              "type": "csv_row"
+            },
+            "vector_score": 0.6314041614532471,
+            "bm25_score": 11.006326882560046,
+            "fused_score": 0.9846837875115813,
+            "text": "Year: 2016 | Old Region: Western Region | New Region: Western North Region | Code: NDC | Candidate: John Dramani Mahama | Party: NDC | Votes: 169900 | Votes(%): 53.70%"
+          },
+          {
+            "rank": 2,
+            "source": "ghana_elections",
+            "meta": {
+              "row": 531,
+              "type": "csv_row"
+            },
+            "vector_score": 0.626827597618103,
+            "bm25_score": 11.155922359954658,
+            "fused_score": 0.9441879129434241,
+            "text": "Year: 2000 | Old Region: Northern Region | New Region: Northern Region | Code: NDC | Candidate: J. A. Mills | Party: NDC | Votes: 563049 | Votes(%): 50.88%"
+          },
+          {
+            "rank": 3,
+            "source": "ghana_elections",
+            "meta": {
+              "row": 263,
+              "type": "csv_row"
+            },
+            "vector_score": 0.6252754926681519,
+            "bm25_score": 11.0557173847404,
+            "fused_score": 0.9166248062428505,
+            "text": "Year: 2016 | Old Region: Northern Region | New Region: Savannah Region | Code: NDC | Candidate: John Dramani Mahama | Party: NDC | Votes: 106256 | Votes(%): 63.89%"
+          },
+          {
+            "rank": 4,
+            "source": "ghana_elections",
+            "meta": {
+              "row": 408,
+              "type": "csv_row"
+            },
+            "vector_score": 0.6238786578178406,
+            "bm25_score": 11.023697795596267,
+            "fused_score": 0.8971478666946912,
+            "text": "Year: 2012 | Old Region: Western Region | New Region: Western North Region | Code: NPP | Candidate: Nana Akufo Addo | Party: NPP | Votes: 126300 | Votes(%): 35.87%"
+          },
+          {
+            "rank": 5,
+            "source": "ghana_elections",
+            "meta": {
+              "row": 121,
+              "type": "csv_row"
+            },
+            "vector_score": 0.6222140789031982,
+            "bm25_score": 11.0557173847404,
+            "fused_score": 0.8803672913928394,
+            "text": "Year: 2020 | Old Region: Northern Region | New Region: Savannah Region | Code: NDC | Candidate: John Dramani Mahama | Party: NDC | Votes: 144244 | Votes(%): 62.97%"
+          },
+          {
+            "rank": 6,
+            "source": "ghana_elections",
+            "meta": {
+              "row": 485,
+              "type": "csv_row"
+            },
+            "vector_score": 0.6181348562240601,
+            "bm25_score": 11.173495323781877,
+            "fused_score": 0.8428464531961536,
+            "text": "Year: 2004 | Old Region: Northern Region | New Region: Northern Region | Code: NPP | Candidate: J. A. Kuffour | Party: NPP | Votes: 283091 | Votes(%): 35.90%"
+          },
+          {
+            "rank": 7,
+            "source": "ghana_elections",
+            "meta": {
+              "row": 409,
+              "type": "csv_row"
+            },
+            "vector_score": 0.6178045272827148,
+            "bm25_score": 11.006326882560046,
+            "fused_score": 0.8236180264773942,
+            "text": "Year: 2012 | Old Region: Western Region | New Region: Western North Region | Code: NDC | Candidate: John Dramani Mahama | Party: NDC | Votes: 221651 | Votes(%): 62.95%"
+          },
+          {
+            "rank": 8,
+            "source": "ghana_elections",
+            "meta": {
+              "row": 49,
+              "type": "csv_row"
+            },
+            "vector_score": 0.6165084838867188,
+            "bm25_score": 11.0557173847404,
+            "fused_score": 0.8127937087538757,
+            "text": "Year: 2020 | Old Region: Central Region | New Region: Central Region | Code: NDC | Candidate: John Dramani Mahama | Party: NDC | Votes: 538829 | Votes(%): 45.92%"
+          }
+        ],
+        "selected_sources": [
+          "ghana_elections"
+        ],
+        "final_prompt": "You are an assistant for Academic City. Answer ONLY using the CONTEXT below.\nIf the CONTEXT does not contain enough information, say you do not know and suggest what is missing.\nDo not invent statistics, dates, or names not present in CONTEXT. Quote figures only when they appear in CONTEXT.\nBefore answering, mentally list which context snippets support each claim.\n\nCONTEXT:\n[1] (source=ghana_elections)\nYear: 2016 | Old Region: Western Region | New Region: Western North Region | Code: NDC | Candidate: John Dramani Mahama | Party: NDC | Votes: 169900 | Votes(%): 53.70%\n\n[2] (source=ghana_elections)\nYear: 2000 | Old Region: Northern Region | New Region: Northern Region | Code: NDC | Candidate: J. A. Mills | Party: NDC | Votes: 563049 | Votes(%): 50.88%\n\n[3] (source=ghana_elections)\nYear: 2016 | Old Region: Northern Region | New Region: Savannah Region | Code: NDC | Candidate: John Dramani Mahama | Party: NDC | Votes: 106256 | Votes(%): 63.89%\n\n[4] (source=ghana_elections)\nYear: 2012 | Old Region: Western Region | New Region: Western North Region | Code: NPP | Candidate: Nana Akufo Addo | Party: NPP | Votes: 126300 | Votes(%): 35.87%\n\n[5] (source=ghana_elections)\nYear: 2020 | Old Region: Northern Region | New Region: Savannah Region | Code: NDC | Candidate: John Dramani Mahama | Party: NDC | Votes: 144244 | Votes(%): 62.97%\n\n[6] (source=ghana_elections)\nYear: 2004 | Old Region: Northern Region | New Region: Northern Region | Code: NPP | Candidate: J. A. Kuffour | Party: NPP | Votes: 283091 | Votes(%): 35.90%\n\n[7] (source=ghana_elections)\nYear: 2012 | Old Region: Western Region | New Region: Western North Region | Code: NDC | Candidate: John Dramani Mahama | Party: NDC | Votes: 221651 | Votes(%): 62.95%\n\n[8] (source=ghana_elections)\nYear: 2020 | Old Region: Central Region | New Region: Central Region | Code: NDC | Candidate: John Dramani Mahama | Party: NDC | Votes: 538829 | Votes(%): 45.92%\n\nUSER QUESTION:\nWhat was the total valid votes for NDC and NPP in the latest election results? constituency candidate party votes\n\nANSWER:",
+        "answer": "[Demo] LLM call failed (often quota/network). RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}. Prompt length: 2058 chars.",
+        "pipeline_log": [
+          {
+            "stage": "query",
+            "text": "What was the total valid votes for NDC and NPP in the latest election results?"
+          },
+          {
+            "stage": "retrieval",
+            "mode": "hybrid",
+            "expanded_query": "What was the total valid votes for NDC and NPP in the latest election results? constituency candidate party votes",
+            "hits": [
+              {
+                "source": "ghana_elections",
+                "vector_score": 0.6314,
+                "bm25_score": 11.0063,
+                "fused_score": 0.9847,
+                "text_preview": "Year: 2016 | Old Region: Western Region | New Region: Western North Region | Code: NDC | Candidate: John Dramani Mahama | Party: NDC | Votes: 169900 | Votes(%): 53.70%"
+              },
+              {
+                "source": "ghana_elections",
+                "vector_score": 0.6268,
+                "bm25_score": 11.1559,
+                "fused_score": 0.9442,
+                "text_preview": "Year: 2000 | Old Region: Northern Region | New Region: Northern Region | Code: NDC | Candidate: J. A. Mills | Party: NDC | Votes: 563049 | Votes(%): 50.88%"
+              },
+              {
+                "source": "ghana_elections",
+                "vector_score": 0.6253,
+                "bm25_score": 11.0557,
+                "fused_score": 0.9166,
+                "text_preview": "Year: 2016 | Old Region: Northern Region | New Region: Savannah Region | Code: NDC | Candidate: John Dramani Mahama | Party: NDC | Votes: 106256 | Votes(%): 63.89%"
+              },
+              {
+                "source": "ghana_elections",
+                "vector_score": 0.6239,
+                "bm25_score": 11.0237,
+                "fused_score": 0.8971,
+                "text_preview": "Year: 2012 | Old Region: Western Region | New Region: Western North Region | Code: NPP | Candidate: Nana Akufo Addo | Party: NPP | Votes: 126300 | Votes(%): 35.87%"
+              },
+              {
+                "source": "ghana_elections",
+                "vector_score": 0.6222,
+                "bm25_score": 11.0557,
+                "fused_score": 0.8804,
+                "text_preview": "Year: 2020 | Old Region: Northern Region | New Region: Savannah Region | Code: NDC | Candidate: John Dramani Mahama | Party: NDC | Votes: 144244 | Votes(%): 62.97%"
+              },
+              {
+                "source": "ghana_elections",
+                "vector_score": 0.6181,
+                "bm25_score": 11.1735,
+                "fused_score": 0.8428,
+                "text_preview": "Year: 2004 | Old Region: Northern Region | New Region: Northern Region | Code: NPP | Candidate: J. A. Kuffour | Party: NPP | Votes: 283091 | Votes(%): 35.90%"
+              },
+              {
+                "source": "ghana_elections",
+                "vector_score": 0.6178,
+                "bm25_score": 11.0063,
+                "fused_score": 0.8236,
+                "text_preview": "Year: 2012 | Old Region: Western Region | New Region: Western North Region | Code: NDC | Candidate: John Dramani Mahama | Party: NDC | Votes: 221651 | Votes(%): 62.95%"
+              },
+              {
+                "source": "ghana_elections",
+                "vector_score": 0.6165,
+                "bm25_score": 11.0557,
+                "fused_score": 0.8128,
+                "text_preview": "Year: 2020 | Old Region: Central Region | New Region: Central Region | Code: NDC | Candidate: John Dramani Mahama | Party: NDC | Votes: 538829 | Votes(%): 45.92%"
+              }
+            ]
+          },
+          {
+            "stage": "prompt",
+            "style": "strict",
+            "final_prompt": "You are an assistant for Academic City. Answer ONLY using the CONTEXT below.\nIf the CONTEXT does not contain enough information, say you do not know and suggest what is missing.\nDo not invent statistics, dates, or names not present in CONTEXT. Quote figures only when they appear in CONTEXT.\nBefore answering, mentally list which context snippets support each claim.\n\nCONTEXT:\n[1] (source=ghana_elections)\nYear: 2016 | Old Region: Western Region | New Region: Western North Region | Code: NDC | Candidate: John Dramani Mahama | Party: NDC | Votes: 169900 | Votes(%): 53.70%\n\n[2] (source=ghana_elections)\nYear: 2000 | Old Region: Northern Region | New Region: Northern Region | Code: NDC | Candidate: J. A. Mills | Party: NDC | Votes: 563049 | Votes(%): 50.88%\n\n[3] (source=ghana_elections)\nYear: 2016 | Old Region: Northern Region | New Region: Savannah Region | Code: NDC | Candidate: John Dramani Mahama | Party: NDC | Votes: 106256 | Votes(%): 63.89%\n\n[4] (source=ghana_elections)\nYear: 2012 | Old Region: Western Region | New Region: Western North Region | Code: NPP | Candidate: Nana Akufo Addo | Party: NPP | Votes: 126300 | Votes(%): 35.87%\n\n[5] (source=ghana_elections)\nYear: 2020 | Old Region: Northern Region | New Region: Savannah Region | Code: NDC | Candidate: John Dramani Mahama | Party: NDC | Votes: 144244 | Votes(%): 62.97%\n\n[6] (source=ghana_elections)\nYear: 2004 | Old Region: Northern Region | New Region: Northern Region | Code: NPP | Candidate: J. A. Kuffour | Party: NPP | Votes: 283091 | Votes(%): 35.90%\n\n[7] (source=ghana_elections)\nYear: 2012 | Old Region: Western Region | New Region: Western North Region | Code: NDC | Candidate: John Dramani Mahama | Party: NDC | Votes: 221651 | Votes(%): 62.95%\n\n[8] (source=ghana_elections)\nYear: 2020 | Old Region: Central Region | New Region: Central Region | Code: NDC | Candidate: John Dramani Mahama | Party: NDC | Votes: 538829 | Votes(%): 45.92%\n\nUSER QUESTION:\nWhat was the total valid votes for NDC and NPP in the latest election results? constituency candidate party votes\n\nANSWER:",
+            "prompt_chars": 2058
+          },
+          {
+            "stage": "generation",
+            "answer_preview": "[Demo] LLM call failed (often quota/network). RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}. Prompt length: 2058 chars."
+          }
+        ]
+      },
+      "llm_only": {
+        "answer": "[Demo] LLM call failed (often quota/network). RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}. Prompt length: 165 chars.",
+        "pipeline_log": [
+          {
+            "stage": "query",
+            "text": "What was the total valid votes for NDC and NPP in the latest election results?",
+            "mode": "no_retrieval"
+          },
+          {
+            "stage": "prompt",
+            "final_prompt": "Answer the question helpfully. You may use general knowledge.\n\nUSER QUESTION:\nWhat was the total valid votes for NDC and NPP in the latest election results?\n\nANSWER:",
+            "prompt_chars": 165
+          },
+          {
+            "stage": "generation",
+            "answer_preview": "[Demo] LLM call failed (often quota/network). RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}. Prompt length: 165 chars."
+          }
+        ]
+      }
+    },
+    {
+      "query": "Which constituencies or regions show close vote margins between top parties?",
+      "rag": {
+        "expanded_query": "Which constituencies or regions show close vote margins between top parties? constituency candidate party votes",
+        "hits": [
+          {
+            "rank": 1,
+            "source": "ghana_elections",
+            "meta": {
+              "row": 518,
+              "type": "csv_row"
+            },
+            "vector_score": 0.5457494258880615,
+            "bm25_score": 4.552721101154761,
+            "fused_score": 0.907923647394832,
+            "text": "Year: 2000 | Old Region: Central Region | New Region: Central Region | Code: Others | Candidate: Edward Mahama | Party: PNC | Votes: 2648 | Votes(%): 0.26%"
+          },
+          {
+            "rank": 2,
+            "source": "ghana_elections",
+            "meta": {
+              "row": 533,
+              "type": "csv_row"
+            },
+            "vector_score": 0.5399352312088013,
+            "bm25_score": 4.552721101154761,
+            "fused_score": 0.8530330672921212,
+            "text": "Year: 2000 | Old Region: Northern Region | New Region: Northern Region | Code: Others | Candidate: Edward Mahama | Party: PNC | Votes: 45870 | Votes(%): 4.15%"
+          },
+          {
+            "rank": 3,
+            "source": "ghana_elections",
+            "meta": {
+              "row": 476,
+              "type": "csv_row"
+            },
+            "vector_score": 0.5381098985671997,
+            "bm25_score": 4.552721101154761,
+            "fused_score": 0.8358004885593653,
+            "text": "Year: 2004 | Old Region: Central Region | New Region: Central Region | Code: Others | Candidate: Edward Mahama | Party: PNC | Votes: 5718 | Votes(%): 0.82%"
+          },
+          {
+            "rank": 4,
+            "source": "ghana_elections",
+            "meta": {
+              "row": 428,
+              "type": "csv_row"
+            },
+            "vector_score": 0.5372668504714966,
+            "bm25_score": 4.552721101154761,
+            "fused_score": 0.8278414501059921,
+            "text": "Year: 2008 | Old Region: Central Region | New Region: Central Region | Code: Others | Candidate: Edward Mahama | Party: PNC | Votes: 2693 | Votes(%): 0.39%"
+          },
+          {
+            "rank": 5,
+            "source": "ghana_elections",
+            "meta": {
+              "row": 519,
+              "type": "csv_row"
+            },
+            "vector_score": 0.535246729850769,
+            "bm25_score": 4.552721101154761,
+            "fused_score": 0.8087699193323974,
+            "text": "Year: 2000 | Old Region: Central Region | New Region: Central Region | Code: Others | Candidate: Dan Lartey | Party: GCPP | Votes: 6398 | Votes(%): 0.63%"
+          },
+          {
+            "rank": 6,
+            "source": "ghana_elections",
+            "meta": {
+              "row": 504,
+              "type": "csv_row"
+            },
+            "vector_score": 0.5292407274246216,
+            "bm25_score": 4.552721101154761,
+            "fused_score": 0.7520685229299866,
+            "text": "Year: 2004 | Old Region: Western Region | New Region: Western Region | Code: Others | Candidate: Edward Mahama | Party: PNC | Votes: 7318 | Votes(%): 0.85%"
+          },
+          {
+            "rank": 7,
+            "source": "ghana_elections",
+            "meta": {
+              "row": 488,
+              "type": "csv_row"
+            },
+            "vector_score": 0.5253295302391052,
+            "bm25_score": 4.552721101154761,
+            "fused_score": 0.7151437389741117,
+            "text": "Year: 2004 | Old Region: Northern Region | New Region: Northern Region | Code: Others | Candidate: Edward Mahama | Party: PNC | Votes: 48302 | Votes(%): 6.13%"
+          },
+          {
+            "rank": 8,
+            "source": "ghana_elections",
+            "meta": {
+              "row": 515,
+              "type": "csv_row"
+            },
+            "vector_score": 0.5224239826202393,
+            "bm25_score": 4.552721101154761,
+            "fused_score": 0.6877130795081485,
+            "text": "Year: 2000 | Old Region: Central Region | New Region: Central Region | Code: NPP | Candidate: J. A. Kuffour | Party: NPP | Votes: 559844 | Votes(%): 55.53%"
+          }
+        ],
+        "selected_sources": [
+          "ghana_elections"
+        ],
+        "final_prompt": "You are an assistant for Academic City. Answer ONLY using the CONTEXT below.\nIf the CONTEXT does not contain enough information, say you do not know and suggest what is missing.\nDo not invent statistics, dates, or names not present in CONTEXT. Quote figures only when they appear in CONTEXT.\nBefore answering, mentally list which context snippets support each claim.\n\nCONTEXT:\n[1] (source=ghana_elections)\nYear: 2000 | Old Region: Central Region | New Region: Central Region | Code: Others | Candidate: Edward Mahama | Party: PNC | Votes: 2648 | Votes(%): 0.26%\n\n[2] (source=ghana_elections)\nYear: 2000 | Old Region: Northern Region | New Region: Northern Region | Code: Others | Candidate: Edward Mahama | Party: PNC | Votes: 45870 | Votes(%): 4.15%\n\n[3] (source=ghana_elections)\nYear: 2004 | Old Region: Central Region | New Region: Central Region | Code: Others | Candidate: Edward Mahama | Party: PNC | Votes: 5718 | Votes(%): 0.82%\n\n[4] (source=ghana_elections)\nYear: 2008 | Old Region: Central Region | New Region: Central Region | Code: Others | Candidate: Edward Mahama | Party: PNC | Votes: 2693 | Votes(%): 0.39%\n\n[5] (source=ghana_elections)\nYear: 2000 | Old Region: Central Region | New Region: Central Region | Code: Others | Candidate: Dan Lartey | Party: GCPP | Votes: 6398 | Votes(%): 0.63%\n\n[6] (source=ghana_elections)\nYear: 2004 | Old Region: Western Region | New Region: Western Region | Code: Others | Candidate: Edward Mahama | Party: PNC | Votes: 7318 | Votes(%): 0.85%\n\n[7] (source=ghana_elections)\nYear: 2004 | Old Region: Northern Region | New Region: Northern Region | Code: Others | Candidate: Edward Mahama | Party: PNC | Votes: 48302 | Votes(%): 6.13%\n\n[8] (source=ghana_elections)\nYear: 2000 | Old Region: Central Region | New Region: Central Region | Code: NPP | Candidate: J. A. Kuffour | Party: NPP | Votes: 559844 | Votes(%): 55.53%\n\nUSER QUESTION:\nWhich constituencies or regions show close vote margins between top parties? constituency candidate party votes\n\nANSWER:",
+        "answer": "[Demo] LLM call failed (often quota/network). RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}. Prompt length: 2004 chars.",
+        "pipeline_log": [
+          {
+            "stage": "query",
+            "text": "Which constituencies or regions show close vote margins between top parties?"
+          },
+          {
+            "stage": "retrieval",
+            "mode": "hybrid",
+            "expanded_query": "Which constituencies or regions show close vote margins between top parties? constituency candidate party votes",
+            "hits": [
+              {
+                "source": "ghana_elections",
+                "vector_score": 0.5457,
+                "bm25_score": 4.5527,
+                "fused_score": 0.9079,
+                "text_preview": "Year: 2000 | Old Region: Central Region | New Region: Central Region | Code: Others | Candidate: Edward Mahama | Party: PNC | Votes: 2648 | Votes(%): 0.26%"
+              },
+              {
+                "source": "ghana_elections",
+                "vector_score": 0.5399,
+                "bm25_score": 4.5527,
+                "fused_score": 0.853,
+                "text_preview": "Year: 2000 | Old Region: Northern Region | New Region: Northern Region | Code: Others | Candidate: Edward Mahama | Party: PNC | Votes: 45870 | Votes(%): 4.15%"
+              },
+              {
+                "source": "ghana_elections",
+                "vector_score": 0.5381,
+                "bm25_score": 4.5527,
+                "fused_score": 0.8358,
+                "text_preview": "Year: 2004 | Old Region: Central Region | New Region: Central Region | Code: Others | Candidate: Edward Mahama | Party: PNC | Votes: 5718 | Votes(%): 0.82%"
+              },
+              {
+                "source": "ghana_elections",
+                "vector_score": 0.5373,
+                "bm25_score": 4.5527,
+                "fused_score": 0.8278,
+                "text_preview": "Year: 2008 | Old Region: Central Region | New Region: Central Region | Code: Others | Candidate: Edward Mahama | Party: PNC | Votes: 2693 | Votes(%): 0.39%"
+              },
+              {
+                "source": "ghana_elections",
+                "vector_score": 0.5352,
+                "bm25_score": 4.5527,
+                "fused_score": 0.8088,
+                "text_preview": "Year: 2000 | Old Region: Central Region | New Region: Central Region | Code: Others | Candidate: Dan Lartey | Party: GCPP | Votes: 6398 | Votes(%): 0.63%"
+              },
+              {
+                "source": "ghana_elections",
+                "vector_score": 0.5292,
+                "bm25_score": 4.5527,
+                "fused_score": 0.7521,
+                "text_preview": "Year: 2004 | Old Region: Western Region | New Region: Western Region | Code: Others | Candidate: Edward Mahama | Party: PNC | Votes: 7318 | Votes(%): 0.85%"
+              },
+              {
+                "source": "ghana_elections",
+                "vector_score": 0.5253,
+                "bm25_score": 4.5527,
+                "fused_score": 0.7151,
+                "text_preview": "Year: 2004 | Old Region: Northern Region | New Region: Northern Region | Code: Others | Candidate: Edward Mahama | Party: PNC | Votes: 48302 | Votes(%): 6.13%"
+              },
+              {
+                "source": "ghana_elections",
+                "vector_score": 0.5224,
+                "bm25_score": 4.5527,
+                "fused_score": 0.6877,
+                "text_preview": "Year: 2000 | Old Region: Central Region | New Region: Central Region | Code: NPP | Candidate: J. A. Kuffour | Party: NPP | Votes: 559844 | Votes(%): 55.53%"
+              }
+            ]
+          },
+          {
+            "stage": "prompt",
+            "style": "strict",
+            "final_prompt": "You are an assistant for Academic City. Answer ONLY using the CONTEXT below.\nIf the CONTEXT does not contain enough information, say you do not know and suggest what is missing.\nDo not invent statistics, dates, or names not present in CONTEXT. Quote figures only when they appear in CONTEXT.\nBefore answering, mentally list which context snippets support each claim.\n\nCONTEXT:\n[1] (source=ghana_elections)\nYear: 2000 | Old Region: Central Region | New Region: Central Region | Code: Others | Candidate: Edward Mahama | Party: PNC | Votes: 2648 | Votes(%): 0.26%\n\n[2] (source=ghana_elections)\nYear: 2000 | Old Region: Northern Region | New Region: Northern Region | Code: Others | Candidate: Edward Mahama | Party: PNC | Votes: 45870 | Votes(%): 4.15%\n\n[3] (source=ghana_elections)\nYear: 2004 | Old Region: Central Region | New Region: Central Region | Code: Others | Candidate: Edward Mahama | Party: PNC | Votes: 5718 | Votes(%): 0.82%\n\n[4] (source=ghana_elections)\nYear: 2008 | Old Region: Central Region | New Region: Central Region | Code: Others | Candidate: Edward Mahama | Party: PNC | Votes: 2693 | Votes(%): 0.39%\n\n[5] (source=ghana_elections)\nYear: 2000 | Old Region: Central Region | New Region: Central Region | Code: Others | Candidate: Dan Lartey | Party: GCPP | Votes: 6398 | Votes(%): 0.63%\n\n[6] (source=ghana_elections)\nYear: 2004 | Old Region: Western Region | New Region: Western Region | Code: Others | Candidate: Edward Mahama | Party: PNC | Votes: 7318 | Votes(%): 0.85%\n\n[7] (source=ghana_elections)\nYear: 2004 | Old Region: Northern Region | New Region: Northern Region | Code: Others | Candidate: Edward Mahama | Party: PNC | Votes: 48302 | Votes(%): 6.13%\n\n[8] (source=ghana_elections)\nYear: 2000 | Old Region: Central Region | New Region: Central Region | Code: NPP | Candidate: J. A. Kuffour | Party: NPP | Votes: 559844 | Votes(%): 55.53%\n\nUSER QUESTION:\nWhich constituencies or regions show close vote margins between top parties? constituency candidate party votes\n\nANSWER:",
+            "prompt_chars": 2004
+          },
+          {
+            "stage": "generation",
+            "answer_preview": "[Demo] LLM call failed (often quota/network). RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}. Prompt length: 2004 chars."
+          }
+        ]
+      },
+      "llm_only": {
+        "answer": "[Demo] LLM call failed (often quota/network). RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}. Prompt length: 163 chars.",
+        "pipeline_log": [
+          {
+            "stage": "query",
+            "text": "Which constituencies or regions show close vote margins between top parties?",
+            "mode": "no_retrieval"
+          },
+          {
+            "stage": "prompt",
+            "final_prompt": "Answer the question helpfully. You may use general knowledge.\n\nUSER QUESTION:\nWhich constituencies or regions show close vote margins between top parties?\n\nANSWER:",
+            "prompt_chars": 163
+          },
+          {
+            "stage": "generation",
+            "answer_preview": "[Demo] LLM call failed (often quota/network). RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}. Prompt length: 163 chars."
+          }
+        ]
+      }
+    },
+    {
+      "query": "What does the 2025 budget say about revenue mobilization?",
+      "rag": {
+        "expanded_query": "What does the 2025 budget say about revenue mobilization? economic policy expenditure revenue",
+        "hits": [
+          {
+            "rank": 1,
+            "source": "budget_2025",
+            "meta": {
+              "chunk_index": 282,
+              "type": "pdf_window",
+              "start": 218261
+            },
+            "vector_score": 0.6715651154518127,
+            "bm25_score": 16.3180517391424,
+            "fused_score": 0.8476568835419399,
+            "text": "a transformative step, emphasizing its role as the nation's economic epicenter, dedicated to improving the lives of its citizens. Outlook For 2025 464. Mr. Speaker, in line with government reset agenda, the Ministry in 2025 will focus on fiscal discipline, sustainable revenue mobilsation and enhanced private sector growth 465. The Ministry will continue to coordinate the implementation of the IMF -supported programme and ensure a successful 4 th and 5th Review to trigger the release of an estimated US$720 and bolster investor confidence. 466. Mr. Speaker, consistent with government’s commitment to revenue mobilisation, we will review the Medium-Term Revenue Strategy to align it with current Policy priorities and publish it within the year. 467. Additionally, the following drafting instructions on amendments to selected revenue legislations will be submitted to the Attorney-General and"
+          },
+          {
+            "rank": 2,
+            "source": "budget_2025",
+            "meta": {
+              "chunk_index": 220,
+              "type": "pdf_window",
+              "start": 170242
+            },
+            "vector_score": 0.635912299156189,
+            "bm25_score": 16.036581996921548,
+            "fused_score": 0.7359284235197951,
+            "text": "of the Fiscal Responsibility Act, 2018 (Act 982), programmed to be enacted by Parliament alongside the approval of this budget, to include a debt rule and legislate an independent fiscal council to monitor the adherence to fiscal targets, will greatly support the achievement of fiscal targets for 2025 and the medium-term. 346. Mr. Speaker, to achieve this fiscal objective, Total Revenue and Grants are projected to moderate from 15.9 percent of GDP in 2024 to 16.1 percent in 2025, and further to 16.9 percent by 2028. This steady improvement will be driven by a mix of tax policy measures, strengthened revenue administration, and an improvement in collection efficiency and tax compliance. 347. Mr. Speaker, on the expenditure front, the fiscal objective is to reduce primary expenditure as a share of GDP to below the 2023 level as part of our commitment to frontload the fiscal adjustment."
+          },
+          {
+            "rank": 3,
+            "source": "budget_2025",
+            "meta": {
+              "chunk_index": 167,
+              "type": "pdf_window",
+              "start": 129168
+            },
+            "vector_score": 0.556494951248169,
+            "bm25_score": 22.55303947799357,
+            "fused_score": 0.6615908735256837,
+            "text": "m - term vision, policy objectives and targets. Resetting the Economy for the Ghana We Want 2025 Budget 49 Fiscal Policy Objectives 236. Mr. Speaker, consistent with Section 14 of the Public Financial Management Act, 2016 (Act 921), the fiscal policy objectives of this government is to support the economic transformation agenda to ensure the macroeconomic stability of the country within the macroeconomic and fiscal framework. More specifically, the fiscal policy objectives of government include: i. rationalising government expenditure and eliminating wasteful expenditure; ii. optimising domestic revenue mobilisation through the broadening of the tax base, increased non-tax revenue collection, adopting enhanced tax compliance measures, and modernisation of tax administration through digital technology; iii. increasing the share of domestic capital expenditure to spur economic growth and"
+          },
+          {
+            "rank": 4,
+            "source": "budget_2025",
+            "meta": {
+              "chunk_index": 274,
+              "type": "pdf_window",
+              "start": 212069
+            },
+            "vector_score": 0.5823315382003784,
+            "bm25_score": 19.110976674339675,
+            "fused_score": 0.6534715889819656,
+            "text": "amme. This resulted in securing about $900million from the Fund to support economic reforms; concluded the external debt restructuring programme with Official Creditor Committee and Eurobond Holders; ii. delivered the 2024 Mid -Year Budget and set a clear path to achieving revised targets; iii. prepared and submitted the 2025 Expenditure in Advance of Appropriation to ensure the provision of public services are sustained in the first quarter of 2025. 446. Mr. Speaker, in the year under review, the Ministry ensured that all the mandatory reports were prepared and submitted to Parliament in fulfilment of regulatory requirements. By doing this, the Ministry managed to ensure accountability and transparency in the management of public funds. 447. Mr. Speaker, to shore up revenue in 2024, various legislations were passed to give effect to the policy measures outlined in the Medium -Term"
+          },
+          {
+            "rank": 5,
+            "source": "budget_2025",
+            "meta": {
+              "chunk_index": 182,
+              "type": "pdf_window",
+              "start": 140765
+            },
+            "vector_score": 0.6371663212776184,
+            "bm25_score": 11.959633462339333,
+            "fused_score": 0.6400018919049284,
+            "text": "ed to some ceramic companies through the Discounted Industrial Development Tariff (DIDT) will be reversed to the current WACOG. 2025 Revenue Measures 255. Mr. Speaker, Government is proposing some revenue measures to support the achievement of the fiscal target for 2025 and the medium -term for the consideration and approval of Parliament. This is consistent with our commitment under the IMF - supported programme to observe a non-oil tax revenue effort of 0.6 percentage points annually as part of measures to improve domestic revenue mobilisation and achieve our debt sustainability targets over the medium-term. 256. Mr. Speaker, this is also consistent with Government’s pledge to rationalise the tax system and improve tax collections. In line with this, Government will conduct a complete overhaul of our current tax system to ensure that it generates the necessary revenue for the benefit"
+          },
+          {
+            "rank": 6,
+            "source": "budget_2025",
+            "meta": {
+              "chunk_index": 442,
+              "type": "pdf_window",
+              "start": 342307
+            },
+            "vector_score": 0.5763846635818481,
+            "bm25_score": 16.562816775890823,
+            "fused_score": 0.5737217755799353,
+            "text": "tions; aggressive nationwide anti-corruption education campaigns; and support for intelligence gathering and inter-agency collaborations. Resetting the Economy for the Ghana We Want 2025 Budget 123 SECTION 7: CONCLUSION 757. Mr. Speaker, the state of the economy as I have just presented, does not reflect an economy that has turned the corner; it reflects an economy in severe distress, burdened by debt repayment humps, mismanagement and a lack of accountability. 758. This budget sets Ghana on a path of fiscal responsibility, debt sustainability, macroeconomic stability and job creation. It is about resetting the economy and restoring hope. 759. Ghanaians reaffirmed their faith in a better future when they actively participated in the National Economic Dialogue on 3rd and 4th March, 2025. 760. A key outcome of the Dialogue was the confirmation that the fundamental problem with our economy"
+          },
+          {
+            "rank": 7,
+            "source": "budget_2025",
+            "meta": {
+              "chunk_index": 196,
+              "type": "pdf_window",
+              "start": 151634
+            },
+            "vector_score": 0.5517957210540771,
+            "bm25_score": 18.250555010799665,
+            "fused_score": 0.5426458075257613,
+            "text": "r, Non-Tax Revenue (Non-oil) is estimated at GH¢16.2 billion, representing about 7.3 percent of Domestic Revenue. Of this amount, GH¢13.6 billion will be retained for use by MDAs, while GH¢2.6 billion will be lodged, with an estimated yield of GH¢274.6 million from the IGF Capping Policy. 292. Mr. Speaker, Total Oil and Gas receipts are projected at GH¢16.5 billion. 293. Mr. Speaker, Other Revenue comprising SSNIT transfers to the NHIL, and ESL will amount to GH¢7.9 billion. 294. Mr. Speaker, grants from External Partners are projected at GH¢2.7 billion representing 1.2% of Total Revenue and Grants. These expected disbursements are entirely project- related, supporting key development initiatives in line with government priorities. Resetting the Economy for the Ghana We Want 2025 Budget 58 Figure 11: 2025 Resource Mobilisation (in GH¢ Million) Source: MoF 2025 Resource Allocation 295."
+          },
+          {
+            "rank": 8,
+            "source": "budget_2025",
+            "meta": {
+              "chunk_index": 94,
+              "type": "pdf_window",
+              "start": 72550
+            },
+            "vector_score": 0.5983421206474304,
+            "bm25_score": 12.45045660422977,
+            "fused_score": 0.5378166130304128,
+            "text": "it of 7.9% of GDP against a target deficit of 4.2% whilst the Overall Fiscal Balance (cash) was a deficit of 5.2% of GDP against a target of 5.3%; and iv. revenue exceeded the target by 5.3% (GH¢9.4 billion) whilst Expenditures (commitment) surpassed the target by 27.1% (GH¢59.5 billion) largely on the back of arrears build -up and more than anticipated foreign -financed capex spending. Resetting the Economy for the Ghana We Want 2025 Budget 24 117. Mr. Speaker, the fiscal performance for 2024 shows a reversal of the effort made in 2023 as primary balance on commitment basis worsened from a deficit of 0. 2% in 2023 to a deficit of 3.9% of GDP in 2024. The same trend was observed for the overall fiscal balance. 118. Mr. Speaker, Total Revenue and Grants was GH¢18 6,593 million, 5.3 percent above the revised target of GH¢177,220 million; 119. Total Expenditure (Commitment, including"
+          }
+        ],
+        "selected_sources": [
+          "budget_2025"
+        ],
+        "final_prompt": "You are an assistant for Academic City. Answer ONLY using the CONTEXT below.\nIf the CONTEXT does not contain enough information, say you do not know and suggest what is missing.\nDo not invent statistics, dates, or names not present in CONTEXT. Quote figures only when they appear in CONTEXT.\nBefore answering, mentally list which context snippets support each claim.\n\nCONTEXT:\n[1] (source=budget_2025)\na transformative step, emphasizing its role as the nation's economic epicenter, dedicated to improving the lives of its citizens. Outlook For 2025 464. Mr. Speaker, in line with government reset agenda, the Ministry in 2025 will focus on fiscal discipline, sustainable revenue mobilsation and enhanced private sector growth 465. The Ministry will continue to coordinate the implementation of the IMF -supported programme and ensure a successful 4 th and 5th Review to trigger the release of an estimated US$720 and bolster investor confidence. 466. Mr. Speaker, consistent with government’s commitment to revenue mobilisation, we will review the Medium-Term Revenue Strategy to align it with current Policy priorities and publish it within the year. 467. Additionally, the following drafting instructions on amendments to selected revenue legislations will be submitted to the Attorney-General and\n\n[2] (source=budget_2025)\nof the Fiscal Responsibility Act, 2018 (Act 982), programmed to be enacted by Parliament alongside the approval of this budget, to include a debt rule and legislate an independent fiscal council to monitor the adherence to fiscal targets, will greatly support the achievement of fiscal targets for 2025 and the medium-term. 346. Mr. Speaker, to achieve this fiscal objective, Total Revenue and Grants are projected to moderate from 15.9 percent of GDP in 2024 to 16.1 percent in 2025, and further to 16.9 percent by 2028. This steady improvement will be driven by a mix of tax policy measures, strengthened revenue administration, and an improvement in collection efficiency and tax compliance. 347. Mr. Speaker, on the expenditure front, the fiscal objective is to reduce primary expenditure as a share of GDP to below the 2023 level as part of our commitment to frontload the fiscal adjustment.\n\n[3] (source=budget_2025)\nm - term vision, policy objectives and targets. Resetting the Economy for the Ghana We Want 2025 Budget 49 Fiscal Policy Objectives 236. Mr. Speaker, consistent with Section 14 of the Public Financial Management Act, 2016 (Act 921), the fiscal policy objectives of this government is to support the economic transformation agenda to ensure the macroeconomic stability of the country within the macroeconomic and fiscal framework. More specifically, the fiscal policy objectives of government include: i. rationalising government expenditure and eliminating wasteful expenditure; ii. optimising domestic revenue mobilisation through the broadening of the tax base, increased non-tax revenue collection, adopting enhanced tax compliance measures, and modernisation of tax administration through digital technology; iii. increasing the share of domestic capital expenditure to spur economic growth and\n\n[4] (source=budget_2025)\namme. This resulted in securing about $900million from the Fund to support economic reforms; concluded the external debt restructuring programme with Official Creditor Committee and Eurobond Holders; ii. delivered the 2024 Mid -Year Budget and set a clear path to achieving revised targets; iii. prepared and submitted the 2025 Expenditure in Advance of Appropriation to ensure the provision of public services are sustained in the first quarter of 2025. 446. Mr. Speaker, in the year under review, the Ministry ensured that all the mandatory reports were prepared and submitted to Parliament in fulfilment of regulatory requirements. By doing this, the Ministry managed to ensure accountability and transparency in the management of public funds. 447. Mr. Speaker, to shore up revenue in 2024, various legislations were passed to give effect to the policy measures outlined in the Medium -Term\n\n[5] (source=budget_2025)\ned to some ceramic companies through the Discounted Industrial Development Tariff (DIDT) will be reversed to the current WACOG. 2025 Revenue Measures 255. Mr. Speaker, Government is proposing some revenue measures to support the achievement of the fiscal target for 2025 and the medium -term for the consideration and approval of Parliament. This is consistent with our commitment under the IMF - supported programme to observe a non-oil tax revenue effort of 0.6 percentage points annually as part of measures to improve domestic revenue mobilisation and achieve our debt sustainability targets over the medium-term. 256. Mr. Speaker, this is also consistent with Government’s pledge to rationalise the tax system and improve tax collections. In line with this, Government will conduct a complete overhaul of our current tax system to ensure that it generates the necessary revenue for the benefit\n\n[6] (source=budget_2025)\ntions; aggressive nationwide anti-corruption education campaigns; and support for intelligence gathering and inter-agency collaborations. Resetting the Economy for the Ghana We Want 2025 Budget 123 SECTION 7: CONCLUSION 757. Mr. Speaker, the state of the economy as I have just presented, does not reflect an economy that has turned the corner; it reflects an economy in severe distress, burdened by debt repayment humps, mismanagement and a lack of accountability. 758. This budget sets Ghana on a path of fiscal responsibility, debt sustainability, macroeconomic stability and job creation. It is about resetting the economy and restoring hope. 759. Ghanaians reaffirmed their faith in a better future when they actively participated in the National Economic Dialogue on 3rd and 4th March, 2025. 760. A key outcome of the Dialogue was the confirmation that the fundamental problem with our economy\n\n[7] (source=budget_2025)\nr, Non-Tax Revenue (Non-oil) is estimated at GH¢16.2 billion, representing about 7.3 percent of Domestic Revenue. Of this amount, GH¢13.6 billion will be retained for use by MDAs, while GH¢2.6 billion will be lodged, with an estimated yield of GH¢274.6 million from the IGF Capping Policy. 292. Mr. Speaker, Total Oil and Gas receipts are projected at GH¢16.5 billion. 293. Mr. Speaker, Other Revenue comprising SSNIT transfers to the NHIL, and ESL will amount to GH¢7.9 billion. 294. Mr. Speaker, grants from External Partners are projected at GH¢2.7 billion representing 1.2% of Total Revenue and Grant…\n\nUSER QUESTION:\nWhat does the 2025 budget say about revenue mobilization? economic policy expenditure revenue\n\nANSWER:",
+        "answer": "[Demo] LLM call failed (often quota/network). RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}. Prompt length: 6670 chars.",
+        "pipeline_log": [
+          {
+            "stage": "query",
+            "text": "What does the 2025 budget say about revenue mobilization?"
+          },
+          {
+            "stage": "retrieval",
+            "mode": "hybrid",
+            "expanded_query": "What does the 2025 budget say about revenue mobilization? economic policy expenditure revenue",
+            "hits": [
+              {
+                "source": "budget_2025",
+                "vector_score": 0.6716,
+                "bm25_score": 16.3181,
+                "fused_score": 0.8477,
+                "text_preview": "a transformative step, emphasizing its role as the nation's economic epicenter, dedicated to improving the lives of its citizens. Outlook For 2025 464. Mr. Speaker, in line with government reset agenda, the Ministry in 2…"
+              },
+              {
+                "source": "budget_2025",
+                "vector_score": 0.6359,
+                "bm25_score": 16.0366,
+                "fused_score": 0.7359,
+                "text_preview": "of the Fiscal Responsibility Act, 2018 (Act 982), programmed to be enacted by Parliament alongside the approval of this budget, to include a debt rule and legislate an independent fiscal council to monitor the adherence …"
+              },
+              {
+                "source": "budget_2025",
+                "vector_score": 0.5565,
+                "bm25_score": 22.553,
+                "fused_score": 0.6616,
+                "text_preview": "m - term vision, policy objectives and targets. Resetting the Economy for the Ghana We Want 2025 Budget 49 Fiscal Policy Objectives 236. Mr. Speaker, consistent with Section 14 of the Public Financial Management Act, 201…"
+              },
+              {
+                "source": "budget_2025",
+                "vector_score": 0.5823,
+                "bm25_score": 19.111,
+                "fused_score": 0.6535,
+                "text_preview": "amme. This resulted in securing about $900million from the Fund to support economic reforms; concluded the external debt restructuring programme with Official Creditor Committee and Eurobond Holders; ii. delivered the 20…"
+              },
+              {
+                "source": "budget_2025",
+                "vector_score": 0.6372,
+                "bm25_score": 11.9596,
+                "fused_score": 0.64,
+                "text_preview": "ed to some ceramic companies through the Discounted Industrial Development Tariff (DIDT) will be reversed to the current WACOG. 2025 Revenue Measures 255. Mr. Speaker, Government is proposing some revenue measures to sup…"
+              },
+              {
+                "source": "budget_2025",
+                "vector_score": 0.5764,
+                "bm25_score": 16.5628,
+                "fused_score": 0.5737,
+                "text_preview": "tions; aggressive nationwide anti-corruption education campaigns; and support for intelligence gathering and inter-agency collaborations. Resetting the Economy for the Ghana We Want 2025 Budget 123 SECTION 7: CONCLUSION …"
+              },
+              {
+                "source": "budget_2025",
+                "vector_score": 0.5518,
+                "bm25_score": 18.2506,
+                "fused_score": 0.5426,
+                "text_preview": "r, Non-Tax Revenue (Non-oil) is estimated at GH¢16.2 billion, representing about 7.3 percent of Domestic Revenue. Of this amount, GH¢13.6 billion will be retained for use by MDAs, while GH¢2.6 billion will be lodged, wit…"
+              },
+              {
+                "source": "budget_2025",
+                "vector_score": 0.5983,
+                "bm25_score": 12.4505,
+                "fused_score": 0.5378,
+                "text_preview": "it of 7.9% of GDP against a target deficit of 4.2% whilst the Overall Fiscal Balance (cash) was a deficit of 5.2% of GDP against a target of 5.3%; and iv. revenue exceeded the target by 5.3% (GH¢9.4 billion) whilst Expen…"
+              }
+            ]
+          },
+          {
+            "stage": "prompt",
+            "style": "strict",
+            "final_prompt": "You are an assistant for Academic City. Answer ONLY using the CONTEXT below.\nIf the CONTEXT does not contain enough information, say you do not know and suggest what is missing.\nDo not invent statistics, dates, or names not present in CONTEXT. Quote figures only when they appear in CONTEXT.\nBefore answering, mentally list which context snippets support each claim.\n\nCONTEXT:\n[1] (source=budget_2025)\na transformative step, emphasizing its role as the nation's economic epicenter, dedicated to improving the lives of its citizens. Outlook For 2025 464. Mr. Speaker, in line with government reset agenda, the Ministry in 2025 will focus on fiscal discipline, sustainable revenue mobilsation and enhanced private sector growth 465. The Ministry will continue to coordinate the implementation of the IMF -supported programme and ensure a successful 4 th and 5th Review to trigger the release of an estimated US$720 and bolster investor confidence. 466. Mr. Speaker, consistent with government’s commitment to revenue mobilisation, we will review the Medium-Term Revenue Strategy to align it with current Policy priorities and publish it within the year. 467. Additionally, the following drafting instructions on amendments to selected revenue legislations will be submitted to the Attorney-General and\n\n[2] (source=budget_2025)\nof the Fiscal Responsibility Act, 2018 (Act 982), programmed to be enacted by Parliament alongside the approval of this budget, to include a debt rule and legislate an independent fiscal council to monitor the adherence to fiscal targets, will greatly support the achievement of fiscal targets for 2025 and the medium-term. 346. Mr. Speaker, to achieve this fiscal objective, Total Revenue and Grants are projected to moderate from 15.9 percent of GDP in 2024 to 16.1 percent in 2025, and further to 16.9 percent by 2028. This steady improvement will be driven by a mix of tax policy measures, strengthened revenue administration, and an improvement in collection efficiency and tax compliance. 347. Mr. Speaker, on the expenditure front, the fiscal objective is to reduce primary expenditure as a share of GDP to below the 2023 level as part of our commitment to frontload the fiscal adjustment.\n\n[3] (source=budget_2025)\nm - term vision, policy objectives and targets. Resetting the Economy for the Ghana We Want 2025 Budget 49 Fiscal Policy Objectives 236. Mr. Speaker, consistent with Section 14 of the Public Financial Management Act, 2016 (Act 921), the fiscal policy objectives of this government is to support the economic transformation agenda to ensure the macroeconomic stability of the country within the macroeconomic and fiscal framework. More specifically, the fiscal policy objectives of government include: i. rationalising government expenditure and eliminating wasteful expenditure; ii. optimising domestic revenue mobilisation through the broadening of the tax base, increased non-tax revenue collection, adopting enhanced tax compliance measures, and modernisation of tax administration through digital technology; iii. increasing the share of domestic capital expenditure to spur economic growth and\n\n[4] (source=budget_2025)\namme. This resulted in securing about $900million from the Fund to support economic reforms; concluded the external debt restructuring programme with Official Creditor Committee and Eurobond Holders; ii. delivered the 2024 Mid -Year Budget and set a clear path to achieving revised targets; iii. prepared and submitted the 2025 Expenditure in Advance of Appropriation to ensure the provision of public services are sustained in the first quarter of 2025. 446. Mr. Speaker, in the year under review, the Ministry ensured that all the mandatory reports were prepared and submitted to Parliament in fulfilment of regulatory requirements. By doing this, the Ministry managed to ensure accountability and transparency in the management of public funds. 447. Mr. Speaker, to shore up revenue in 2024, various legislations were passed to give effect to the policy measures outlined in the Medium -Term\n\n[5] (source=budget_2025)\ned to some ceramic companies through the Discounted Industrial Development Tariff (DIDT) will be reversed to the current WACOG. 2025 Revenue Measures 255. Mr. Speaker, Government is proposing some revenue measures to support the achievement of the fiscal target for 2025 and the medium -term for the consideration and approval of Parliament. This is consistent with our commitment under the IMF - supported programme to observe a non-oil tax revenue effort of 0.6 percentage points annually as part of measures to improve domestic revenue mobilisation and achieve our debt sustainability targets over the medium-term. 256. Mr. Speaker, this is also consistent with Government’s pledge to rationalise the tax system and improve tax collections. In line with this, Government will conduct a complete overhaul of our current tax system to ensure that it generates the necessary revenue for the benefit\n\n[6] (source=budget_2025)\ntions; aggressive nationwide anti-corruption education campaigns; and support for intelligence gathering and inter-agency collaborations. Resetting the Economy for the Ghana We Want 2025 Budget 123 SECTION 7: CONCLUSION 757. Mr. Speaker, the state of the economy as I have just presented, does not reflect an economy that has turned the corner; it reflects an economy in severe distress, burdened by debt repayment humps, mismanagement and a lack of accountability. 758. This budget sets Ghana on a path of fiscal responsibility, debt sustainability, macroeconomic stability and job creation. It is about resetting the economy and restoring hope. 759. Ghanaians reaffirmed their faith in a better future when they actively participated in the National Economic Dialogue on 3rd and 4th March, 2025. 760. A key outcome of the Dialogue was the confirmation that the fundamental problem with our economy\n\n[7] (source=budget_2025)\nr, Non-Tax Revenue (Non-oil) is estimated at GH¢16.2 billion, representing about 7.3 percent of Domestic Revenue. Of this amount, GH¢13.6 billion will be retained for use by MDAs, while GH¢2.6 billion will be lodged, with an estimated yield of GH¢274.6 million from the IGF Capping Policy. 292. Mr. Speaker, Total Oil and Gas receipts are projected at GH¢16.5 billion. 293. Mr. Speaker, Other Revenue comprising SSNIT transfers to the NHIL, and ESL will amount to GH¢7.9 billion. 294. Mr. Speaker, grants from External Partners are projected at GH¢2.7 billion representing 1.2% of Total Revenue and Grant…\n\nUSER QUESTION:\nWhat does the 2025 budget say about revenue mobilization? economic policy expenditure revenue\n\nANSWER:",
+            "prompt_chars": 6670
+          },
+          {
+            "stage": "generation",
+            "answer_preview": "[Demo] LLM call failed (often quota/network). RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}. Prompt length: 6670 chars."
+          }
+        ]
+      },
+      "llm_only": {
+        "answer": "[Demo] LLM call failed (often quota/network). RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}. Prompt length: 144 chars.",
+        "pipeline_log": [
+          {
+            "stage": "query",
+            "text": "What does the 2025 budget say about revenue mobilization?",
+            "mode": "no_retrieval"
+          },
+          {
+            "stage": "prompt",
+            "final_prompt": "Answer the question helpfully. You may use general knowledge.\n\nUSER QUESTION:\nWhat does the 2025 budget say about revenue mobilization?\n\nANSWER:",
+            "prompt_chars": 144
+          },
+          {
+            "stage": "generation",
+            "answer_preview": "[Demo] LLM call failed (often quota/network). RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}. Prompt length: 144 chars."
+          }
+        ]
+      }
+    },
+    {
+      "query": "What are the expenditure priorities in the 2025 budget?",
+      "rag": {
+        "expanded_query": "What are the expenditure priorities in the 2025 budget? economic policy expenditure revenue",
+        "hits": [
+          {
+            "rank": 1,
+            "source": "budget_2025",
+            "meta": {
+              "chunk_index": 220,
+              "type": "pdf_window",
+              "start": 170242
+            },
+            "vector_score": 0.6858687400817871,
+            "bm25_score": 22.037538763230906,
+            "fused_score": 0.932616292443188,
+            "text": "of the Fiscal Responsibility Act, 2018 (Act 982), programmed to be enacted by Parliament alongside the approval of this budget, to include a debt rule and legislate an independent fiscal council to monitor the adherence to fiscal targets, will greatly support the achievement of fiscal targets for 2025 and the medium-term. 346. Mr. Speaker, to achieve this fiscal objective, Total Revenue and Grants are projected to moderate from 15.9 percent of GDP in 2024 to 16.1 percent in 2025, and further to 16.9 percent by 2028. This steady improvement will be driven by a mix of tax policy measures, strengthened revenue administration, and an improvement in collection efficiency and tax compliance. 347. Mr. Speaker, on the expenditure front, the fiscal objective is to reduce primary expenditure as a share of GDP to below the 2023 level as part of our commitment to frontload the fiscal adjustment."
+          },
+          {
+            "rank": 2,
+            "source": "budget_2025",
+            "meta": {
+              "chunk_index": 167,
+              "type": "pdf_window",
+              "start": 129168
+            },
+            "vector_score": 0.5952957272529602,
+            "bm25_score": 24.87594536558703,
+            "fused_score": 0.7148170738573449,
+            "text": "m - term vision, policy objectives and targets. Resetting the Economy for the Ghana We Want 2025 Budget 49 Fiscal Policy Objectives 236. Mr. Speaker, consistent with Section 14 of the Public Financial Management Act, 2016 (Act 921), the fiscal policy objectives of this government is to support the economic transformation agenda to ensure the macroeconomic stability of the country within the macroeconomic and fiscal framework. More specifically, the fiscal policy objectives of government include: i. rationalising government expenditure and eliminating wasteful expenditure; ii. optimising domestic revenue mobilisation through the broadening of the tax base, increased non-tax revenue collection, adopting enhanced tax compliance measures, and modernisation of tax administration through digital technology; iii. increasing the share of domestic capital expenditure to spur economic growth and"
+          },
+          {
+            "rank": 3,
+            "source": "budget_2025",
+            "meta": {
+              "chunk_index": 174,
+              "type": "pdf_window",
+              "start": 134570
+            },
+            "vector_score": 0.6501368284225464,
+            "bm25_score": 16.059953440956768,
+            "fused_score": 0.6782011879494089,
+            "text": "nce on Commitment basis at a surplus of 1.5 percent of GDP; and v. Gross International Reserves (including oil funds and encumbered/pledged assets) to cover not less than 3 months of imports. 2025 Expenditure Measures 251. Mr. Speaker, to contain public expenditure and bring public finances back on a sustainable path, we will improve the quality and efficiency in public spending and rationalise expenditure to spur growth. 252. Mr. Speaker, the following expenditure measures will be implemented in the 2025 fiscal year and the medium-term to support the fiscal consolidation agenda: i. conduct a comprehensive audit to validate the quantum of outstanding claim (arrears) and commitments as at 31st December 2024; ii. review/audit the current business process for budget preparation and implementation with a view to simplifying and improving the process to support value for money, prevent"
+          },
+          {
+            "rank": 4,
+            "source": "budget_2025",
+            "meta": {
+              "chunk_index": 274,
+              "type": "pdf_window",
+              "start": 212069
+            },
+            "vector_score": 0.5961133241653442,
+            "bm25_score": 22.645796774178052,
+            "fused_score": 0.6644477259194711,
+            "text": "amme. This resulted in securing about $900million from the Fund to support economic reforms; concluded the external debt restructuring programme with Official Creditor Committee and Eurobond Holders; ii. delivered the 2024 Mid -Year Budget and set a clear path to achieving revised targets; iii. prepared and submitted the 2025 Expenditure in Advance of Appropriation to ensure the provision of public services are sustained in the first quarter of 2025. 446. Mr. Speaker, in the year under review, the Ministry ensured that all the mandatory reports were prepared and submitted to Parliament in fulfilment of regulatory requirements. By doing this, the Ministry managed to ensure accountability and transparency in the management of public funds. 447. Mr. Speaker, to shore up revenue in 2024, various legislations were passed to give effect to the policy measures outlined in the Medium -Term"
+          },
+          {
+            "rank": 5,
+            "source": "budget_2025",
+            "meta": {
+              "chunk_index": 221,
+              "type": "pdf_window",
+              "start": 171018
+            },
+            "vector_score": 0.6398534774780273,
+            "bm25_score": 15.98731077128233,
+            "fused_score": 0.6440979559249803,
+            "text": "imary expenditure as a share of GDP to below the 2023 level as part of our commitment to frontload the fiscal adjustment. 348. Mr. Speaker, the primary expenditure is, thus, projected to decline significantly from 19.8 percent of GDP in 2024 to 14.6 percent in 2025, even lower than the 2023 outturn of 15.6 percent of GDP, reflecting government’s commitment to cutting wasteful spending. Resetting the Economy for the Ghana We Want 2025 Budget 66 349. Mr. Speaker, the primary expenditure is projected to rise modestly to 15.4 percent of GDP by 2028, ensuring adequate resources for priority investments, including the Big Push initiative, while maintaining fiscal discipline as shown in Table 35. 350. Mr. Speaker, the overall fiscal balance (commitment) is projected to decline significantly from a deficit of 7.9 percent of GDP in 2024 to 3.1 percent of GDP in 2025 and improve to a surplus of"
+          },
+          {
+            "rank": 6,
+            "source": "budget_2025",
+            "meta": {
+              "chunk_index": 94,
+              "type": "pdf_window",
+              "start": 72550
+            },
+            "vector_score": 0.6345360279083252,
+            "bm25_score": 15.25249164620642,
+            "fused_score": 0.609910566895186,
+            "text": "it of 7.9% of GDP against a target deficit of 4.2% whilst the Overall Fiscal Balance (cash) was a deficit of 5.2% of GDP against a target of 5.3%; and iv. revenue exceeded the target by 5.3% (GH¢9.4 billion) whilst Expenditures (commitment) surpassed the target by 27.1% (GH¢59.5 billion) largely on the back of arrears build -up and more than anticipated foreign -financed capex spending. Resetting the Economy for the Ghana We Want 2025 Budget 24 117. Mr. Speaker, the fiscal performance for 2024 shows a reversal of the effort made in 2023 as primary balance on commitment basis worsened from a deficit of 0. 2% in 2023 to a deficit of 3.9% of GDP in 2024. The same trend was observed for the overall fiscal balance. 118. Mr. Speaker, Total Revenue and Grants was GH¢18 6,593 million, 5.3 percent above the revised target of GH¢177,220 million; 119. Total Expenditure (Commitment, including"
+          },
+          {
+            "rank": 7,
+            "source": "budget_2025",
+            "meta": {
+              "chunk_index": 197,
+              "type": "pdf_window",
+              "start": 152411
+            },
+            "vector_score": 0.6484733819961548,
+            "bm25_score": 12.797129770304734,
+            "fused_score": 0.5955042145034515,
+            "text": "We Want 2025 Budget 58 Figure 11: 2025 Resource Mobilisation (in GH¢ Million) Source: MoF 2025 Resource Allocation 295. Mr. Speaker, Total Expenditures (Commitment) for 2025 has been programmed at GH¢268.8 billion down from GH¢279.2 billion in 2024. 296. Mr. Speaker, Primary Expenditure on a commitment basis (expenditures net of interest payments)—is projected at GH¢204.7 billion in 2025 (14.6% of GDP) , presenting a significant decline from 19.8% of GDP in 2024 and lower than the 2023 level of 15.6% of GDP. 297. Mr. Speaker, Compensation of Employees, comprising wages and salaries, pensions, gratuities, and social security has been programmed at GH¢76.6 billion . This reflects the 10% increase in the base pay granted to public servants on the Single Spine Salary Structure (SSSS). 298. Mr. Speaker, Use of Goods and Services is also projected at GH¢6.97 billion. 299. Mr. Speaker, Grants"
+          },
+          {
+            "rank": 8,
+            "source": "budget_2025",
+            "meta": {
+              "chunk_index": 5,
+              "type": "pdf_window",
+              "start": 3852
+            },
+            "vector_score": 0.5810332894325256,
+            "bm25_score": 20.54791106349166,
+            "fused_score": 0.5671621811161257,
+            "text": ".. ...................... 51 2025 Expenditure Measures ................................ ................................ ......................... 51 2025 Revenue Measures ................................ ................................ .............................. 53 2025 Resource Allocation ................................ ................................ ............................. 58 2025 Budget Balances and Financing Operations ................................ ........................ 59 2025 Petroleum Receipts and Utilisation Projection ................................ ...................... 60 2025 Debt Policy Objectives and Liability Management ................................ ................ 61 2025 Key Initiatives and Outlook for the Ghana Stock Exchange ................................ . 63 Medium-Term Vision and Policy Objectives ................................"
+          }
+        ],
+        "selected_sources": [
+          "budget_2025"
+        ],
+        "final_prompt": "You are an assistant for Academic City. Answer ONLY using the CONTEXT below.\nIf the CONTEXT does not contain enough information, say you do not know and suggest what is missing.\nDo not invent statistics, dates, or names not present in CONTEXT. Quote figures only when they appear in CONTEXT.\nBefore answering, mentally list which context snippets support each claim.\n\nCONTEXT:\n[1] (source=budget_2025)\nof the Fiscal Responsibility Act, 2018 (Act 982), programmed to be enacted by Parliament alongside the approval of this budget, to include a debt rule and legislate an independent fiscal council to monitor the adherence to fiscal targets, will greatly support the achievement of fiscal targets for 2025 and the medium-term. 346. Mr. Speaker, to achieve this fiscal objective, Total Revenue and Grants are projected to moderate from 15.9 percent of GDP in 2024 to 16.1 percent in 2025, and further to 16.9 percent by 2028. This steady improvement will be driven by a mix of tax policy measures, strengthened revenue administration, and an improvement in collection efficiency and tax compliance. 347. Mr. Speaker, on the expenditure front, the fiscal objective is to reduce primary expenditure as a share of GDP to below the 2023 level as part of our commitment to frontload the fiscal adjustment.\n\n[2] (source=budget_2025)\nm - term vision, policy objectives and targets. Resetting the Economy for the Ghana We Want 2025 Budget 49 Fiscal Policy Objectives 236. Mr. Speaker, consistent with Section 14 of the Public Financial Management Act, 2016 (Act 921), the fiscal policy objectives of this government is to support the economic transformation agenda to ensure the macroeconomic stability of the country within the macroeconomic and fiscal framework. More specifically, the fiscal policy objectives of government include: i. rationalising government expenditure and eliminating wasteful expenditure; ii. optimising domestic revenue mobilisation through the broadening of the tax base, increased non-tax revenue collection, adopting enhanced tax compliance measures, and modernisation of tax administration through digital technology; iii. increasing the share of domestic capital expenditure to spur economic growth and\n\n[3] (source=budget_2025)\nnce on Commitment basis at a surplus of 1.5 percent of GDP; and v. Gross International Reserves (including oil funds and encumbered/pledged assets) to cover not less than 3 months of imports. 2025 Expenditure Measures 251. Mr. Speaker, to contain public expenditure and bring public finances back on a sustainable path, we will improve the quality and efficiency in public spending and rationalise expenditure to spur growth. 252. Mr. Speaker, the following expenditure measures will be implemented in the 2025 fiscal year and the medium-term to support the fiscal consolidation agenda: i. conduct a comprehensive audit to validate the quantum of outstanding claim (arrears) and commitments as at 31st December 2024; ii. review/audit the current business process for budget preparation and implementation with a view to simplifying and improving the process to support value for money, prevent\n\n[4] (source=budget_2025)\namme. This resulted in securing about $900million from the Fund to support economic reforms; concluded the external debt restructuring programme with Official Creditor Committee and Eurobond Holders; ii. delivered the 2024 Mid -Year Budget and set a clear path to achieving revised targets; iii. prepared and submitted the 2025 Expenditure in Advance of Appropriation to ensure the provision of public services are sustained in the first quarter of 2025. 446. Mr. Speaker, in the year under review, the Ministry ensured that all the mandatory reports were prepared and submitted to Parliament in fulfilment of regulatory requirements. By doing this, the Ministry managed to ensure accountability and transparency in the management of public funds. 447. Mr. Speaker, to shore up revenue in 2024, various legislations were passed to give effect to the policy measures outlined in the Medium -Term\n\n[5] (source=budget_2025)\nimary expenditure as a share of GDP to below the 2023 level as part of our commitment to frontload the fiscal adjustment. 348. Mr. Speaker, the primary expenditure is, thus, projected to decline significantly from 19.8 percent of GDP in 2024 to 14.6 percent in 2025, even lower than the 2023 outturn of 15.6 percent of GDP, reflecting government’s commitment to cutting wasteful spending. Resetting the Economy for the Ghana We Want 2025 Budget 66 349. Mr. Speaker, the primary expenditure is projected to rise modestly to 15.4 percent of GDP by 2028, ensuring adequate resources for priority investments, including the Big Push initiative, while maintaining fiscal discipline as shown in Table 35. 350. Mr. Speaker, the overall fiscal balance (commitment) is projected to decline significantly from a deficit of 7.9 percent of GDP in 2024 to 3.1 percent of GDP in 2025 and improve to a surplus of\n\n[6] (source=budget_2025)\nit of 7.9% of GDP against a target deficit of 4.2% whilst the Overall Fiscal Balance (cash) was a deficit of 5.2% of GDP against a target of 5.3%; and iv. revenue exceeded the target by 5.3% (GH¢9.4 billion) whilst Expenditures (commitment) surpassed the target by 27.1% (GH¢59.5 billion) largely on the back of arrears build -up and more than anticipated foreign -financed capex spending. Resetting the Economy for the Ghana We Want 2025 Budget 24 117. Mr. Speaker, the fiscal performance for 2024 shows a reversal of the effort made in 2023 as primary balance on commitment basis worsened from a deficit of 0. 2% in 2023 to a deficit of 3.9% of GDP in 2024. The same trend was observed for the overall fiscal balance. 118. Mr. Speaker, Total Revenue and Grants was GH¢18 6,593 million, 5.3 percent above the revised target of GH¢177,220 million; 119. Total Expenditure (Commitment, including\n\n[7] (source=budget_2025)\nWe Want 2025 Budget 58 Figure 11: 2025 Resource Mobilisation (in GH¢ Million) Source: MoF 2025 Resource Allocation 295. Mr. Speaker, Total Expenditures (Commitment) for 2025 has been programmed at GH¢268.8 billion down from GH¢279.2 billion in 2024. 296. Mr. Speaker, Primary Expenditure on a commitment basis (expenditures net of interest payments)—is projected at GH¢204.7 billion in 2025 (14.6% of GDP) , presenting a significant decline from 19.8% of GDP in 2024 and lower than the 2023 level of 15.6% of GDP. 297. Mr. Speaker, Compensation of Employees, comprising wages and salaries, pensions, gratuities, and…\n\nUSER QUESTION:\nWhat are the expenditure priorities in the 2025 budget? economic policy expenditure revenue\n\nANSWER:",
+        "answer": "[Demo] LLM call failed (often quota/network). RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}. Prompt length: 6668 chars.",
+        "pipeline_log": [
+          {
+            "stage": "query",
+            "text": "What are the expenditure priorities in the 2025 budget?"
+          },
+          {
+            "stage": "retrieval",
+            "mode": "hybrid",
+            "expanded_query": "What are the expenditure priorities in the 2025 budget? economic policy expenditure revenue",
+            "hits": [
+              {
+                "source": "budget_2025",
+                "vector_score": 0.6859,
+                "bm25_score": 22.0375,
+                "fused_score": 0.9326,
+                "text_preview": "of the Fiscal Responsibility Act, 2018 (Act 982), programmed to be enacted by Parliament alongside the approval of this budget, to include a debt rule and legislate an independent fiscal council to monitor the adherence …"
+              },
+              {
+                "source": "budget_2025",
+                "vector_score": 0.5953,
+                "bm25_score": 24.8759,
+                "fused_score": 0.7148,
+                "text_preview": "m - term vision, policy objectives and targets. Resetting the Economy for the Ghana We Want 2025 Budget 49 Fiscal Policy Objectives 236. Mr. Speaker, consistent with Section 14 of the Public Financial Management Act, 201…"
+              },
+              {
+                "source": "budget_2025",
+                "vector_score": 0.6501,
+                "bm25_score": 16.06,
+                "fused_score": 0.6782,
+                "text_preview": "nce on Commitment basis at a surplus of 1.5 percent of GDP; and v. Gross International Reserves (including oil funds and encumbered/pledged assets) to cover not less than 3 months of imports. 2025 Expenditure Measures 25…"
+              },
+              {
+                "source": "budget_2025",
+                "vector_score": 0.5961,
+                "bm25_score": 22.6458,
+                "fused_score": 0.6644,
+                "text_preview": "amme. This resulted in securing about $900million from the Fund to support economic reforms; concluded the external debt restructuring programme with Official Creditor Committee and Eurobond Holders; ii. delivered the 20…"
+              },
+              {
+                "source": "budget_2025",
+                "vector_score": 0.6399,
+                "bm25_score": 15.9873,
+                "fused_score": 0.6441,
+                "text_preview": "imary expenditure as a share of GDP to below the 2023 level as part of our commitment to frontload the fiscal adjustment. 348. Mr. Speaker, the primary expenditure is, thus, projected to decline significantly from 19.8 p…"
+              },
+              {
+                "source": "budget_2025",
+                "vector_score": 0.6345,
+                "bm25_score": 15.2525,
+                "fused_score": 0.6099,
+                "text_preview": "it of 7.9% of GDP against a target deficit of 4.2% whilst the Overall Fiscal Balance (cash) was a deficit of 5.2% of GDP against a target of 5.3%; and iv. revenue exceeded the target by 5.3% (GH¢9.4 billion) whilst Expen…"
+              },
+              {
+                "source": "budget_2025",
+                "vector_score": 0.6485,
+                "bm25_score": 12.7971,
+                "fused_score": 0.5955,
+                "text_preview": "We Want 2025 Budget 58 Figure 11: 2025 Resource Mobilisation (in GH¢ Million) Source: MoF 2025 Resource Allocation 295. Mr. Speaker, Total Expenditures (Commitment) for 2025 has been programmed at GH¢268.8 billion down f…"
+              },
+              {
+                "source": "budget_2025",
+                "vector_score": 0.581,
+                "bm25_score": 20.5479,
+                "fused_score": 0.5672,
+                "text_preview": ".. ...................... 51 2025 Expenditure Measures ................................ ................................ ......................... 51 2025 Revenue Measures ................................ ...............…"
+              }
+            ]
+          },
+          {
+            "stage": "prompt",
+            "style": "strict",
+            "final_prompt": "You are an assistant for Academic City. Answer ONLY using the CONTEXT below.\nIf the CONTEXT does not contain enough information, say you do not know and suggest what is missing.\nDo not invent statistics, dates, or names not present in CONTEXT. Quote figures only when they appear in CONTEXT.\nBefore answering, mentally list which context snippets support each claim.\n\nCONTEXT:\n[1] (source=budget_2025)\nof the Fiscal Responsibility Act, 2018 (Act 982), programmed to be enacted by Parliament alongside the approval of this budget, to include a debt rule and legislate an independent fiscal council to monitor the adherence to fiscal targets, will greatly support the achievement of fiscal targets for 2025 and the medium-term. 346. Mr. Speaker, to achieve this fiscal objective, Total Revenue and Grants are projected to moderate from 15.9 percent of GDP in 2024 to 16.1 percent in 2025, and further to 16.9 percent by 2028. This steady improvement will be driven by a mix of tax policy measures, strengthened revenue administration, and an improvement in collection efficiency and tax compliance. 347. Mr. Speaker, on the expenditure front, the fiscal objective is to reduce primary expenditure as a share of GDP to below the 2023 level as part of our commitment to frontload the fiscal adjustment.\n\n[2] (source=budget_2025)\nm - term vision, policy objectives and targets. Resetting the Economy for the Ghana We Want 2025 Budget 49 Fiscal Policy Objectives 236. Mr. Speaker, consistent with Section 14 of the Public Financial Management Act, 2016 (Act 921), the fiscal policy objectives of this government is to support the economic transformation agenda to ensure the macroeconomic stability of the country within the macroeconomic and fiscal framework. More specifically, the fiscal policy objectives of government include: i. rationalising government expenditure and eliminating wasteful expenditure; ii. optimising domestic revenue mobilisation through the broadening of the tax base, increased non-tax revenue collection, adopting enhanced tax compliance measures, and modernisation of tax administration through digital technology; iii. increasing the share of domestic capital expenditure to spur economic growth and\n\n[3] (source=budget_2025)\nnce on Commitment basis at a surplus of 1.5 percent of GDP; and v. Gross International Reserves (including oil funds and encumbered/pledged assets) to cover not less than 3 months of imports. 2025 Expenditure Measures 251. Mr. Speaker, to contain public expenditure and bring public finances back on a sustainable path, we will improve the quality and efficiency in public spending and rationalise expenditure to spur growth. 252. Mr. Speaker, the following expenditure measures will be implemented in the 2025 fiscal year and the medium-term to support the fiscal consolidation agenda: i. conduct a comprehensive audit to validate the quantum of outstanding claim (arrears) and commitments as at 31st December 2024; ii. review/audit the current business process for budget preparation and implementation with a view to simplifying and improving the process to support value for money, prevent\n\n[4] (source=budget_2025)\namme. This resulted in securing about $900million from the Fund to support economic reforms; concluded the external debt restructuring programme with Official Creditor Committee and Eurobond Holders; ii. delivered the 2024 Mid -Year Budget and set a clear path to achieving revised targets; iii. prepared and submitted the 2025 Expenditure in Advance of Appropriation to ensure the provision of public services are sustained in the first quarter of 2025. 446. Mr. Speaker, in the year under review, the Ministry ensured that all the mandatory reports were prepared and submitted to Parliament in fulfilment of regulatory requirements. By doing this, the Ministry managed to ensure accountability and transparency in the management of public funds. 447. Mr. Speaker, to shore up revenue in 2024, various legislations were passed to give effect to the policy measures outlined in the Medium -Term\n\n[5] (source=budget_2025)\nimary expenditure as a share of GDP to below the 2023 level as part of our commitment to frontload the fiscal adjustment. 348. Mr. Speaker, the primary expenditure is, thus, projected to decline significantly from 19.8 percent of GDP in 2024 to 14.6 percent in 2025, even lower than the 2023 outturn of 15.6 percent of GDP, reflecting government’s commitment to cutting wasteful spending. Resetting the Economy for the Ghana We Want 2025 Budget 66 349. Mr. Speaker, the primary expenditure is projected to rise modestly to 15.4 percent of GDP by 2028, ensuring adequate resources for priority investments, including the Big Push initiative, while maintaining fiscal discipline as shown in Table 35. 350. Mr. Speaker, the overall fiscal balance (commitment) is projected to decline significantly from a deficit of 7.9 percent of GDP in 2024 to 3.1 percent of GDP in 2025 and improve to a surplus of\n\n[6] (source=budget_2025)\nit of 7.9% of GDP against a target deficit of 4.2% whilst the Overall Fiscal Balance (cash) was a deficit of 5.2% of GDP against a target of 5.3%; and iv. revenue exceeded the target by 5.3% (GH¢9.4 billion) whilst Expenditures (commitment) surpassed the target by 27.1% (GH¢59.5 billion) largely on the back of arrears build -up and more than anticipated foreign -financed capex spending. Resetting the Economy for the Ghana We Want 2025 Budget 24 117. Mr. Speaker, the fiscal performance for 2024 shows a reversal of the effort made in 2023 as primary balance on commitment basis worsened from a deficit of 0. 2% in 2023 to a deficit of 3.9% of GDP in 2024. The same trend was observed for the overall fiscal balance. 118. Mr. Speaker, Total Revenue and Grants was GH¢18 6,593 million, 5.3 percent above the revised target of GH¢177,220 million; 119. Total Expenditure (Commitment, including\n\n[7] (source=budget_2025)\nWe Want 2025 Budget 58 Figure 11: 2025 Resource Mobilisation (in GH¢ Million) Source: MoF 2025 Resource Allocation 295. Mr. Speaker, Total Expenditures (Commitment) for 2025 has been programmed at GH¢268.8 billion down from GH¢279.2 billion in 2024. 296. Mr. Speaker, Primary Expenditure on a commitment basis (expenditures net of interest payments)—is projected at GH¢204.7 billion in 2025 (14.6% of GDP) , presenting a significant decline from 19.8% of GDP in 2024 and lower than the 2023 level of 15.6% of GDP. 297. Mr. Speaker, Compensation of Employees, comprising wages and salaries, pensions, gratuities, and…\n\nUSER QUESTION:\nWhat are the expenditure priorities in the 2025 budget? economic policy expenditure revenue\n\nANSWER:",
+            "prompt_chars": 6668
+          },
+          {
+            "stage": "generation",
+            "answer_preview": "[Demo] LLM call failed (often quota/network). RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}. Prompt length: 6668 chars."
+          }
+        ]
+      },
+      "llm_only": {
+        "answer": "[Demo] LLM call failed (often quota/network). RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}. Prompt length: 142 chars.",
+        "pipeline_log": [
+          {
+            "stage": "query",
+            "text": "What are the expenditure priorities in the 2025 budget?",
+            "mode": "no_retrieval"
+          },
+          {
+            "stage": "prompt",
+            "final_prompt": "Answer the question helpfully. You may use general knowledge.\n\nUSER QUESTION:\nWhat are the expenditure priorities in the 2025 budget?\n\nANSWER:",
+            "prompt_chars": 142
+          },
+          {
+            "stage": "generation",
+            "answer_preview": "[Demo] LLM call failed (often quota/network). RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}. Prompt length: 142 chars."
+          }
+        ]
+      }
+    },
+    {
+      "query": "What fiscal deficit target is mentioned in the 2025 budget statement?",
+      "rag": {
+        "expanded_query": "What fiscal deficit target is mentioned in the 2025 budget statement? economic policy expenditure revenue",
+        "hits": [
+          {
+            "rank": 1,
+            "source": "budget_2025",
+            "meta": {
+              "chunk_index": 94,
+              "type": "pdf_window",
+              "start": 72550
+            },
+            "vector_score": 0.6810932159423828,
+            "bm25_score": 29.532626258190618,
+            "fused_score": 0.882265384955129,
+            "text": "it of 7.9% of GDP against a target deficit of 4.2% whilst the Overall Fiscal Balance (cash) was a deficit of 5.2% of GDP against a target of 5.3%; and iv. revenue exceeded the target by 5.3% (GH¢9.4 billion) whilst Expenditures (commitment) surpassed the target by 27.1% (GH¢59.5 billion) largely on the back of arrears build -up and more than anticipated foreign -financed capex spending. Resetting the Economy for the Ghana We Want 2025 Budget 24 117. Mr. Speaker, the fiscal performance for 2024 shows a reversal of the effort made in 2023 as primary balance on commitment basis worsened from a deficit of 0. 2% in 2023 to a deficit of 3.9% of GDP in 2024. The same trend was observed for the overall fiscal balance. 118. Mr. Speaker, Total Revenue and Grants was GH¢18 6,593 million, 5.3 percent above the revised target of GH¢177,220 million; 119. Total Expenditure (Commitment, including"
+          },
+          {
+            "rank": 2,
+            "source": "budget_2025",
+            "meta": {
+              "chunk_index": 93,
+              "type": "pdf_window",
+              "start": 71775
+            },
+            "vector_score": 0.6828758716583252,
+            "bm25_score": 29.21895323114436,
+            "fused_score": 0.8803218454635084,
+            "text": "update the House on fiscal performance for the 2024 financial year. 116. Mr. Speaker, the fiscal performance in 2024 was characterized by robust revenue collection but with significant expenditure overruns. In addition, large arrears/payables were accumulated. In summary, Mr. Speaker, provisional data show that: i. the primary balance (commitment), the key fiscal anchor, under the IMF - Supported Programme, worsened from a deficit of 0. 2% of GDP at the end of 2023 to a deficit of 3.9% at the end of 2024, that is 4.4 percentage points worse than the target surplus of 0.5% of GDP as shown in Table 19; ii. on cash basis, the primary balance was a deficit of 1.2% of GDP against a target deficit of 0.6%; iii. the overall fiscal balance (Commitment) for 2024 was a deficit of 7.9% of GDP against a target deficit of 4.2% whilst the Overall Fiscal Balance (cash) was a deficit of 5.2% of GDP"
+          },
+          {
+            "rank": 3,
+            "source": "budget_2025",
+            "meta": {
+              "chunk_index": 220,
+              "type": "pdf_window",
+              "start": 170242
+            },
+            "vector_score": 0.7345370650291443,
+            "bm25_score": 22.463621920658905,
+            "fused_score": 0.8676975786546737,
+            "text": "of the Fiscal Responsibility Act, 2018 (Act 982), programmed to be enacted by Parliament alongside the approval of this budget, to include a debt rule and legislate an independent fiscal council to monitor the adherence to fiscal targets, will greatly support the achievement of fiscal targets for 2025 and the medium-term. 346. Mr. Speaker, to achieve this fiscal objective, Total Revenue and Grants are projected to moderate from 15.9 percent of GDP in 2024 to 16.1 percent in 2025, and further to 16.9 percent by 2028. This steady improvement will be driven by a mix of tax policy measures, strengthened revenue administration, and an improvement in collection efficiency and tax compliance. 347. Mr. Speaker, on the expenditure front, the fiscal objective is to reduce primary expenditure as a share of GDP to below the 2023 level as part of our commitment to frontload the fiscal adjustment."
+          },
+          {
+            "rank": 4,
+            "source": "budget_2025",
+            "meta": {
+              "chunk_index": 218,
+              "type": "pdf_window",
+              "start": 168692
+            },
+            "vector_score": 0.7169107794761658,
+            "bm25_score": 20.541791262194135,
+            "fused_score": 0.7928988986662484,
+            "text": "nt in 2025 and further to 8 percent from 2026 onwards; iv The Primary Balance on commitment basis is projected to improve from a deficit of 3.9 percent of GDP in 2024 to a surplus of 1.5 percent of GDP in 2025 and remain at a surplus of at least 1.5 percent of GDP from 2026 onwards; and v Gross International Reserve (including oil funds and encumbered/pledged assets) is expected to cover at least three (3) months of import of goods and services in 2025 and the medium-term. Medium-Term Fiscal Policy Framework 343. Mr. Speaker, the 2025 fiscal framework reflects a bold and decisive effort to restore macroeconomic stability and ensure fiscal and debt sustainability. To this end, the government is undertaking a significant fiscal adjustment of about 5.3 percentage points of GDP —one of the most ambitious in our history. The primary balance (commitment) is therefore programmed to improve"
+          },
+          {
+            "rank": 5,
+            "source": "budget_2025",
+            "meta": {
+              "chunk_index": 222,
+              "type": "pdf_window",
+              "start": 171795
+            },
+            "vector_score": 0.6776268482208252,
+            "bm25_score": 21.23017672319869,
+            "fused_score": 0.7192417225146768,
+            "text": "ine significantly from a deficit of 7.9 percent of GDP in 2024 to 3.1 percent of GDP in 2025 and improve to a surplus of 0.1 percent of GDP by 2028 in line with our medium-term fiscal and debt sustainability objective, despite full resumption of interest payment from 2025 following the completion of the debt restructuring programme. 351. Similarly, the overall fiscal balance (cash) is expected to improve from a deficit of 5.2 percent of GDP in 2024 to 4.1 percent of GDP in 2025 and improve further to 0.7 percent of GDP by 2028 as shown in Table 35. Table 38: Summary of Central Government Fiscal Operations (% of GDP) Source: MoF Medium-Term GDP Outlook 352. Mr. Speaker, economic growth in 2025 and the medium -term is expected to be influenced by front-loaded fiscal consolidation and key growth-enhancing programmes within the context of the 24-Hour Economy initiative, while ensuring"
+          },
+          {
+            "rank": 6,
+            "source": "budget_2025",
+            "meta": {
+              "chunk_index": 221,
+              "type": "pdf_window",
+              "start": 171018
+            },
+            "vector_score": 0.6667737364768982,
+            "bm25_score": 22.025541374281502,
+            "fused_score": 0.7102186860716864,
+            "text": "imary expenditure as a share of GDP to below the 2023 level as part of our commitment to frontload the fiscal adjustment. 348. Mr. Speaker, the primary expenditure is, thus, projected to decline significantly from 19.8 percent of GDP in 2024 to 14.6 percent in 2025, even lower than the 2023 outturn of 15.6 percent of GDP, reflecting government’s commitment to cutting wasteful spending. Resetting the Economy for the Ghana We Want 2025 Budget 66 349. Mr. Speaker, the primary expenditure is projected to rise modestly to 15.4 percent of GDP by 2028, ensuring adequate resources for priority investments, including the Big Push initiative, while maintaining fiscal discipline as shown in Table 35. 350. Mr. Speaker, the overall fiscal balance (commitment) is projected to decline significantly from a deficit of 7.9 percent of GDP in 2024 to 3.1 percent of GDP in 2025 and improve to a surplus of"
+          },
+          {
+            "rank": 7,
+            "source": "budget_2025",
+            "meta": {
+              "chunk_index": 173,
+              "type": "pdf_window",
+              "start": 133809
+            },
+            "vector_score": 0.7055912017822266,
+            "bm25_score": 17.433962374154238,
+            "fused_score": 0.7097966739271881,
+            "text": "2024. 248. Mr. Speaker, a key pillar of our fiscal consolidation strategy is to reduce the fiscal deficit to sustainable levels to support the debt sustainability agenda. 249. Mr. Speaker, to ensure effective fiscal monitoring, the government will continue to assess fiscal effort through the Primary Balance (commitment) which serves as the main fiscal anchor. Resetting the Economy for the Ghana We Want 2025 Budget 51 2025 Macroeconomic Targets 250. Mr. Speaker, in pursuit of the overarching macroeconomic objectives, the following macroeconomic targets are set for the 2025 fiscal year: i. Overall Real GDP growth of at least 4.0 percent; ii. Non-Oil Real GDP growth of at least 4.8 percent; iii. End-Period inflation rate of 11.9 percent; iv. Primary Balance on Commitment basis at a surplus of 1.5 percent of GDP; and v. Gross International Reserves (including oil funds and"
+          },
+          {
+            "rank": 8,
+            "source": "budget_2025",
+            "meta": {
+              "chunk_index": 172,
+              "type": "pdf_window",
+              "start": 133033
+            },
+            "vector_score": 0.6466436386108398,
+            "bm25_score": 20.497483409365934,
+            "fused_score": 0.6372740003721661,
+            "text": "tloading fiscal adjustment. This is the downpayment for our policy credibility and creditworthiness; iii. Restore fiscal responsibility. Moving forward, we will enhance public financial management by: i) Empowering ministers to effectively manage their budgets; ii) Ensuring strict compliance with the commencement certificate system; iii) Passing and enforcing the revised Fiscal Responsibility Act; and iv) Enforcing sanctions for non-compliance; and 2025 Fiscal Framework 246. Mr. Speaker, the government’s fiscal strategy is focused on restoring macroeconomic stability as well as fiscal and debt sustainability over the medium-term. 247. The 2025 fiscal framework reflects a bold and front-loaded fiscal adjustment following the large accumulation of arrears/payables in 2024. 248. Mr. Speaker, a key pillar of our fiscal consolidation strategy is to reduce the fiscal deficit to sustainable"
+          }
+        ],
+        "selected_sources": [
+          "budget_2025"
+        ],
+        "final_prompt": "You are an assistant for Academic City. Answer ONLY using the CONTEXT below.\nIf the CONTEXT does not contain enough information, say you do not know and suggest what is missing.\nDo not invent statistics, dates, or names not present in CONTEXT. Quote figures only when they appear in CONTEXT.\nBefore answering, mentally list which context snippets support each claim.\n\nCONTEXT:\n[1] (source=budget_2025)\nit of 7.9% of GDP against a target deficit of 4.2% whilst the Overall Fiscal Balance (cash) was a deficit of 5.2% of GDP against a target of 5.3%; and iv. revenue exceeded the target by 5.3% (GH¢9.4 billion) whilst Expenditures (commitment) surpassed the target by 27.1% (GH¢59.5 billion) largely on the back of arrears build -up and more than anticipated foreign -financed capex spending. Resetting the Economy for the Ghana We Want 2025 Budget 24 117. Mr. Speaker, the fiscal performance for 2024 shows a reversal of the effort made in 2023 as primary balance on commitment basis worsened from a deficit of 0. 2% in 2023 to a deficit of 3.9% of GDP in 2024. The same trend was observed for the overall fiscal balance. 118. Mr. Speaker, Total Revenue and Grants was GH¢18 6,593 million, 5.3 percent above the revised target of GH¢177,220 million; 119. Total Expenditure (Commitment, including\n\n[2] (source=budget_2025)\nupdate the House on fiscal performance for the 2024 financial year. 116. Mr. Speaker, the fiscal performance in 2024 was characterized by robust revenue collection but with significant expenditure overruns. In addition, large arrears/payables were accumulated. In summary, Mr. Speaker, provisional data show that: i. the primary balance (commitment), the key fiscal anchor, under the IMF - Supported Programme, worsened from a deficit of 0. 2% of GDP at the end of 2023 to a deficit of 3.9% at the end of 2024, that is 4.4 percentage points worse than the target surplus of 0.5% of GDP as shown in Table 19; ii. on cash basis, the primary balance was a deficit of 1.2% of GDP against a target deficit of 0.6%; iii. the overall fiscal balance (Commitment) for 2024 was a deficit of 7.9% of GDP against a target deficit of 4.2% whilst the Overall Fiscal Balance (cash) was a deficit of 5.2% of GDP\n\n[3] (source=budget_2025)\nof the Fiscal Responsibility Act, 2018 (Act 982), programmed to be enacted by Parliament alongside the approval of this budget, to include a debt rule and legislate an independent fiscal council to monitor the adherence to fiscal targets, will greatly support the achievement of fiscal targets for 2025 and the medium-term. 346. Mr. Speaker, to achieve this fiscal objective, Total Revenue and Grants are projected to moderate from 15.9 percent of GDP in 2024 to 16.1 percent in 2025, and further to 16.9 percent by 2028. This steady improvement will be driven by a mix of tax policy measures, strengthened revenue administration, and an improvement in collection efficiency and tax compliance. 347. Mr. Speaker, on the expenditure front, the fiscal objective is to reduce primary expenditure as a share of GDP to below the 2023 level as part of our commitment to frontload the fiscal adjustment.\n\n[4] (source=budget_2025)\nnt in 2025 and further to 8 percent from 2026 onwards; iv The Primary Balance on commitment basis is projected to improve from a deficit of 3.9 percent of GDP in 2024 to a surplus of 1.5 percent of GDP in 2025 and remain at a surplus of at least 1.5 percent of GDP from 2026 onwards; and v Gross International Reserve (including oil funds and encumbered/pledged assets) is expected to cover at least three (3) months of import of goods and services in 2025 and the medium-term. Medium-Term Fiscal Policy Framework 343. Mr. Speaker, the 2025 fiscal framework reflects a bold and decisive effort to restore macroeconomic stability and ensure fiscal and debt sustainability. To this end, the government is undertaking a significant fiscal adjustment of about 5.3 percentage points of GDP —one of the most ambitious in our history. The primary balance (commitment) is therefore programmed to improve\n\n[5] (source=budget_2025)\nine significantly from a deficit of 7.9 percent of GDP in 2024 to 3.1 percent of GDP in 2025 and improve to a surplus of 0.1 percent of GDP by 2028 in line with our medium-term fiscal and debt sustainability objective, despite full resumption of interest payment from 2025 following the completion of the debt restructuring programme. 351. Similarly, the overall fiscal balance (cash) is expected to improve from a deficit of 5.2 percent of GDP in 2024 to 4.1 percent of GDP in 2025 and improve further to 0.7 percent of GDP by 2028 as shown in Table 35. Table 38: Summary of Central Government Fiscal Operations (% of GDP) Source: MoF Medium-Term GDP Outlook 352. Mr. Speaker, economic growth in 2025 and the medium -term is expected to be influenced by front-loaded fiscal consolidation and key growth-enhancing programmes within the context of the 24-Hour Economy initiative, while ensuring\n\n[6] (source=budget_2025)\nimary expenditure as a share of GDP to below the 2023 level as part of our commitment to frontload the fiscal adjustment. 348. Mr. Speaker, the primary expenditure is, thus, projected to decline significantly from 19.8 percent of GDP in 2024 to 14.6 percent in 2025, even lower than the 2023 outturn of 15.6 percent of GDP, reflecting government’s commitment to cutting wasteful spending. Resetting the Economy for the Ghana We Want 2025 Budget 66 349. Mr. Speaker, the primary expenditure is projected to rise modestly to 15.4 percent of GDP by 2028, ensuring adequate resources for priority investments, including the Big Push initiative, while maintaining fiscal discipline as shown in Table 35. 350. Mr. Speaker, the overall fiscal balance (commitment) is projected to decline significantly from a deficit of 7.9 percent of GDP in 2024 to 3.1 percent of GDP in 2025 and improve to a surplus of\n\n[7] (source=budget_2025)\n2024. 248. Mr. Speaker, a key pillar of our fiscal consolidation strategy is to reduce the fiscal deficit to sustainable levels to support the debt sustainability agenda. 249. Mr. Speaker, to ensure effective fiscal monitoring, the government will continue to assess fiscal effort through the Primary Balance (commitment) which serves as the main fiscal anchor. Resetting the Economy for the Ghana We Want 2025 Budget 51 2025 Macroeconomic Targets 250. Mr. Speaker, in pursuit of the overarching macroeconomic objectives, the following macroeconomic targets are set for the 2025 fiscal year: i. Overall Real GDP growt…\n\nUSER QUESTION:\nWhat fiscal deficit target is mentioned in the 2025 budget statement? economic policy expenditure revenue\n\nANSWER:",
+        "answer": "[Demo] LLM call failed (often quota/network). RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}. Prompt length: 6682 chars.",
+        "pipeline_log": [
+          {
+            "stage": "query",
+            "text": "What fiscal deficit target is mentioned in the 2025 budget statement?"
+          },
+          {
+            "stage": "retrieval",
+            "mode": "hybrid",
+            "expanded_query": "What fiscal deficit target is mentioned in the 2025 budget statement? economic policy expenditure revenue",
+            "hits": [
+              {
+                "source": "budget_2025",
+                "vector_score": 0.6811,
+                "bm25_score": 29.5326,
+                "fused_score": 0.8823,
+                "text_preview": "it of 7.9% of GDP against a target deficit of 4.2% whilst the Overall Fiscal Balance (cash) was a deficit of 5.2% of GDP against a target of 5.3%; and iv. revenue exceeded the target by 5.3% (GH¢9.4 billion) whilst Expen…"
+              },
+              {
+                "source": "budget_2025",
+                "vector_score": 0.6829,
+                "bm25_score": 29.219,
+                "fused_score": 0.8803,
+                "text_preview": "update the House on fiscal performance for the 2024 financial year. 116. Mr. Speaker, the fiscal performance in 2024 was characterized by robust revenue collection but with significant expenditure overruns. In addition, …"
+              },
+              {
+                "source": "budget_2025",
+                "vector_score": 0.7345,
+                "bm25_score": 22.4636,
+                "fused_score": 0.8677,
+                "text_preview": "of the Fiscal Responsibility Act, 2018 (Act 982), programmed to be enacted by Parliament alongside the approval of this budget, to include a debt rule and legislate an independent fiscal council to monitor the adherence …"
+              },
+              {
+                "source": "budget_2025",
+                "vector_score": 0.7169,
+                "bm25_score": 20.5418,
+                "fused_score": 0.7929,
+                "text_preview": "nt in 2025 and further to 8 percent from 2026 onwards; iv The Primary Balance on commitment basis is projected to improve from a deficit of 3.9 percent of GDP in 2024 to a surplus of 1.5 percent of GDP in 2025 and remain…"
+              },
+              {
+                "source": "budget_2025",
+                "vector_score": 0.6776,
+                "bm25_score": 21.2302,
+                "fused_score": 0.7192,
+                "text_preview": "ine significantly from a deficit of 7.9 percent of GDP in 2024 to 3.1 percent of GDP in 2025 and improve to a surplus of 0.1 percent of GDP by 2028 in line with our medium-term fiscal and debt sustainability objective, d…"
+              },
+              {
+                "source": "budget_2025",
+                "vector_score": 0.6668,
+                "bm25_score": 22.0255,
+                "fused_score": 0.7102,
+                "text_preview": "imary expenditure as a share of GDP to below the 2023 level as part of our commitment to frontload the fiscal adjustment. 348. Mr. Speaker, the primary expenditure is, thus, projected to decline significantly from 19.8 p…"
+              },
+              {
+                "source": "budget_2025",
+                "vector_score": 0.7056,
+                "bm25_score": 17.434,
+                "fused_score": 0.7098,
+                "text_preview": "2024. 248. Mr. Speaker, a key pillar of our fiscal consolidation strategy is to reduce the fiscal deficit to sustainable levels to support the debt sustainability agenda. 249. Mr. Speaker, to ensure effective fiscal moni…"
+              },
+              {
+                "source": "budget_2025",
+                "vector_score": 0.6466,
+                "bm25_score": 20.4975,
+                "fused_score": 0.6373,
+                "text_preview": "tloading fiscal adjustment. This is the downpayment for our policy credibility and creditworthiness; iii. Restore fiscal responsibility. Moving forward, we will enhance public financial management by: i) Empowering minis…"
+              }
+            ]
+          },
+          {
+            "stage": "prompt",
+            "style": "strict",
+            "final_prompt": "You are an assistant for Academic City. Answer ONLY using the CONTEXT below.\nIf the CONTEXT does not contain enough information, say you do not know and suggest what is missing.\nDo not invent statistics, dates, or names not present in CONTEXT. Quote figures only when they appear in CONTEXT.\nBefore answering, mentally list which context snippets support each claim.\n\nCONTEXT:\n[1] (source=budget_2025)\nit of 7.9% of GDP against a target deficit of 4.2% whilst the Overall Fiscal Balance (cash) was a deficit of 5.2% of GDP against a target of 5.3%; and iv. revenue exceeded the target by 5.3% (GH¢9.4 billion) whilst Expenditures (commitment) surpassed the target by 27.1% (GH¢59.5 billion) largely on the back of arrears build -up and more than anticipated foreign -financed capex spending. Resetting the Economy for the Ghana We Want 2025 Budget 24 117. Mr. Speaker, the fiscal performance for 2024 shows a reversal of the effort made in 2023 as primary balance on commitment basis worsened from a deficit of 0. 2% in 2023 to a deficit of 3.9% of GDP in 2024. The same trend was observed for the overall fiscal balance. 118. Mr. Speaker, Total Revenue and Grants was GH¢18 6,593 million, 5.3 percent above the revised target of GH¢177,220 million; 119. Total Expenditure (Commitment, including\n\n[2] (source=budget_2025)\nupdate the House on fiscal performance for the 2024 financial year. 116. Mr. Speaker, the fiscal performance in 2024 was characterized by robust revenue collection but with significant expenditure overruns. In addition, large arrears/payables were accumulated. In summary, Mr. Speaker, provisional data show that: i. the primary balance (commitment), the key fiscal anchor, under the IMF - Supported Programme, worsened from a deficit of 0. 2% of GDP at the end of 2023 to a deficit of 3.9% at the end of 2024, that is 4.4 percentage points worse than the target surplus of 0.5% of GDP as shown in Table 19; ii. on cash basis, the primary balance was a deficit of 1.2% of GDP against a target deficit of 0.6%; iii. the overall fiscal balance (Commitment) for 2024 was a deficit of 7.9% of GDP against a target deficit of 4.2% whilst the Overall Fiscal Balance (cash) was a deficit of 5.2% of GDP\n\n[3] (source=budget_2025)\nof the Fiscal Responsibility Act, 2018 (Act 982), programmed to be enacted by Parliament alongside the approval of this budget, to include a debt rule and legislate an independent fiscal council to monitor the adherence to fiscal targets, will greatly support the achievement of fiscal targets for 2025 and the medium-term. 346. Mr. Speaker, to achieve this fiscal objective, Total Revenue and Grants are projected to moderate from 15.9 percent of GDP in 2024 to 16.1 percent in 2025, and further to 16.9 percent by 2028. This steady improvement will be driven by a mix of tax policy measures, strengthened revenue administration, and an improvement in collection efficiency and tax compliance. 347. Mr. Speaker, on the expenditure front, the fiscal objective is to reduce primary expenditure as a share of GDP to below the 2023 level as part of our commitment to frontload the fiscal adjustment.\n\n[4] (source=budget_2025)\nnt in 2025 and further to 8 percent from 2026 onwards; iv The Primary Balance on commitment basis is projected to improve from a deficit of 3.9 percent of GDP in 2024 to a surplus of 1.5 percent of GDP in 2025 and remain at a surplus of at least 1.5 percent of GDP from 2026 onwards; and v Gross International Reserve (including oil funds and encumbered/pledged assets) is expected to cover at least three (3) months of import of goods and services in 2025 and the medium-term. Medium-Term Fiscal Policy Framework 343. Mr. Speaker, the 2025 fiscal framework reflects a bold and decisive effort to restore macroeconomic stability and ensure fiscal and debt sustainability. To this end, the government is undertaking a significant fiscal adjustment of about 5.3 percentage points of GDP —one of the most ambitious in our history. The primary balance (commitment) is therefore programmed to improve\n\n[5] (source=budget_2025)\nine significantly from a deficit of 7.9 percent of GDP in 2024 to 3.1 percent of GDP in 2025 and improve to a surplus of 0.1 percent of GDP by 2028 in line with our medium-term fiscal and debt sustainability objective, despite full resumption of interest payment from 2025 following the completion of the debt restructuring programme. 351. Similarly, the overall fiscal balance (cash) is expected to improve from a deficit of 5.2 percent of GDP in 2024 to 4.1 percent of GDP in 2025 and improve further to 0.7 percent of GDP by 2028 as shown in Table 35. Table 38: Summary of Central Government Fiscal Operations (% of GDP) Source: MoF Medium-Term GDP Outlook 352. Mr. Speaker, economic growth in 2025 and the medium -term is expected to be influenced by front-loaded fiscal consolidation and key growth-enhancing programmes within the context of the 24-Hour Economy initiative, while ensuring\n\n[6] (source=budget_2025)\nimary expenditure as a share of GDP to below the 2023 level as part of our commitment to frontload the fiscal adjustment. 348. Mr. Speaker, the primary expenditure is, thus, projected to decline significantly from 19.8 percent of GDP in 2024 to 14.6 percent in 2025, even lower than the 2023 outturn of 15.6 percent of GDP, reflecting government’s commitment to cutting wasteful spending. Resetting the Economy for the Ghana We Want 2025 Budget 66 349. Mr. Speaker, the primary expenditure is projected to rise modestly to 15.4 percent of GDP by 2028, ensuring adequate resources for priority investments, including the Big Push initiative, while maintaining fiscal discipline as shown in Table 35. 350. Mr. Speaker, the overall fiscal balance (commitment) is projected to decline significantly from a deficit of 7.9 percent of GDP in 2024 to 3.1 percent of GDP in 2025 and improve to a surplus of\n\n[7] (source=budget_2025)\n2024. 248. Mr. Speaker, a key pillar of our fiscal consolidation strategy is to reduce the fiscal deficit to sustainable levels to support the debt sustainability agenda. 249. Mr. Speaker, to ensure effective fiscal monitoring, the government will continue to assess fiscal effort through the Primary Balance (commitment) which serves as the main fiscal anchor. Resetting the Economy for the Ghana We Want 2025 Budget 51 2025 Macroeconomic Targets 250. Mr. Speaker, in pursuit of the overarching macroeconomic objectives, the following macroeconomic targets are set for the 2025 fiscal year: i. Overall Real GDP growt…\n\nUSER QUESTION:\nWhat fiscal deficit target is mentioned in the 2025 budget statement? economic policy expenditure revenue\n\nANSWER:",
+            "prompt_chars": 6682
+          },
+          {
+            "stage": "generation",
+            "answer_preview": "[Demo] LLM call failed (often quota/network). RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}. Prompt length: 6682 chars."
+          }
+        ]
+      },
+      "llm_only": {
+        "answer": "[Demo] LLM call failed (often quota/network). RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}. Prompt length: 156 chars.",
+        "pipeline_log": [
+          {
+            "stage": "query",
+            "text": "What fiscal deficit target is mentioned in the 2025 budget statement?",
+            "mode": "no_retrieval"
+          },
+          {
+            "stage": "prompt",
+            "final_prompt": "Answer the question helpfully. You may use general knowledge.\n\nUSER QUESTION:\nWhat fiscal deficit target is mentioned in the 2025 budget statement?\n\nANSWER:",
+            "prompt_chars": 156
+          },
+          {
+            "stage": "generation",
+            "answer_preview": "[Demo] LLM call failed (often quota/network). RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}. Prompt length: 156 chars."
+          }
+        ]
+      }
+    },
+    {
+      "query": "What was the biggest win?",
+      "rag": {
+        "expanded_query": "What was the biggest win?",
+        "hits": [
+          {
+            "rank": 1,
+            "source": "ghana_elections",
+            "meta": {
+              "row": 589,
+              "type": "csv_row"
+            },
+            "vector_score": 0.244850292801857,
+            "bm25_score": 0.0,
+            "fused_score": 1.0,
+            "text": "Year: 1992 | Old Region: Brong Ahafo Region | New Region: Brong Ahafo Region | Code: NDC | Candidate: Jerry John Rawlings | Party: NDC | Votes: 243361 | Votes(%): 61.95%"
+          },
+          {
+            "rank": 2,
+            "source": "ghana_elections",
+            "meta": {
+              "row": 595,
+              "type": "csv_row"
+            },
+            "vector_score": 0.23307949304580688,
+            "bm25_score": 0.0,
+            "fused_score": 0.89278428988945,
+            "text": "Year: 1992 | Old Region: Eastern Region | New Region: Eastern Region | Code: NDC | Candidate: Jerry John Rawlings | Party: NDC | Votes: 240076 | Votes(%): 52.60%"
+          },
+          {
+            "rank": 3,
+            "source": "ghana_elections",
+            "meta": {
+              "row": 588,
+              "type": "csv_row"
+            },
+            "vector_score": 0.23221690952777863,
+            "bm25_score": 0.0,
+            "fused_score": 0.884927346747798,
+            "text": "Year: 1992 | Old Region: Brong Ahafo Region | New Region: Brong Ahafo Region | Code: NPP | Candidate: Albert Adu Boahen | Party: NPP | Votes: 116041 | Votes(%): 29.54%"
+          },
+          {
+            "rank": 4,
+            "source": "ghana_elections",
+            "meta": {
+              "row": 559,
+              "type": "csv_row"
+            },
+            "vector_score": 0.2314395010471344,
+            "bm25_score": 0.0,
+            "fused_score": 0.8778462304238717,
+            "text": "Year: 1996 | Old Region: Brong Ahafo Region | New Region: Brong Ahafo Region | Code: NDC | Candidate: J. J. Rawlings | Party: NDC | Votes: 395381 | Votes(%): 61.73%"
+          },
+          {
+            "rank": 5,
+            "source": "budget_2025",
+            "meta": {
+              "chunk_index": 1010,
+              "type": "pdf_window",
+              "start": 690646
+            },
+            "vector_score": 0.22865505516529083,
+            "bm25_score": 0.0,
+            "fused_score": 0.8524837785367083,
+            "text": "89"
+          },
+          {
+            "rank": 6,
+            "source": "ghana_elections",
+            "meta": {
+              "row": 594,
+              "type": "csv_row"
+            },
+            "vector_score": 0.22506080567836761,
+            "bm25_score": 0.0,
+            "fused_score": 0.8197451355352521,
+            "text": "Year: 1992 | Old Region: Eastern Region | New Region: Eastern Region | Code: NPP | Candidate: Albert Adu Boahen | Party: NPP | Votes: 194724 | Votes(%): 42.66%"
+          },
+          {
+            "rank": 7,
+            "source": "ghana_elections",
+            "meta": {
+              "row": 592,
+              "type": "csv_row"
+            },
+            "vector_score": 0.2246817648410797,
+            "bm25_score": 0.0,
+            "fused_score": 0.8162925976131936,
+            "text": "Year: 1992 | Old Region: Central Region | New Region: Central Region | Code: NDC | Candidate: Jerry John Rawlings | Party: NDC | Votes: 222092 | Votes(%): 66.49%"
+          },
+          {
+            "rank": 8,
+            "source": "budget_2025",
+            "meta": {
+              "chunk_index": 1009,
+              "type": "pdf_window",
+              "start": 690645
+            },
+            "vector_score": 0.22383373975753784,
+            "bm25_score": 0.0,
+            "fused_score": 0.80856826167954,
+            "text": ".89"
+          }
+        ],
+        "selected_sources": [
+          "budget_2025",
+          "ghana_elections"
+        ],
+        "final_prompt": "You are an assistant for Academic City. Answer ONLY using the CONTEXT below.\nIf the CONTEXT does not contain enough information, say you do not know and suggest what is missing.\nDo not invent statistics, dates, or names not present in CONTEXT. Quote figures only when they appear in CONTEXT.\nBefore answering, mentally list which context snippets support each claim.\n\nCONTEXT:\n[1] (source=ghana_elections)\nYear: 1992 | Old Region: Brong Ahafo Region | New Region: Brong Ahafo Region | Code: NDC | Candidate: Jerry John Rawlings | Party: NDC | Votes: 243361 | Votes(%): 61.95%\n\n[2] (source=ghana_elections)\nYear: 1992 | Old Region: Eastern Region | New Region: Eastern Region | Code: NDC | Candidate: Jerry John Rawlings | Party: NDC | Votes: 240076 | Votes(%): 52.60%\n\n[3] (source=ghana_elections)\nYear: 1992 | Old Region: Brong Ahafo Region | New Region: Brong Ahafo Region | Code: NPP | Candidate: Albert Adu Boahen | Party: NPP | Votes: 116041 | Votes(%): 29.54%\n\n[4] (source=ghana_elections)\nYear: 1996 | Old Region: Brong Ahafo Region | New Region: Brong Ahafo Region | Code: NDC | Candidate: J. J. Rawlings | Party: NDC | Votes: 395381 | Votes(%): 61.73%\n\n[5] (source=budget_2025)\n89\n\n[6] (source=ghana_elections)\nYear: 1992 | Old Region: Eastern Region | New Region: Eastern Region | Code: NPP | Candidate: Albert Adu Boahen | Party: NPP | Votes: 194724 | Votes(%): 42.66%\n\n[7] (source=ghana_elections)\nYear: 1992 | Old Region: Central Region | New Region: Central Region | Code: NDC | Candidate: Jerry John Rawlings | Party: NDC | Votes: 222092 | Votes(%): 66.49%\n\n[8] (source=budget_2025)\n.89\n\nUSER QUESTION:\nWhat was the biggest win?\n\nANSWER:",
+        "answer": "[Demo] LLM call failed (often quota/network). RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}. Prompt length: 1652 chars.",
+        "pipeline_log": [
+          {
+            "stage": "query",
+            "text": "What was the biggest win?"
+          },
+          {
+            "stage": "retrieval",
+            "mode": "hybrid",
+            "expanded_query": "What was the biggest win?",
+            "hits": [
+              {
+                "source": "ghana_elections",
+                "vector_score": 0.2449,
+                "bm25_score": 0.0,
+                "fused_score": 1.0,
+                "text_preview": "Year: 1992 | Old Region: Brong Ahafo Region | New Region: Brong Ahafo Region | Code: NDC | Candidate: Jerry John Rawlings | Party: NDC | Votes: 243361 | Votes(%): 61.95%"
+              },
+              {
+                "source": "ghana_elections",
+                "vector_score": 0.2331,
+                "bm25_score": 0.0,
+                "fused_score": 0.8928,
+                "text_preview": "Year: 1992 | Old Region: Eastern Region | New Region: Eastern Region | Code: NDC | Candidate: Jerry John Rawlings | Party: NDC | Votes: 240076 | Votes(%): 52.60%"
+              },
+              {
+                "source": "ghana_elections",
+                "vector_score": 0.2322,
+                "bm25_score": 0.0,
+                "fused_score": 0.8849,
+                "text_preview": "Year: 1992 | Old Region: Brong Ahafo Region | New Region: Brong Ahafo Region | Code: NPP | Candidate: Albert Adu Boahen | Party: NPP | Votes: 116041 | Votes(%): 29.54%"
+              },
+              {
+                "source": "ghana_elections",
+                "vector_score": 0.2314,
+                "bm25_score": 0.0,
+                "fused_score": 0.8778,
+                "text_preview": "Year: 1996 | Old Region: Brong Ahafo Region | New Region: Brong Ahafo Region | Code: NDC | Candidate: J. J. Rawlings | Party: NDC | Votes: 395381 | Votes(%): 61.73%"
+              },
+              {
+                "source": "budget_2025",
+                "vector_score": 0.2287,
+                "bm25_score": 0.0,
+                "fused_score": 0.8525,
+                "text_preview": "89"
+              },
+              {
+                "source": "ghana_elections",
+                "vector_score": 0.2251,
+                "bm25_score": 0.0,
+                "fused_score": 0.8197,
+                "text_preview": "Year: 1992 | Old Region: Eastern Region | New Region: Eastern Region | Code: NPP | Candidate: Albert Adu Boahen | Party: NPP | Votes: 194724 | Votes(%): 42.66%"
+              },
+              {
+                "source": "ghana_elections",
+                "vector_score": 0.2247,
+                "bm25_score": 0.0,
+                "fused_score": 0.8163,
+                "text_preview": "Year: 1992 | Old Region: Central Region | New Region: Central Region | Code: NDC | Candidate: Jerry John Rawlings | Party: NDC | Votes: 222092 | Votes(%): 66.49%"
+              },
+              {
+                "source": "budget_2025",
+                "vector_score": 0.2238,
+                "bm25_score": 0.0,
+                "fused_score": 0.8086,
+                "text_preview": ".89"
+              }
+            ]
+          },
+          {
+            "stage": "prompt",
+            "style": "strict",
+            "final_prompt": "You are an assistant for Academic City. Answer ONLY using the CONTEXT below.\nIf the CONTEXT does not contain enough information, say you do not know and suggest what is missing.\nDo not invent statistics, dates, or names not present in CONTEXT. Quote figures only when they appear in CONTEXT.\nBefore answering, mentally list which context snippets support each claim.\n\nCONTEXT:\n[1] (source=ghana_elections)\nYear: 1992 | Old Region: Brong Ahafo Region | New Region: Brong Ahafo Region | Code: NDC | Candidate: Jerry John Rawlings | Party: NDC | Votes: 243361 | Votes(%): 61.95%\n\n[2] (source=ghana_elections)\nYear: 1992 | Old Region: Eastern Region | New Region: Eastern Region | Code: NDC | Candidate: Jerry John Rawlings | Party: NDC | Votes: 240076 | Votes(%): 52.60%\n\n[3] (source=ghana_elections)\nYear: 1992 | Old Region: Brong Ahafo Region | New Region: Brong Ahafo Region | Code: NPP | Candidate: Albert Adu Boahen | Party: NPP | Votes: 116041 | Votes(%): 29.54%\n\n[4] (source=ghana_elections)\nYear: 1996 | Old Region: Brong Ahafo Region | New Region: Brong Ahafo Region | Code: NDC | Candidate: J. J. Rawlings | Party: NDC | Votes: 395381 | Votes(%): 61.73%\n\n[5] (source=budget_2025)\n89\n\n[6] (source=ghana_elections)\nYear: 1992 | Old Region: Eastern Region | New Region: Eastern Region | Code: NPP | Candidate: Albert Adu Boahen | Party: NPP | Votes: 194724 | Votes(%): 42.66%\n\n[7] (source=ghana_elections)\nYear: 1992 | Old Region: Central Region | New Region: Central Region | Code: NDC | Candidate: Jerry John Rawlings | Party: NDC | Votes: 222092 | Votes(%): 66.49%\n\n[8] (source=budget_2025)\n.89\n\nUSER QUESTION:\nWhat was the biggest win?\n\nANSWER:",
+            "prompt_chars": 1652
+          },
+          {
+            "stage": "generation",
+            "answer_preview": "[Demo] LLM call failed (often quota/network). RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}. Prompt length: 1652 chars."
+          }
+        ]
+      },
+      "llm_only": {
+        "answer": "[Demo] LLM call failed (often quota/network). RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}. Prompt length: 112 chars.",
+        "pipeline_log": [
+          {
+            "stage": "query",
+            "text": "What was the biggest win?",
+            "mode": "no_retrieval"
+          },
+          {
+            "stage": "prompt",
+            "final_prompt": "Answer the question helpfully. You may use general knowledge.\n\nUSER QUESTION:\nWhat was the biggest win?\n\nANSWER:",
+            "prompt_chars": 112
+          },
+          {
+            "stage": "generation",
+            "answer_preview": "[Demo] LLM call failed (often quota/network). RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}. Prompt length: 112 chars."
+          }
+        ]
+      }
+    },
+    {
+      "query": "The budget reduced all taxes in 2025. Explain by how much.",
+      "rag": {
+        "expanded_query": "The budget reduced all taxes in 2025. Explain by how much. economic policy expenditure revenue",
+        "hits": [
+          {
+            "rank": 1,
+            "source": "budget_2025",
+            "meta": {
+              "chunk_index": 220,
+              "type": "pdf_window",
+              "start": 170242
+            },
+            "vector_score": 0.595620334148407,
+            "bm25_score": 17.806243710085223,
+            "fused_score": 0.9310125828227407,
+            "text": "of the Fiscal Responsibility Act, 2018 (Act 982), programmed to be enacted by Parliament alongside the approval of this budget, to include a debt rule and legislate an independent fiscal council to monitor the adherence to fiscal targets, will greatly support the achievement of fiscal targets for 2025 and the medium-term. 346. Mr. Speaker, to achieve this fiscal objective, Total Revenue and Grants are projected to moderate from 15.9 percent of GDP in 2024 to 16.1 percent in 2025, and further to 16.9 percent by 2028. This steady improvement will be driven by a mix of tax policy measures, strengthened revenue administration, and an improvement in collection efficiency and tax compliance. 347. Mr. Speaker, on the expenditure front, the fiscal objective is to reduce primary expenditure as a share of GDP to below the 2023 level as part of our commitment to frontload the fiscal adjustment."
+          },
+          {
+            "rank": 2,
+            "source": "budget_2025",
+            "meta": {
+              "chunk_index": 94,
+              "type": "pdf_window",
+              "start": 72550
+            },
+            "vector_score": 0.578188419342041,
+            "bm25_score": 13.788550493292462,
+            "fused_score": 0.7586768285831789,
+            "text": "it of 7.9% of GDP against a target deficit of 4.2% whilst the Overall Fiscal Balance (cash) was a deficit of 5.2% of GDP against a target of 5.3%; and iv. revenue exceeded the target by 5.3% (GH¢9.4 billion) whilst Expenditures (commitment) surpassed the target by 27.1% (GH¢59.5 billion) largely on the back of arrears build -up and more than anticipated foreign -financed capex spending. Resetting the Economy for the Ghana We Want 2025 Budget 24 117. Mr. Speaker, the fiscal performance for 2024 shows a reversal of the effort made in 2023 as primary balance on commitment basis worsened from a deficit of 0. 2% in 2023 to a deficit of 3.9% of GDP in 2024. The same trend was observed for the overall fiscal balance. 118. Mr. Speaker, Total Revenue and Grants was GH¢18 6,593 million, 5.3 percent above the revised target of GH¢177,220 million; 119. Total Expenditure (Commitment, including"
+          },
+          {
+            "rank": 3,
+            "source": "budget_2025",
+            "meta": {
+              "chunk_index": 167,
+              "type": "pdf_window",
+              "start": 129168
+            },
+            "vector_score": 0.5367480516433716,
+            "bm25_score": 19.335766148979086,
+            "fused_score": 0.7585684813519508,
+            "text": "m - term vision, policy objectives and targets. Resetting the Economy for the Ghana We Want 2025 Budget 49 Fiscal Policy Objectives 236. Mr. Speaker, consistent with Section 14 of the Public Financial Management Act, 2016 (Act 921), the fiscal policy objectives of this government is to support the economic transformation agenda to ensure the macroeconomic stability of the country within the macroeconomic and fiscal framework. More specifically, the fiscal policy objectives of government include: i. rationalising government expenditure and eliminating wasteful expenditure; ii. optimising domestic revenue mobilisation through the broadening of the tax base, increased non-tax revenue collection, adopting enhanced tax compliance measures, and modernisation of tax administration through digital technology; iii. increasing the share of domestic capital expenditure to spur economic growth and"
+          },
+          {
+            "rank": 4,
+            "source": "budget_2025",
+            "meta": {
+              "chunk_index": 222,
+              "type": "pdf_window",
+              "start": 171795
+            },
+            "vector_score": 0.5950506329536438,
+            "bm25_score": 11.22804088784422,
+            "fused_score": 0.7504923277375933,
+            "text": "ine significantly from a deficit of 7.9 percent of GDP in 2024 to 3.1 percent of GDP in 2025 and improve to a surplus of 0.1 percent of GDP by 2028 in line with our medium-term fiscal and debt sustainability objective, despite full resumption of interest payment from 2025 following the completion of the debt restructuring programme. 351. Similarly, the overall fiscal balance (cash) is expected to improve from a deficit of 5.2 percent of GDP in 2024 to 4.1 percent of GDP in 2025 and improve further to 0.7 percent of GDP by 2028 as shown in Table 35. Table 38: Summary of Central Government Fiscal Operations (% of GDP) Source: MoF Medium-Term GDP Outlook 352. Mr. Speaker, economic growth in 2025 and the medium -term is expected to be influenced by front-loaded fiscal consolidation and key growth-enhancing programmes within the context of the 24-Hour Economy initiative, while ensuring"
+          },
+          {
+            "rank": 5,
+            "source": "budget_2025",
+            "meta": {
+              "chunk_index": 221,
+              "type": "pdf_window",
+              "start": 171018
+            },
+            "vector_score": 0.5815039873123169,
+            "bm25_score": 12.372186590146374,
+            "fused_score": 0.7323029090303999,
+            "text": "imary expenditure as a share of GDP to below the 2023 level as part of our commitment to frontload the fiscal adjustment. 348. Mr. Speaker, the primary expenditure is, thus, projected to decline significantly from 19.8 percent of GDP in 2024 to 14.6 percent in 2025, even lower than the 2023 outturn of 15.6 percent of GDP, reflecting government’s commitment to cutting wasteful spending. Resetting the Economy for the Ghana We Want 2025 Budget 66 349. Mr. Speaker, the primary expenditure is projected to rise modestly to 15.4 percent of GDP by 2028, ensuring adequate resources for priority investments, including the Big Push initiative, while maintaining fiscal discipline as shown in Table 35. 350. Mr. Speaker, the overall fiscal balance (commitment) is projected to decline significantly from a deficit of 7.9 percent of GDP in 2024 to 3.1 percent of GDP in 2025 and improve to a surplus of"
+          },
+          {
+            "rank": 6,
+            "source": "budget_2025",
+            "meta": {
+              "chunk_index": 468,
+              "type": "pdf_window",
+              "start": 362431
+            },
+            "vector_score": 0.5613464117050171,
+            "bm25_score": 14.46935747516008,
+            "fused_score": 0.7159431747859545,
+            "text": "Annual Budget Funding Amount (ABFA) 8,036,398,622 7,526,368,294 10,831,267,732 (percent of GDP) 0.8 0.7 0.9 Nominal GDP 1,050,978,263,557 1,020,179,905,409 1,176,219,900,567 Non-Oil Nominal GDP 979,407,741,110 904,452,902,854 1,128,205,130,431 Resetting the Economy for the Ghana We Want 2025 Budget 131 Appendix 2B: Economic Classification of Central Gov't Revenue – 2024 In GH¢ unless otherwise stated 2024 2024 2024 Budget Rev. Prov Budget Outturn TAX REVENUE 143,169,831,428 143,175,494,092 151,155,011,888 TAXES ON INCOME & PROPERTY 65,811,144,460 67,237,519,600 78,742,005,811 Personal 23,254,105,822 22,686,447,637 23,604,502,170 PAYE 21,641,423,584 21,113,599,022 22,147,410,759 Self Employed 1,612,682,238 1,572,848,615 1,457,091,410 Companies 28,587,584,536 30,003,888,865 33,919,446,366 Company Taxes on Oil 4,274,664,109 4,274,664,109 7,356,787,744 Others 9,694,789,994 10,272,518,990"
+          },
+          {
+            "rank": 7,
+            "source": "budget_2025",
+            "meta": {
+              "chunk_index": 182,
+              "type": "pdf_window",
+              "start": 140765
+            },
+            "vector_score": 0.5796862840652466,
+            "bm25_score": 8.877350878293889,
+            "fused_score": 0.6308914916641458,
+            "text": "ed to some ceramic companies through the Discounted Industrial Development Tariff (DIDT) will be reversed to the current WACOG. 2025 Revenue Measures 255. Mr. Speaker, Government is proposing some revenue measures to support the achievement of the fiscal target for 2025 and the medium -term for the consideration and approval of Parliament. This is consistent with our commitment under the IMF - supported programme to observe a non-oil tax revenue effort of 0.6 percentage points annually as part of measures to improve domestic revenue mobilisation and achieve our debt sustainability targets over the medium-term. 256. Mr. Speaker, this is also consistent with Government’s pledge to rationalise the tax system and improve tax collections. In line with this, Government will conduct a complete overhaul of our current tax system to ensure that it generates the necessary revenue for the benefit"
+          },
+          {
+            "rank": 8,
+            "source": "budget_2025",
+            "meta": {
+              "chunk_index": 274,
+              "type": "pdf_window",
+              "start": 212069
+            },
+            "vector_score": 0.4889979958534241,
+            "bm25_score": 20.349326823241853,
+            "fused_score": 0.6125447372317735,
+            "text": "amme. This resulted in securing about $900million from the Fund to support economic reforms; concluded the external debt restructuring programme with Official Creditor Committee and Eurobond Holders; ii. delivered the 2024 Mid -Year Budget and set a clear path to achieving revised targets; iii. prepared and submitted the 2025 Expenditure in Advance of Appropriation to ensure the provision of public services are sustained in the first quarter of 2025. 446. Mr. Speaker, in the year under review, the Ministry ensured that all the mandatory reports were prepared and submitted to Parliament in fulfilment of regulatory requirements. By doing this, the Ministry managed to ensure accountability and transparency in the management of public funds. 447. Mr. Speaker, to shore up revenue in 2024, various legislations were passed to give effect to the policy measures outlined in the Medium -Term"
+          }
+        ],
+        "selected_sources": [
+          "budget_2025"
+        ],
+        "final_prompt": "You are an assistant for Academic City. Answer ONLY using the CONTEXT below.\nIf the CONTEXT does not contain enough information, say you do not know and suggest what is missing.\nDo not invent statistics, dates, or names not present in CONTEXT. Quote figures only when they appear in CONTEXT.\nBefore answering, mentally list which context snippets support each claim.\n\nCONTEXT:\n[1] (source=budget_2025)\nof the Fiscal Responsibility Act, 2018 (Act 982), programmed to be enacted by Parliament alongside the approval of this budget, to include a debt rule and legislate an independent fiscal council to monitor the adherence to fiscal targets, will greatly support the achievement of fiscal targets for 2025 and the medium-term. 346. Mr. Speaker, to achieve this fiscal objective, Total Revenue and Grants are projected to moderate from 15.9 percent of GDP in 2024 to 16.1 percent in 2025, and further to 16.9 percent by 2028. This steady improvement will be driven by a mix of tax policy measures, strengthened revenue administration, and an improvement in collection efficiency and tax compliance. 347. Mr. Speaker, on the expenditure front, the fiscal objective is to reduce primary expenditure as a share of GDP to below the 2023 level as part of our commitment to frontload the fiscal adjustment.\n\n[2] (source=budget_2025)\nit of 7.9% of GDP against a target deficit of 4.2% whilst the Overall Fiscal Balance (cash) was a deficit of 5.2% of GDP against a target of 5.3%; and iv. revenue exceeded the target by 5.3% (GH¢9.4 billion) whilst Expenditures (commitment) surpassed the target by 27.1% (GH¢59.5 billion) largely on the back of arrears build -up and more than anticipated foreign -financed capex spending. Resetting the Economy for the Ghana We Want 2025 Budget 24 117. Mr. Speaker, the fiscal performance for 2024 shows a reversal of the effort made in 2023 as primary balance on commitment basis worsened from a deficit of 0. 2% in 2023 to a deficit of 3.9% of GDP in 2024. The same trend was observed for the overall fiscal balance. 118. Mr. Speaker, Total Revenue and Grants was GH¢18 6,593 million, 5.3 percent above the revised target of GH¢177,220 million; 119. Total Expenditure (Commitment, including\n\n[3] (source=budget_2025)\nm - term vision, policy objectives and targets. Resetting the Economy for the Ghana We Want 2025 Budget 49 Fiscal Policy Objectives 236. Mr. Speaker, consistent with Section 14 of the Public Financial Management Act, 2016 (Act 921), the fiscal policy objectives of this government is to support the economic transformation agenda to ensure the macroeconomic stability of the country within the macroeconomic and fiscal framework. More specifically, the fiscal policy objectives of government include: i. rationalising government expenditure and eliminating wasteful expenditure; ii. optimising domestic revenue mobilisation through the broadening of the tax base, increased non-tax revenue collection, adopting enhanced tax compliance measures, and modernisation of tax administration through digital technology; iii. increasing the share of domestic capital expenditure to spur economic growth and\n\n[4] (source=budget_2025)\nine significantly from a deficit of 7.9 percent of GDP in 2024 to 3.1 percent of GDP in 2025 and improve to a surplus of 0.1 percent of GDP by 2028 in line with our medium-term fiscal and debt sustainability objective, despite full resumption of interest payment from 2025 following the completion of the debt restructuring programme. 351. Similarly, the overall fiscal balance (cash) is expected to improve from a deficit of 5.2 percent of GDP in 2024 to 4.1 percent of GDP in 2025 and improve further to 0.7 percent of GDP by 2028 as shown in Table 35. Table 38: Summary of Central Government Fiscal Operations (% of GDP) Source: MoF Medium-Term GDP Outlook 352. Mr. Speaker, economic growth in 2025 and the medium -term is expected to be influenced by front-loaded fiscal consolidation and key growth-enhancing programmes within the context of the 24-Hour Economy initiative, while ensuring\n\n[5] (source=budget_2025)\nimary expenditure as a share of GDP to below the 2023 level as part of our commitment to frontload the fiscal adjustment. 348. Mr. Speaker, the primary expenditure is, thus, projected to decline significantly from 19.8 percent of GDP in 2024 to 14.6 percent in 2025, even lower than the 2023 outturn of 15.6 percent of GDP, reflecting government’s commitment to cutting wasteful spending. Resetting the Economy for the Ghana We Want 2025 Budget 66 349. Mr. Speaker, the primary expenditure is projected to rise modestly to 15.4 percent of GDP by 2028, ensuring adequate resources for priority investments, including the Big Push initiative, while maintaining fiscal discipline as shown in Table 35. 350. Mr. Speaker, the overall fiscal balance (commitment) is projected to decline significantly from a deficit of 7.9 percent of GDP in 2024 to 3.1 percent of GDP in 2025 and improve to a surplus of\n\n[6] (source=budget_2025)\nAnnual Budget Funding Amount (ABFA) 8,036,398,622 7,526,368,294 10,831,267,732 (percent of GDP) 0.8 0.7 0.9 Nominal GDP 1,050,978,263,557 1,020,179,905,409 1,176,219,900,567 Non-Oil Nominal GDP 979,407,741,110 904,452,902,854 1,128,205,130,431 Resetting the Economy for the Ghana We Want 2025 Budget 131 Appendix 2B: Economic Classification of Central Gov't Revenue – 2024 In GH¢ unless otherwise stated 2024 2024 2024 Budget Rev. Prov Budget Outturn TAX REVENUE 143,169,831,428 143,175,494,092 151,155,011,888 TAXES ON INCOME & PROPERTY 65,811,144,460 67,237,519,600 78,742,005,811 Personal 23,254,105,822 22,686,447,637 23,604,502,170 PAYE 21,641,423,584 21,113,599,022 22,147,410,759 Self Employed 1,612,682,238 1,572,848,615 1,457,091,410 Companies 28,587,584,536 30,003,888,865 33,919,446,366 Company Taxes on Oil 4,274,664,109 4,274,664,109 7,356,787,744 Others 9,694,789,994 10,272,518,990\n\n[7] (source=budget_2025)\ned to some ceramic companies through the Discounted Industrial Development Tariff (DIDT) will be reversed to the current WACOG. 2025 Revenue Measures 255. Mr. Speaker, Government is proposing some revenue measures to support the achievement of the fiscal target for 2025 and the medium -term for the consideration and approval of Parliament. This is consistent with our commitment under the IMF - supported programme to observe a non-oil tax revenue effort of 0.6 percentage points annually as part of measures to improve domestic revenue mobilisation and achieve our debt sustainability targets over the medium-t…\n\nUSER QUESTION:\nThe budget reduced all taxes in 2025. Explain by how much. economic policy expenditure revenue\n\nANSWER:",
+        "answer": "[Demo] LLM call failed (often quota/network). RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}. Prompt length: 6671 chars.",
+        "pipeline_log": [
+          {
+            "stage": "query",
+            "text": "The budget reduced all taxes in 2025. Explain by how much."
+          },
+          {
+            "stage": "retrieval",
+            "mode": "hybrid",
+            "expanded_query": "The budget reduced all taxes in 2025. Explain by how much. economic policy expenditure revenue",
+            "hits": [
+              {
+                "source": "budget_2025",
+                "vector_score": 0.5956,
+                "bm25_score": 17.8062,
+                "fused_score": 0.931,
+                "text_preview": "of the Fiscal Responsibility Act, 2018 (Act 982), programmed to be enacted by Parliament alongside the approval of this budget, to include a debt rule and legislate an independent fiscal council to monitor the adherence …"
+              },
+              {
+                "source": "budget_2025",
+                "vector_score": 0.5782,
+                "bm25_score": 13.7886,
+                "fused_score": 0.7587,
+                "text_preview": "it of 7.9% of GDP against a target deficit of 4.2% whilst the Overall Fiscal Balance (cash) was a deficit of 5.2% of GDP against a target of 5.3%; and iv. revenue exceeded the target by 5.3% (GH¢9.4 billion) whilst Expen…"
+              },
+              {
+                "source": "budget_2025",
+                "vector_score": 0.5367,
+                "bm25_score": 19.3358,
+                "fused_score": 0.7586,
+                "text_preview": "m - term vision, policy objectives and targets. Resetting the Economy for the Ghana We Want 2025 Budget 49 Fiscal Policy Objectives 236. Mr. Speaker, consistent with Section 14 of the Public Financial Management Act, 201…"
+              },
+              {
+                "source": "budget_2025",
+                "vector_score": 0.5951,
+                "bm25_score": 11.228,
+                "fused_score": 0.7505,
+                "text_preview": "ine significantly from a deficit of 7.9 percent of GDP in 2024 to 3.1 percent of GDP in 2025 and improve to a surplus of 0.1 percent of GDP by 2028 in line with our medium-term fiscal and debt sustainability objective, d…"
+              },
+              {
+                "source": "budget_2025",
+                "vector_score": 0.5815,
+                "bm25_score": 12.3722,
+                "fused_score": 0.7323,
+                "text_preview": "imary expenditure as a share of GDP to below the 2023 level as part of our commitment to frontload the fiscal adjustment. 348. Mr. Speaker, the primary expenditure is, thus, projected to decline significantly from 19.8 p…"
+              },
+              {
+                "source": "budget_2025",
+                "vector_score": 0.5613,
+                "bm25_score": 14.4694,
+                "fused_score": 0.7159,
+                "text_preview": "Annual Budget Funding Amount (ABFA) 8,036,398,622 7,526,368,294 10,831,267,732 (percent of GDP) 0.8 0.7 0.9 Nominal GDP 1,050,978,263,557 1,020,179,905,409 1,176,219,900,567 Non-Oil Nominal GDP 979,407,741,110 904,452,90…"
+              },
+              {
+                "source": "budget_2025",
+                "vector_score": 0.5797,
+                "bm25_score": 8.8774,
+                "fused_score": 0.6309,
+                "text_preview": "ed to some ceramic companies through the Discounted Industrial Development Tariff (DIDT) will be reversed to the current WACOG. 2025 Revenue Measures 255. Mr. Speaker, Government is proposing some revenue measures to sup…"
+              },
+              {
+                "source": "budget_2025",
+                "vector_score": 0.489,
+                "bm25_score": 20.3493,
+                "fused_score": 0.6125,
+                "text_preview": "amme. This resulted in securing about $900million from the Fund to support economic reforms; concluded the external debt restructuring programme with Official Creditor Committee and Eurobond Holders; ii. delivered the 20…"
+              }
+            ]
+          },
+          {
+            "stage": "prompt",
+            "style": "strict",
+            "final_prompt": "You are an assistant for Academic City. Answer ONLY using the CONTEXT below.\nIf the CONTEXT does not contain enough information, say you do not know and suggest what is missing.\nDo not invent statistics, dates, or names not present in CONTEXT. Quote figures only when they appear in CONTEXT.\nBefore answering, mentally list which context snippets support each claim.\n\nCONTEXT:\n[1] (source=budget_2025)\nof the Fiscal Responsibility Act, 2018 (Act 982), programmed to be enacted by Parliament alongside the approval of this budget, to include a debt rule and legislate an independent fiscal council to monitor the adherence to fiscal targets, will greatly support the achievement of fiscal targets for 2025 and the medium-term. 346. Mr. Speaker, to achieve this fiscal objective, Total Revenue and Grants are projected to moderate from 15.9 percent of GDP in 2024 to 16.1 percent in 2025, and further to 16.9 percent by 2028. This steady improvement will be driven by a mix of tax policy measures, strengthened revenue administration, and an improvement in collection efficiency and tax compliance. 347. Mr. Speaker, on the expenditure front, the fiscal objective is to reduce primary expenditure as a share of GDP to below the 2023 level as part of our commitment to frontload the fiscal adjustment.\n\n[2] (source=budget_2025)\nit of 7.9% of GDP against a target deficit of 4.2% whilst the Overall Fiscal Balance (cash) was a deficit of 5.2% of GDP against a target of 5.3%; and iv. revenue exceeded the target by 5.3% (GH¢9.4 billion) whilst Expenditures (commitment) surpassed the target by 27.1% (GH¢59.5 billion) largely on the back of arrears build -up and more than anticipated foreign -financed capex spending. Resetting the Economy for the Ghana We Want 2025 Budget 24 117. Mr. Speaker, the fiscal performance for 2024 shows a reversal of the effort made in 2023 as primary balance on commitment basis worsened from a deficit of 0. 2% in 2023 to a deficit of 3.9% of GDP in 2024. The same trend was observed for the overall fiscal balance. 118. Mr. Speaker, Total Revenue and Grants was GH¢18 6,593 million, 5.3 percent above the revised target of GH¢177,220 million; 119. Total Expenditure (Commitment, including\n\n[3] (source=budget_2025)\nm - term vision, policy objectives and targets. Resetting the Economy for the Ghana We Want 2025 Budget 49 Fiscal Policy Objectives 236. Mr. Speaker, consistent with Section 14 of the Public Financial Management Act, 2016 (Act 921), the fiscal policy objectives of this government is to support the economic transformation agenda to ensure the macroeconomic stability of the country within the macroeconomic and fiscal framework. More specifically, the fiscal policy objectives of government include: i. rationalising government expenditure and eliminating wasteful expenditure; ii. optimising domestic revenue mobilisation through the broadening of the tax base, increased non-tax revenue collection, adopting enhanced tax compliance measures, and modernisation of tax administration through digital technology; iii. increasing the share of domestic capital expenditure to spur economic growth and\n\n[4] (source=budget_2025)\nine significantly from a deficit of 7.9 percent of GDP in 2024 to 3.1 percent of GDP in 2025 and improve to a surplus of 0.1 percent of GDP by 2028 in line with our medium-term fiscal and debt sustainability objective, despite full resumption of interest payment from 2025 following the completion of the debt restructuring programme. 351. Similarly, the overall fiscal balance (cash) is expected to improve from a deficit of 5.2 percent of GDP in 2024 to 4.1 percent of GDP in 2025 and improve further to 0.7 percent of GDP by 2028 as shown in Table 35. Table 38: Summary of Central Government Fiscal Operations (% of GDP) Source: MoF Medium-Term GDP Outlook 352. Mr. Speaker, economic growth in 2025 and the medium -term is expected to be influenced by front-loaded fiscal consolidation and key growth-enhancing programmes within the context of the 24-Hour Economy initiative, while ensuring\n\n[5] (source=budget_2025)\nimary expenditure as a share of GDP to below the 2023 level as part of our commitment to frontload the fiscal adjustment. 348. Mr. Speaker, the primary expenditure is, thus, projected to decline significantly from 19.8 percent of GDP in 2024 to 14.6 percent in 2025, even lower than the 2023 outturn of 15.6 percent of GDP, reflecting government’s commitment to cutting wasteful spending. Resetting the Economy for the Ghana We Want 2025 Budget 66 349. Mr. Speaker, the primary expenditure is projected to rise modestly to 15.4 percent of GDP by 2028, ensuring adequate resources for priority investments, including the Big Push initiative, while maintaining fiscal discipline as shown in Table 35. 350. Mr. Speaker, the overall fiscal balance (commitment) is projected to decline significantly from a deficit of 7.9 percent of GDP in 2024 to 3.1 percent of GDP in 2025 and improve to a surplus of\n\n[6] (source=budget_2025)\nAnnual Budget Funding Amount (ABFA) 8,036,398,622 7,526,368,294 10,831,267,732 (percent of GDP) 0.8 0.7 0.9 Nominal GDP 1,050,978,263,557 1,020,179,905,409 1,176,219,900,567 Non-Oil Nominal GDP 979,407,741,110 904,452,902,854 1,128,205,130,431 Resetting the Economy for the Ghana We Want 2025 Budget 131 Appendix 2B: Economic Classification of Central Gov't Revenue – 2024 In GH¢ unless otherwise stated 2024 2024 2024 Budget Rev. Prov Budget Outturn TAX REVENUE 143,169,831,428 143,175,494,092 151,155,011,888 TAXES ON INCOME & PROPERTY 65,811,144,460 67,237,519,600 78,742,005,811 Personal 23,254,105,822 22,686,447,637 23,604,502,170 PAYE 21,641,423,584 21,113,599,022 22,147,410,759 Self Employed 1,612,682,238 1,572,848,615 1,457,091,410 Companies 28,587,584,536 30,003,888,865 33,919,446,366 Company Taxes on Oil 4,274,664,109 4,274,664,109 7,356,787,744 Others 9,694,789,994 10,272,518,990\n\n[7] (source=budget_2025)\ned to some ceramic companies through the Discounted Industrial Development Tariff (DIDT) will be reversed to the current WACOG. 2025 Revenue Measures 255. Mr. Speaker, Government is proposing some revenue measures to support the achievement of the fiscal target for 2025 and the medium -term for the consideration and approval of Parliament. This is consistent with our commitment under the IMF - supported programme to observe a non-oil tax revenue effort of 0.6 percentage points annually as part of measures to improve domestic revenue mobilisation and achieve our debt sustainability targets over the medium-t…\n\nUSER QUESTION:\nThe budget reduced all taxes in 2025. Explain by how much. economic policy expenditure revenue\n\nANSWER:",
+            "prompt_chars": 6671
+          },
+          {
+            "stage": "generation",
+            "answer_preview": "[Demo] LLM call failed (often quota/network). RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}. Prompt length: 6671 chars."
+          }
+        ]
+      },
+      "llm_only": {
+        "answer": "[Demo] LLM call failed (often quota/network). RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}. Prompt length: 145 chars.",
+        "pipeline_log": [
+          {
+            "stage": "query",
+            "text": "The budget reduced all taxes in 2025. Explain by how much.",
+            "mode": "no_retrieval"
+          },
+          {
+            "stage": "prompt",
+            "final_prompt": "Answer the question helpfully. You may use general knowledge.\n\nUSER QUESTION:\nThe budget reduced all taxes in 2025. Explain by how much.\n\nANSWER:",
+            "prompt_chars": 145
+          },
+          {
+            "stage": "generation",
+            "answer_preview": "[Demo] LLM call failed (often quota/network). RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}. Prompt length: 145 chars."
+          }
+        ]
+      }
+    }
+  ]
+}

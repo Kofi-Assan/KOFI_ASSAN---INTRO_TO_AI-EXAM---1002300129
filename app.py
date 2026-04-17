@@ -23,7 +23,11 @@ from rag.pipeline import (  # noqa: E402
     run_llm_only,
 )
 from rag.prompts import build_context_block, build_rag_prompt, select_context  # noqa: E402
-from rag.retrieval import hybrid_retrieve, pure_vector_topk  # noqa: E402
+from rag.retrieval import (  # noqa: E402
+    hybrid_retrieve,
+    pure_vector_topk,
+    retrieve_with_optional_expansion,
+)
 from rag.store import FaissStore  # noqa: E402
 
 logging.basicConfig(level=logging.INFO)
@@ -50,6 +54,7 @@ store = load_store()
 with st.sidebar:
     st.subheader("Retrieval")
     use_hybrid = st.toggle("Hybrid (vector + BM25)", value=True)
+    use_expansion = st.toggle("Query expansion (Part B)", value=False, disabled=not use_hybrid)
     top_k = st.slider("Top-k", 3, 20, 8)
     prompt_style = st.selectbox("Prompt style", ["strict", "concise"])
     st.subheader("Part G — feedback boost")
@@ -69,9 +74,16 @@ if st.button("Run RAG", type="primary") and query.strip():
 
     plog = PipelineLog()
     if use_hybrid:
-        hits = hybrid_retrieve(store, query, k=top_k)
+        if use_expansion:
+            hits, expanded = retrieve_with_optional_expansion(
+                store, query, k=top_k, use_expansion=True
+            )
+        else:
+            hits = hybrid_retrieve(store, query, k=top_k)
+            expanded = query
     else:
         hits = pure_vector_topk(store, query, k=top_k)
+        expanded = query
     if boost_sources:
         hits = apply_feedback_boost(hits, boost_sources)
 
@@ -80,6 +92,8 @@ if st.button("Run RAG", type="primary") and query.strip():
         "retrieval",
         {
             "mode": "hybrid" if use_hybrid else "vector_only",
+            "query_expansion": bool(use_expansion) if use_hybrid else False,
+            "expanded_query": expanded,
             "feedback_boost": sorted(boost_sources),
             "hits": [
                 {
@@ -97,7 +111,7 @@ if st.button("Run RAG", type="primary") and query.strip():
 
     selected = select_context(hits, max_chars=6000)
     context_block = build_context_block(selected)
-    final_prompt = build_rag_prompt(query, context_block, style=prompt_style)
+    final_prompt = build_rag_prompt(expanded, context_block, style=prompt_style)
     plog.add(
         "context_selection",
         {

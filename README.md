@@ -9,6 +9,8 @@ Manual RAG for Academic City: Ghana election results (CSV) + 2025 budget PDF.
 
 ## Architecture (Part F)
 
+Full diagram + component description: `docs/ARCHITECTURE.md`
+
 ```text
 User query
     → Embedding (sentence-transformers)
@@ -28,7 +30,9 @@ User query
 
 ## Setup
 
-1. **Python 3.10+** recommended.
+1. **Python**: This repo deploys with `runtime.txt` (**3.11.9**).  
+   - If you use **Python 3.13**, local `sentence-transformers` may not install (PyTorch support).  
+   - The project therefore supports **OpenAI embeddings** as a fallback for building the index on any Python version.
 
 2. Create a virtual environment and install dependencies:
 
@@ -40,6 +44,11 @@ pip install -r requirements.txt
 ```
 
 3. Copy `.env.example` to `.env` and add your OpenAI key for real answers (optional for UI testing).
+   - To force embeddings backend, set: `EMBEDDINGS_BACKEND=openai` (or leave default `auto`).
+   - Chat provider options:
+     - OpenAI: `LLM_PROVIDER=openai` + `OPENAI_API_KEY=...`
+     - Groq: `LLM_PROVIDER=groq` + `GROQ_API_KEY=...`
+     - Auto-select (default): `LLM_PROVIDER=auto` prefers Groq key when present.
 
 4. Download data and build the index:
 
@@ -47,6 +56,18 @@ pip install -r requirements.txt
 python scripts/download_data.py
 python scripts/build_index.py
 ```
+
+To compare chunking configs for **Part A**, rebuild with explicit settings:
+
+```bash
+# Example Config A
+python scripts/build_index.py 600 80
+
+# Example Config B
+python scripts/build_index.py 900 120
+```
+
+Each build writes `data/index/build_config.json` capturing the chunking + embedding settings used.
 
 5. Run the app:
 
@@ -82,6 +103,20 @@ Document your own runs in `experiment_logs/`. Typical patterns to test:
 
 1. **Exact name or year:** Pure vector retrieval may rank a semantically similar but wrong constituency or section; **hybrid BM25** tends to fix this by matching rare tokens.  
 2. **Ambiguous query:** Short queries can pull generic budget chunks; mitigation: query expansion toggle in `rag/retrieval.py` or stricter `select_context` / user clarification in the UI.
+
+## Experiment evidence runner (Parts B–E)
+
+To generate **evidence JSON** (retrieval hits, prompts, answers) you can attach to your manual writeups:
+
+```bash
+# One query
+python scripts/run_experiments.py --query "What is the budget deficit target?" --hybrid --llm-only
+
+# Multiple queries (one per line, # comments allowed)
+python scripts/run_experiments.py --queries-file experiment_logs/queries.txt --hybrid --query-expansion --llm-only
+```
+
+Outputs are written to `experiment_logs/auto_runs/`. You should still write your own manual reflections using the templates in `experiment_logs/`.
 
 ## Submission (from question paper)
 

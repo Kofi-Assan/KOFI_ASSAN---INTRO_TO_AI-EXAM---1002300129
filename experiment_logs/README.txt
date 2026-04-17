@@ -9,3 +9,8 @@ For each run, create a dated file, e.g. 2026-04-17_run01.txt, and record:
 - Prompt variant (strict vs concise)
 - Answer summary + your note on accuracy / hallucination risk
 - Adversarial tests (Part E): what broke, what you changed
+
+Templates you can copy and fill (still manual):
+- TEMPLATE_run_log.md
+- TEMPLATE_chunking_comparison.md
+- TEMPLATE_adversarial_tests.md

@@ -32,20 +32,55 @@ class PipelineLog:
 
 
 def call_llm(prompt: str, model: str | None = None) -> str:
-    api_key = os.environ.get("OPENAI_API_KEY")
-    if not api_key:
-        return (
-            "[Demo] Set OPENAI_API_KEY in .env to enable live answers. "
-            "Prompt length: %d chars." % len(prompt)
+    provider = os.environ.get("LLM_PROVIDER", "auto").lower().strip()
+    openai_key = os.environ.get("OPENAI_API_KEY")
+    groq_key = os.environ.get("GROQ_API_KEY")
+
+    if provider == "auto":
+        if groq_key:
+            provider = "groq"
+        elif openai_key:
+            provider = "openai"
+        else:
+            provider = "none"
+
+    if provider == "groq":
+        if not groq_key:
+            return (
+                "[Demo] Set GROQ_API_KEY in .env (or switch LLM_PROVIDER). "
+                f"Prompt length: {len(prompt)} chars."
+            )
+        client = OpenAI(
+            api_key=groq_key,
+            base_url=os.environ.get("GROQ_BASE_URL", "https://api.groq.com/openai/v1"),
         )
-    client = OpenAI(api_key=api_key)
-    m = model or os.environ.get("OPENAI_CHAT_MODEL", "gpt-4o-mini")
-    resp = client.chat.completions.create(
-        model=m,
-        messages=[{"role": "user", "content": prompt}],
-        temperature=0.2,
-    )
-    return (resp.choices[0].message.content or "").strip()
+        m = model or os.environ.get("GROQ_MODEL", "llama-3.1-8b-instant")
+    elif provider == "openai":
+        if not openai_key:
+            return (
+                "[Demo] Set OPENAI_API_KEY in .env (or switch LLM_PROVIDER). "
+                f"Prompt length: {len(prompt)} chars."
+            )
+        client = OpenAI(api_key=openai_key)
+        m = model or os.environ.get("OPENAI_CHAT_MODEL", "gpt-4o-mini")
+    else:
+        return (
+            "[Demo] No LLM provider configured. Set LLM_PROVIDER=groq or openai with matching API key. "
+            f"Prompt length: {len(prompt)} chars."
+        )
+
+    try:
+        resp = client.chat.completions.create(
+            model=m,
+            messages=[{"role": "user", "content": prompt}],
+            temperature=0.2,
+        )
+        return (resp.choices[0].message.content or "").strip()
+    except Exception as e:
+        return (
+            "[Demo] LLM call failed (often quota/network). "
+            f"{type(e).__name__}: {e}. Prompt length: {len(prompt)} chars."
+        )
 
 
 def run_rag(

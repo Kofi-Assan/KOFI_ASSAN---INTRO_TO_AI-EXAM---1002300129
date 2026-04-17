@@ -1,0 +1,215 @@
+{
+  "student": {
+    "name": "Kofi Assan",
+    "index": "1002300129"
+  },
+  "run_id": "2026-04-17T015159Z",
+  "index_dir": "C:\\Users\\HP\\OneDrive\\Documents\\GitHub\\KOFI_ASSAN - INTRO_TO_AI EXAM - 1002300129\\data\\index",
+  "settings": {
+    "top_k": 8,
+    "prompt_style": "strict",
+    "max_context_chars": 6000,
+    "min_score_floor": 0.0,
+    "mode": "hybrid",
+    "query_expansion": true,
+    "llm_only_baseline": false
+  },
+  "queries": [
+    {
+      "query": "What does the 2025 budget say about revenue?",
+      "rag": {
+        "expanded_query": "What does the 2025 budget say about revenue? economic policy expenditure revenue",
+        "hits": [
+          {
+            "rank": 1,
+            "source": "budget_2025",
+            "meta": {
+              "chunk_index": 282,
+              "type": "pdf_window",
+              "start": 218261
+            },
+            "vector_score": 0.6434723138809204,
+            "bm25_score": 16.3180517391424,
+            "fused_score": 0.8388429048840486,
+            "text": "a transformative step, emphasizing its role as the nation's economic epicenter, dedicated to improving the lives of its citizens. Outlook For 2025 464. Mr. Speaker, in line with government reset agenda, the Ministry in 2025 will focus on fiscal discipline, sustainable revenue mobilsation and enhanced private sector growth 465. The Ministry will continue to coordinate the implementation of the IMF -supported programme and ensure a successful 4 th and 5th Review to trigger the release of an estimated US$720 and bolster investor confidence. 466. Mr. Speaker, consistent with government’s commitment to revenue mobilisation, we will review the Medium-Term Revenue Strategy to align it with current Policy priorities and publish it within the year. 467. Additionally, the following drafting instructions on amendments to selected revenue legislations will be submitted to the Attorney-General and"
+          },
+          {
+            "rank": 2,
+            "source": "budget_2025",
+            "meta": {
+              "chunk_index": 220,
+              "type": "pdf_window",
+              "start": 170242
+            },
+            "vector_score": 0.6431225538253784,
+            "bm25_score": 16.036581996921548,
+            "fused_score": 0.8307122773889503,
+            "text": "of the Fiscal Responsibility Act, 2018 (Act 982), programmed to be enacted by Parliament alongside the approval of this budget, to include a debt rule and legislate an independent fiscal council to monitor the adherence to fiscal targets, will greatly support the achievement of fiscal targets for 2025 and the medium-term. 346. Mr. Speaker, to achieve this fiscal objective, Total Revenue and Grants are projected to moderate from 15.9 percent of GDP in 2024 to 16.1 percent in 2025, and further to 16.9 percent by 2028. This steady improvement will be driven by a mix of tax policy measures, strengthened revenue administration, and an improvement in collection efficiency and tax compliance. 347. Mr. Speaker, on the expenditure front, the fiscal objective is to reduce primary expenditure as a share of GDP to below the 2023 level as part of our commitment to frontload the fiscal adjustment."
+          },
+          {
+            "rank": 3,
+            "source": "budget_2025",
+            "meta": {
+              "chunk_index": 182,
+              "type": "pdf_window",
+              "start": 140765
+            },
+            "vector_score": 0.6459320187568665,
+            "bm25_score": 11.959633462339333,
+            "fused_score": 0.7411650906265157,
+            "text": "ed to some ceramic companies through the Discounted Industrial Development Tariff (DIDT) will be reversed to the current WACOG. 2025 Revenue Measures 255. Mr. Speaker, Government is proposing some revenue measures to support the achievement of the fiscal target for 2025 and the medium -term for the consideration and approval of Parliament. This is consistent with our commitment under the IMF - supported programme to observe a non-oil tax revenue effort of 0.6 percentage points annually as part of measures to improve domestic revenue mobilisation and achieve our debt sustainability targets over the medium-term. 256. Mr. Speaker, this is also consistent with Government’s pledge to rationalise the tax system and improve tax collections. In line with this, Government will conduct a complete overhaul of our current tax system to ensure that it generates the necessary revenue for the benefit"
+          },
+          {
+            "rank": 4,
+            "source": "budget_2025",
+            "meta": {
+              "chunk_index": 167,
+              "type": "pdf_window",
+              "start": 129168
+            },
+            "vector_score": 0.5712695121765137,
+            "bm25_score": 22.55303947799357,
+            "fused_score": 0.732458253028915,
+            "text": "m - term vision, policy objectives and targets. Resetting the Economy for the Ghana We Want 2025 Budget 49 Fiscal Policy Objectives 236. Mr. Speaker, consistent with Section 14 of the Public Financial Management Act, 2016 (Act 921), the fiscal policy objectives of this government is to support the economic transformation agenda to ensure the macroeconomic stability of the country within the macroeconomic and fiscal framework. More specifically, the fiscal policy objectives of government include: i. rationalising government expenditure and eliminating wasteful expenditure; ii. optimising domestic revenue mobilisation through the broadening of the tax base, increased non-tax revenue collection, adopting enhanced tax compliance measures, and modernisation of tax administration through digital technology; iii. increasing the share of domestic capital expenditure to spur economic growth and"
+          },
+          {
+            "rank": 5,
+            "source": "budget_2025",
+            "meta": {
+              "chunk_index": 94,
+              "type": "pdf_window",
+              "start": 72550
+            },
+            "vector_score": 0.6282145380973816,
+            "bm25_score": 12.45045660422977,
+            "fused_score": 0.6896697609727396,
+            "text": "it of 7.9% of GDP against a target deficit of 4.2% whilst the Overall Fiscal Balance (cash) was a deficit of 5.2% of GDP against a target of 5.3%; and iv. revenue exceeded the target by 5.3% (GH¢9.4 billion) whilst Expenditures (commitment) surpassed the target by 27.1% (GH¢59.5 billion) largely on the back of arrears build -up and more than anticipated foreign -financed capex spending. Resetting the Economy for the Ghana We Want 2025 Budget 24 117. Mr. Speaker, the fiscal performance for 2024 shows a reversal of the effort made in 2023 as primary balance on commitment basis worsened from a deficit of 0. 2% in 2023 to a deficit of 3.9% of GDP in 2024. The same trend was observed for the overall fiscal balance. 118. Mr. Speaker, Total Revenue and Grants was GH¢18 6,593 million, 5.3 percent above the revised target of GH¢177,220 million; 119. Total Expenditure (Commitment, including"
+          },
+          {
+            "rank": 6,
+            "source": "budget_2025",
+            "meta": {
+              "chunk_index": 274,
+              "type": "pdf_window",
+              "start": 212069
+            },
+            "vector_score": 0.5770976543426514,
+            "bm25_score": 19.110976674339675,
+            "fused_score": 0.6692405732863933,
+            "text": "amme. This resulted in securing about $900million from the Fund to support economic reforms; concluded the external debt restructuring programme with Official Creditor Committee and Eurobond Holders; ii. delivered the 2024 Mid -Year Budget and set a clear path to achieving revised targets; iii. prepared and submitted the 2025 Expenditure in Advance of Appropriation to ensure the provision of public services are sustained in the first quarter of 2025. 446. Mr. Speaker, in the year under review, the Ministry ensured that all the mandatory reports were prepared and submitted to Parliament in fulfilment of regulatory requirements. By doing this, the Ministry managed to ensure accountability and transparency in the management of public funds. 447. Mr. Speaker, to shore up revenue in 2024, various legislations were passed to give effect to the policy measures outlined in the Medium -Term"
+          },
+          {
+            "rank": 7,
+            "source": "budget_2025",
+            "meta": {
+              "chunk_index": 442,
+              "type": "pdf_window",
+              "start": 342307
+            },
+            "vector_score": 0.5914286375045776,
+            "bm25_score": 16.562816775890823,
+            "fused_score": 0.6583327867621207,
+            "text": "tions; aggressive nationwide anti-corruption education campaigns; and support for intelligence gathering and inter-agency collaborations. Resetting the Economy for the Ghana We Want 2025 Budget 123 SECTION 7: CONCLUSION 757. Mr. Speaker, the state of the economy as I have just presented, does not reflect an economy that has turned the corner; it reflects an economy in severe distress, burdened by debt repayment humps, mismanagement and a lack of accountability. 758. This budget sets Ghana on a path of fiscal responsibility, debt sustainability, macroeconomic stability and job creation. It is about resetting the economy and restoring hope. 759. Ghanaians reaffirmed their faith in a better future when they actively participated in the National Economic Dialogue on 3rd and 4th March, 2025. 760. A key outcome of the Dialogue was the confirmation that the fundamental problem with our economy"
+          },
+          {
+            "rank": 8,
+            "source": "budget_2025",
+            "meta": {
+              "chunk_index": 197,
+              "type": "pdf_window",
+              "start": 152411
+            },
+            "vector_score": 0.6435933113098145,
+            "bm25_score": 6.997947760467399,
+            "fused_score": 0.6115529077326305,
+            "text": "We Want 2025 Budget 58 Figure 11: 2025 Resource Mobilisation (in GH¢ Million) Source: MoF 2025 Resource Allocation 295. Mr. Speaker, Total Expenditures (Commitment) for 2025 has been programmed at GH¢268.8 billion down from GH¢279.2 billion in 2024. 296. Mr. Speaker, Primary Expenditure on a commitment basis (expenditures net of interest payments)—is projected at GH¢204.7 billion in 2025 (14.6% of GDP) , presenting a significant decline from 19.8% of GDP in 2024 and lower than the 2023 level of 15.6% of GDP. 297. Mr. Speaker, Compensation of Employees, comprising wages and salaries, pensions, gratuities, and social security has been programmed at GH¢76.6 billion . This reflects the 10% increase in the base pay granted to public servants on the Single Spine Salary Structure (SSSS). 298. Mr. Speaker, Use of Goods and Services is also projected at GH¢6.97 billion. 299. Mr. Speaker, Grants"
+          }
+        ],
+        "selected_sources": [
+          "budget_2025"
+        ],
+        "final_prompt": "You are an assistant for Academic City. Answer ONLY using the CONTEXT below.\nIf the CONTEXT does not contain enough information, say you do not know and suggest what is missing.\nDo not invent statistics, dates, or names not present in CONTEXT. Quote figures only when they appear in CONTEXT.\nBefore answering, mentally list which context snippets support each claim.\n\nCONTEXT:\n[1] (source=budget_2025)\na transformative step, emphasizing its role as the nation's economic epicenter, dedicated to improving the lives of its citizens. Outlook For 2025 464. Mr. Speaker, in line with government reset agenda, the Ministry in 2025 will focus on fiscal discipline, sustainable revenue mobilsation and enhanced private sector growth 465. The Ministry will continue to coordinate the implementation of the IMF -supported programme and ensure a successful 4 th and 5th Review to trigger the release of an estimated US$720 and bolster investor confidence. 466. Mr. Speaker, consistent with government’s commitment to revenue mobilisation, we will review the Medium-Term Revenue Strategy to align it with current Policy priorities and publish it within the year. 467. Additionally, the following drafting instructions on amendments to selected revenue legislations will be submitted to the Attorney-General and\n\n[2] (source=budget_2025)\nof the Fiscal Responsibility Act, 2018 (Act 982), programmed to be enacted by Parliament alongside the approval of this budget, to include a debt rule and legislate an independent fiscal council to monitor the adherence to fiscal targets, will greatly support the achievement of fiscal targets for 2025 and the medium-term. 346. Mr. Speaker, to achieve this fiscal objective, Total Revenue and Grants are projected to moderate from 15.9 percent of GDP in 2024 to 16.1 percent in 2025, and further to 16.9 percent by 2028. This steady improvement will be driven by a mix of tax policy measures, strengthened revenue administration, and an improvement in collection efficiency and tax compliance. 347. Mr. Speaker, on the expenditure front, the fiscal objective is to reduce primary expenditure as a share of GDP to below the 2023 level as part of our commitment to frontload the fiscal adjustment.\n\n[3] (source=budget_2025)\ned to some ceramic companies through the Discounted Industrial Development Tariff (DIDT) will be reversed to the current WACOG. 2025 Revenue Measures 255. Mr. Speaker, Government is proposing some revenue measures to support the achievement of the fiscal target for 2025 and the medium -term for the consideration and approval of Parliament. This is consistent with our commitment under the IMF - supported programme to observe a non-oil tax revenue effort of 0.6 percentage points annually as part of measures to improve domestic revenue mobilisation and achieve our debt sustainability targets over the medium-term. 256. Mr. Speaker, this is also consistent with Government’s pledge to rationalise the tax system and improve tax collections. In line with this, Government will conduct a complete overhaul of our current tax system to ensure that it generates the necessary revenue for the benefit\n\n[4] (source=budget_2025)\nm - term vision, policy objectives and targets. Resetting the Economy for the Ghana We Want 2025 Budget 49 Fiscal Policy Objectives 236. Mr. Speaker, consistent with Section 14 of the Public Financial Management Act, 2016 (Act 921), the fiscal policy objectives of this government is to support the economic transformation agenda to ensure the macroeconomic stability of the country within the macroeconomic and fiscal framework. More specifically, the fiscal policy objectives of government include: i. rationalising government expenditure and eliminating wasteful expenditure; ii. optimising domestic revenue mobilisation through the broadening of the tax base, increased non-tax revenue collection, adopting enhanced tax compliance measures, and modernisation of tax administration through digital technology; iii. increasing the share of domestic capital expenditure to spur economic growth and\n\n[5] (source=budget_2025)\nit of 7.9% of GDP against a target deficit of 4.2% whilst the Overall Fiscal Balance (cash) was a deficit of 5.2% of GDP against a target of 5.3%; and iv. revenue exceeded the target by 5.3% (GH¢9.4 billion) whilst Expenditures (commitment) surpassed the target by 27.1% (GH¢59.5 billion) largely on the back of arrears build -up and more than anticipated foreign -financed capex spending. Resetting the Economy for the Ghana We Want 2025 Budget 24 117. Mr. Speaker, the fiscal performance for 2024 shows a reversal of the effort made in 2023 as primary balance on commitment basis worsened from a deficit of 0. 2% in 2023 to a deficit of 3.9% of GDP in 2024. The same trend was observed for the overall fiscal balance. 118. Mr. Speaker, Total Revenue and Grants was GH¢18 6,593 million, 5.3 percent above the revised target of GH¢177,220 million; 119. Total Expenditure (Commitment, including\n\n[6] (source=budget_2025)\namme. This resulted in securing about $900million from the Fund to support economic reforms; concluded the external debt restructuring programme with Official Creditor Committee and Eurobond Holders; ii. delivered the 2024 Mid -Year Budget and set a clear path to achieving revised targets; iii. prepared and submitted the 2025 Expenditure in Advance of Appropriation to ensure the provision of public services are sustained in the first quarter of 2025. 446. Mr. Speaker, in the year under review, the Ministry ensured that all the mandatory reports were prepared and submitted to Parliament in fulfilment of regulatory requirements. By doing this, the Ministry managed to ensure accountability and transparency in the management of public funds. 447. Mr. Speaker, to shore up revenue in 2024, various legislations were passed to give effect to the policy measures outlined in the Medium -Term\n\n[7] (source=budget_2025)\ntions; aggressive nationwide anti-corruption education campaigns; and support for intelligence gathering and inter-agency collaborations. Resetting the Economy for the Ghana We Want 2025 Budget 123 SECTION 7: CONCLUSION 757. Mr. Speaker, the state of the economy as I have just presented, does not reflect an economy that has turned the corner; it reflects an economy in severe distress, burdened by debt repayment humps, mismanagement and a lack of accountability. 758. This budget sets Ghana on a path of fiscal responsibility, debt sustainability, macroeconomic stability and job creation. It is about reset…\n\nUSER QUESTION:\nWhat does the 2025 budget say about revenue? economic policy expenditure revenue\n\nANSWER:",
+        "answer": "[Demo] LLM call failed (often quota/network). RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}. Prompt length: 6657 chars.",
+        "pipeline_log": [
+          {
+            "stage": "query",
+            "text": "What does the 2025 budget say about revenue?"
+          },
+          {
+            "stage": "retrieval",
+            "mode": "hybrid",
+            "expanded_query": "What does the 2025 budget say about revenue? economic policy expenditure revenue",
+            "hits": [
+              {
+                "source": "budget_2025",
+                "vector_score": 0.6435,
+                "bm25_score": 16.3181,
+                "fused_score": 0.8388,
+                "text_preview": "a transformative step, emphasizing its role as the nation's economic epicenter, dedicated to improving the lives of its citizens. Outlook For 2025 464. Mr. Speaker, in line with government reset agenda, the Ministry in 2…"
+              },
+              {
+                "source": "budget_2025",
+                "vector_score": 0.6431,
+                "bm25_score": 16.0366,
+                "fused_score": 0.8307,
+                "text_preview": "of the Fiscal Responsibility Act, 2018 (Act 982), programmed to be enacted by Parliament alongside the approval of this budget, to include a debt rule and legislate an independent fiscal council to monitor the adherence …"
+              },
+              {
+                "source": "budget_2025",
+                "vector_score": 0.6459,
+                "bm25_score": 11.9596,
+                "fused_score": 0.7412,
+                "text_preview": "ed to some ceramic companies through the Discounted Industrial Development Tariff (DIDT) will be reversed to the current WACOG. 2025 Revenue Measures 255. Mr. Speaker, Government is proposing some revenue measures to sup…"
+              },
+              {
+                "source": "budget_2025",
+                "vector_score": 0.5713,
+                "bm25_score": 22.553,
+                "fused_score": 0.7325,
+                "text_preview": "m - term vision, policy objectives and targets. Resetting the Economy for the Ghana We Want 2025 Budget 49 Fiscal Policy Objectives 236. Mr. Speaker, consistent with Section 14 of the Public Financial Management Act, 201…"
+              },
+              {
+                "source": "budget_2025",
+                "vector_score": 0.6282,
+                "bm25_score": 12.4505,
+                "fused_score": 0.6897,
+                "text_preview": "it of 7.9% of GDP against a target deficit of 4.2% whilst the Overall Fiscal Balance (cash) was a deficit of 5.2% of GDP against a target of 5.3%; and iv. revenue exceeded the target by 5.3% (GH¢9.4 billion) whilst Expen…"
+              },
+              {
+                "source": "budget_2025",
+                "vector_score": 0.5771,
+                "bm25_score": 19.111,
+                "fused_score": 0.6692,
+                "text_preview": "amme. This resulted in securing about $900million from the Fund to support economic reforms; concluded the external debt restructuring programme with Official Creditor Committee and Eurobond Holders; ii. delivered the 20…"
+              },
+              {
+                "source": "budget_2025",
+                "vector_score": 0.5914,
+                "bm25_score": 16.5628,
+                "fused_score": 0.6583,
+                "text_preview": "tions; aggressive nationwide anti-corruption education campaigns; and support for intelligence gathering and inter-agency collaborations. Resetting the Economy for the Ghana We Want 2025 Budget 123 SECTION 7: CONCLUSION …"
+              },
+              {
+                "source": "budget_2025",
+                "vector_score": 0.6436,
+                "bm25_score": 6.9979,
+                "fused_score": 0.6116,
+                "text_preview": "We Want 2025 Budget 58 Figure 11: 2025 Resource Mobilisation (in GH¢ Million) Source: MoF 2025 Resource Allocation 295. Mr. Speaker, Total Expenditures (Commitment) for 2025 has been programmed at GH¢268.8 billion down f…"
+              }
+            ]
+          },
+          {
+            "stage": "prompt",
+            "style": "strict",
+            "final_prompt": "You are an assistant for Academic City. Answer ONLY using the CONTEXT below.\nIf the CONTEXT does not contain enough information, say you do not know and suggest what is missing.\nDo not invent statistics, dates, or names not present in CONTEXT. Quote figures only when they appear in CONTEXT.\nBefore answering, mentally list which context snippets support each claim.\n\nCONTEXT:\n[1] (source=budget_2025)\na transformative step, emphasizing its role as the nation's economic epicenter, dedicated to improving the lives of its citizens. Outlook For 2025 464. Mr. Speaker, in line with government reset agenda, the Ministry in 2025 will focus on fiscal discipline, sustainable revenue mobilsation and enhanced private sector growth 465. The Ministry will continue to coordinate the implementation of the IMF -supported programme and ensure a successful 4 th and 5th Review to trigger the release of an estimated US$720 and bolster investor confidence. 466. Mr. Speaker, consistent with government’s commitment to revenue mobilisation, we will review the Medium-Term Revenue Strategy to align it with current Policy priorities and publish it within the year. 467. Additionally, the following drafting instructions on amendments to selected revenue legislations will be submitted to the Attorney-General and\n\n[2] (source=budget_2025)\nof the Fiscal Responsibility Act, 2018 (Act 982), programmed to be enacted by Parliament alongside the approval of this budget, to include a debt rule and legislate an independent fiscal council to monitor the adherence to fiscal targets, will greatly support the achievement of fiscal targets for 2025 and the medium-term. 346. Mr. Speaker, to achieve this fiscal objective, Total Revenue and Grants are projected to moderate from 15.9 percent of GDP in 2024 to 16.1 percent in 2025, and further to 16.9 percent by 2028. This steady improvement will be driven by a mix of tax policy measures, strengthened revenue administration, and an improvement in collection efficiency and tax compliance. 347. Mr. Speaker, on the expenditure front, the fiscal objective is to reduce primary expenditure as a share of GDP to below the 2023 level as part of our commitment to frontload the fiscal adjustment.\n\n[3] (source=budget_2025)\ned to some ceramic companies through the Discounted Industrial Development Tariff (DIDT) will be reversed to the current WACOG. 2025 Revenue Measures 255. Mr. Speaker, Government is proposing some revenue measures to support the achievement of the fiscal target for 2025 and the medium -term for the consideration and approval of Parliament. This is consistent with our commitment under the IMF - supported programme to observe a non-oil tax revenue effort of 0.6 percentage points annually as part of measures to improve domestic revenue mobilisation and achieve our debt sustainability targets over the medium-term. 256. Mr. Speaker, this is also consistent with Government’s pledge to rationalise the tax system and improve tax collections. In line with this, Government will conduct a complete overhaul of our current tax system to ensure that it generates the necessary revenue for the benefit\n\n[4] (source=budget_2025)\nm - term vision, policy objectives and targets. Resetting the Economy for the Ghana We Want 2025 Budget 49 Fiscal Policy Objectives 236. Mr. Speaker, consistent with Section 14 of the Public Financial Management Act, 2016 (Act 921), the fiscal policy objectives of this government is to support the economic transformation agenda to ensure the macroeconomic stability of the country within the macroeconomic and fiscal framework. More specifically, the fiscal policy objectives of government include: i. rationalising government expenditure and eliminating wasteful expenditure; ii. optimising domestic revenue mobilisation through the broadening of the tax base, increased non-tax revenue collection, adopting enhanced tax compliance measures, and modernisation of tax administration through digital technology; iii. increasing the share of domestic capital expenditure to spur economic growth and\n\n[5] (source=budget_2025)\nit of 7.9% of GDP against a target deficit of 4.2% whilst the Overall Fiscal Balance (cash) was a deficit of 5.2% of GDP against a target of 5.3%; and iv. revenue exceeded the target by 5.3% (GH¢9.4 billion) whilst Expenditures (commitment) surpassed the target by 27.1% (GH¢59.5 billion) largely on the back of arrears build -up and more than anticipated foreign -financed capex spending. Resetting the Economy for the Ghana We Want 2025 Budget 24 117. Mr. Speaker, the fiscal performance for 2024 shows a reversal of the effort made in 2023 as primary balance on commitment basis worsened from a deficit of 0. 2% in 2023 to a deficit of 3.9% of GDP in 2024. The same trend was observed for the overall fiscal balance. 118. Mr. Speaker, Total Revenue and Grants was GH¢18 6,593 million, 5.3 percent above the revised target of GH¢177,220 million; 119. Total Expenditure (Commitment, including\n\n[6] (source=budget_2025)\namme. This resulted in securing about $900million from the Fund to support economic reforms; concluded the external debt restructuring programme with Official Creditor Committee and Eurobond Holders; ii. delivered the 2024 Mid -Year Budget and set a clear path to achieving revised targets; iii. prepared and submitted the 2025 Expenditure in Advance of Appropriation to ensure the provision of public services are sustained in the first quarter of 2025. 446. Mr. Speaker, in the year under review, the Ministry ensured that all the mandatory reports were prepared and submitted to Parliament in fulfilment of regulatory requirements. By doing this, the Ministry managed to ensure accountability and transparency in the management of public funds. 447. Mr. Speaker, to shore up revenue in 2024, various legislations were passed to give effect to the policy measures outlined in the Medium -Term\n\n[7] (source=budget_2025)\ntions; aggressive nationwide anti-corruption education campaigns; and support for intelligence gathering and inter-agency collaborations. Resetting the Economy for the Ghana We Want 2025 Budget 123 SECTION 7: CONCLUSION 757. Mr. Speaker, the state of the economy as I have just presented, does not reflect an economy that has turned the corner; it reflects an economy in severe distress, burdened by debt repayment humps, mismanagement and a lack of accountability. 758. This budget sets Ghana on a path of fiscal responsibility, debt sustainability, macroeconomic stability and job creation. It is about reset…\n\nUSER QUESTION:\nWhat does the 2025 budget say about revenue? economic policy expenditure revenue\n\nANSWER:",
+            "prompt_chars": 6657
+          },
+          {
+            "stage": "generation",
+            "answer_preview": "[Demo] LLM call failed (often quota/network). RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}. Prompt length: 6657 chars."
+          }
+        ]
+      }
+    }
+  ]
+}
