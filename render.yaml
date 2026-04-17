@@ -12,6 +12,7 @@ services:
     buildCommand: |
       pip install --upgrade pip
       pip install -r requirements.txt
+      pip install sentence-transformers torch
       if [ -f data/index/index.faiss ]; then
         echo "Using prebuilt data/index artifacts from repository."
       else
@@ -27,6 +28,10 @@ services:
         value: groq
       - key: GROQ_MODEL
         value: llama-3.1-8b-instant
+      - key: EMBEDDINGS_BACKEND
+        value: local
+      - key: EMBEDDING_MODEL
+        value: sentence-transformers/all-MiniLM-L6-v2
       - key: GROQ_API_KEY
         sync: false
       - key: OPENAI_API_KEY

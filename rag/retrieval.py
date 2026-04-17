@@ -66,6 +66,30 @@ def _minmax(x: np.ndarray) -> np.ndarray:
     return (x - lo) / (hi - lo)
 
 
+def _bm25_only_retrieve(store: FaissStore, query: str, k: int = 8) -> list[RetrievalHit]:
+    """Fallback retrieval when query embedding backend is unavailable."""
+    if not store.chunks:
+        return []
+    corpus_tokens = [tokenize(c.text) for c in store.chunks]
+    q_tok = tokenize(query)
+    bm25 = _bm25_scores(q_tok, corpus_tokens)
+    bm25_n = _minmax(bm25)
+    order = np.argsort(-bm25_n)[: min(k, len(store.chunks))]
+    hits: list[RetrievalHit] = []
+    for rank, idx in enumerate(order):
+        i = int(idx)
+        hits.append(
+            RetrievalHit(
+                chunk=store.chunks[i],
+                vector_score=0.0,
+                bm25_score=float(bm25[i]),
+                fused_score=float(bm25_n[i]),
+                rank=rank + 1,
+            )
+        )
+    return hits
+
+
 def hybrid_retrieve(
     store: FaissStore,
     query: str,
@@ -79,7 +103,10 @@ def hybrid_retrieve(
     """
     if not store.chunks:
         return []
-    q_vec = embed_query(query)
+    try:
+        q_vec = embed_query(query)
+    except Exception:
+        return _bm25_only_retrieve(store, query, k=k)
     vec_scores, vec_idx = store.search(q_vec, min(oversample, len(store.chunks)))
     candidate_idx = [int(i) for i in vec_idx if i >= 0]
     if not candidate_idx:
@@ -141,7 +168,10 @@ def retrieve_with_optional_expansion(
 
 def pure_vector_topk(store: FaissStore, query: str, k: int = 8) -> list[RetrievalHit]:
     """Baseline for Part E comparison (no BM25 fusion)."""
-    q_vec = embed_query(query)
+    try:
+        q_vec = embed_query(query)
+    except Exception:
+        return _bm25_only_retrieve(store, query, k=k)
     scores, indices = store.search(q_vec, min(k, len(store.chunks)))
     hits: list[RetrievalHit] = []
     for rank, (s, idx) in enumerate(zip(scores, indices)):
