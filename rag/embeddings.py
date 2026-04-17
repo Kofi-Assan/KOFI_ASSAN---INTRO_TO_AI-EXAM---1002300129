@@ -62,6 +62,10 @@ def _embed_openai(texts: list[str]) -> np.ndarray:
 
 
 def embed_texts(texts: list[str], batch_size: int = 32) -> np.ndarray:
+    # Deployment guard: on low-memory hosts we can force BM25 retrieval only.
+    if os.environ.get("FORCE_BM25_ONLY", "").strip().lower() in {"1", "true", "yes", "on"}:
+        raise RuntimeError("FORCE_BM25_ONLY is enabled; skipping dense embeddings.")
+
     if not texts:
         return np.zeros((0, 1), dtype=np.float32)
 
