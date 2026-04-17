@@ -12,7 +12,6 @@ services:
     buildCommand: |
       pip install --upgrade pip
       pip install -r requirements.txt
-      pip install sentence-transformers torch
       if [ -f data/index/index.faiss ]; then
         echo "Using prebuilt data/index artifacts from repository."
       else
@@ -20,7 +19,7 @@ services:
         python scripts/download_data.py
         python scripts/build_index.py
       fi
-    startCommand: streamlit run app.py --server.port=$PORT --server.address=0.0.0.0 --server.headless=true
+    startCommand: streamlit run app.py --server.port=$PORT --server.address=0.0.0.0 --server.headless=true --server.fileWatcherType=none --browser.gatherUsageStats=false
     envVars:
       - key: PYTHON_VERSION
         value: 3.11.9
@@ -32,6 +31,8 @@ services:
         value: local
       - key: EMBEDDING_MODEL
         value: sentence-transformers/all-MiniLM-L6-v2
+      - key: FORCE_BM25_ONLY
+        value: "1"
       - key: GROQ_API_KEY
         sync: false
       - key: OPENAI_API_KEY
