@@ -1,4 +1,4 @@
-# Name: Kofi Assan | Index: 10022300129 | IT3241-Introduction to Artificial Intelligence
+# Name: Kofi Assan | Index: 10022300129 | CS4241-Introduction to Artificial Intelligence
 
 # Part F — Architecture & System Design
 
@@ -40,7 +40,7 @@ flowchart LR
 - **Chunking**: CSV row-level chunks preserve table semantics; PDF sliding windows preserve long-form policy context with overlap to avoid boundary loss.
 - **Embeddings**: `sentence-transformers` by default; optional OpenAI embeddings fallback.
 - **Vector store**: FAISS inner-product index over normalized vectors (cosine-like).
-- **Hybrid retrieval**: BM25 keyword scoring + dense retrieval fused to reduce exact-token failures (names/years/figures).
+- **Hybrid retrieval**: BM25 keyword scoring + dense retrieval fused to reduce exact-token failures (names/years/figures). *Note: Local deployments use full hybrid retrieval; Render deployments use BM25-only (see `FORCE_BM25_ONLY` in `render.yaml`) for resource efficiency.*
 - **Context selection**: selects top ranked chunks within a character budget; trims last chunk if needed.
 - **Prompting**: context injection + explicit “don’t invent” constraints; strict vs concise prompt variants.
 - **Logging (Part D)**: pipeline stages store retrieval hits + scores, selected context metadata, and the final prompt sent to the LLM.

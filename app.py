@@ -1,4 +1,4 @@
-# Name: Kofi Assan | Index: 10022300129 | IT3241-Introduction to Artificial Intelligence
+# Name: Kofi Assan | Index: 10022300129 | CS4241-Introduction to Artificial Intelligence
 """
 Streamlit UI: query, retrieved chunks, scores, final prompt, answer.
 Run from project root: streamlit run app.py
@@ -306,7 +306,7 @@ html,body{{margin:0;padding:0;background:#000;height:100%;font-family:{_UI_FONT_
   <svg id="waveSvg" viewBox="0 0 1200 200" xmlns="http://www.w3.org/2000/svg"
        preserveAspectRatio="xMidYMid meet" role="img"
        aria-label="Sea wave banner. Drag vertically on the waves to raise or lower peaks."
-       style="width:100%;height:268px;display:block;background:#000000;touch-action:none;">
+       style="width:100%;height:180px;display:block;background:#000000;touch-action:none;">
     <defs>
       <pattern id="gridScroll" width="48" height="48" patternUnits="userSpaceOnUse">
         <path d="M 48 0 L 0 0 0 48" fill="none" stroke="#1c1c1c" stroke-width="0.55"/>
@@ -465,7 +465,7 @@ _FLOAT_DASH_HTML = (
 """
 )
 
-st.set_page_config(page_title="ACity RAG (IT3241)", layout="wide")
+st.set_page_config(page_title="ACity RAG (CS4241)", layout="wide")
 
 st.markdown(
     """
@@ -579,8 +579,8 @@ st.markdown(
 )
 st.markdown(_FLOAT_DASH_HTML, unsafe_allow_html=True)
 st.title("Academic City RAG Assistant")
-st.caption("Kofi Assan · 10022300129 · IT3241 — manual RAG (no LangChain/LlamaIndex)")
-components.html(_WAVE_BANNER_HTML, height=288, scrolling=False)
+st.caption("Kofi Assan · 10022300129 · CS4241 — manual RAG (no LangChain/LlamaIndex)")
+components.html(_WAVE_BANNER_HTML, height=180, scrolling=False)
 
 if not (INDEX_DIR / "index.faiss").is_file():
     st.error(

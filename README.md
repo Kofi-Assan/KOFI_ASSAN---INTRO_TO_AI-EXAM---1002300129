@@ -1,4 +1,4 @@
-# IT3241 — Introduction to Artificial Intelligence (2026)
+# CS4241 — Introduction to Artificial Intelligence (2026)
 
 **Name:** Kofi Assan  
 **Index number:** 10022300129  
@@ -82,6 +82,8 @@ streamlit run app.py
 3. In the service **Environment** tab, set either **GROQ_API_KEY** (if using Groq) or **OPENAI_API_KEY** (if using OpenAI). Optionally set **HF_TOKEN** if Hugging Face throttles the embedding model download during build.
 4. After deploy, copy the **public URL** for your exam email.
 
+**Note on Render retrieval mode:** The `render.yaml` sets `FORCE_BM25_ONLY=1` for resource efficiency during free-tier builds. This means Render uses **BM25 keyword-only retrieval** instead of the full **hybrid** approach (vector + BM25) available locally. To use hybrid retrieval on Render, remove `FORCE_BM25_ONLY` from `render.yaml` and ensure vector embeddings are prebuilt (see below).
+
 The **build** step installs dependencies, downloads the CSV/PDF, and runs `scripts/build_index.py`. If the build exceeds Render’s time limit, build the index on your machine, then force-add the artifacts (they are gitignored by default):
 
 ```bash
@@ -150,7 +152,7 @@ Outputs are written to `experiment_logs/auto_runs/`. You should still write your
 - Push to GitHub: repo **`ai_10022300129`**.  
 - Deploy (this repo includes **Render** via `render.yaml`; or use Streamlit Cloud / Railway) and record the public URL.  
 - Add **GodwinDansoAcity** / `godwin.danso@acity.edu.gh` as collaborator.  
-- Email the lecturer with subject: `IT3241-Introduction to Artificial Intelligence-2026:[your index and name]`.  
+- Email the lecturer with subject: `CS4241-Introduction to Artificial Intelligence-2026:[your index and name]`.  
 - Include: repo link, deployed URL, **video walkthrough (≤2 min)**, **manual** experiment logs, and this documentation.
 
 ## Files
