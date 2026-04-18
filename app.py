@@ -179,7 +179,7 @@ def _hud_pulse_overlay_html(num_patterns: int = 5) -> str:
         parts.append(
             f'<animate attributeName="opacity" dur="{T}s" begin="{begin_s}s" repeatCount="indefinite" '
             f'calcMode="linear" keyTimes="0;{t1};{t2};{t3};1" '
-            'values="0;0.52;0;0;0"/>'
+            'values="0;0.15;0.95;0;0"/>'
         )
         parts.append(f'<g transform="translate({hc},{hc})"><g>')
         parts.append(
@@ -189,7 +189,7 @@ def _hud_pulse_overlay_html(num_patterns: int = 5) -> str:
             f'values="1;1;{max_scale};{max_scale};1"/>'
         )
         parts.append(f'<g transform="translate({-hc},{-hc})">')
-        parts.append(f'<g stroke="{edge_stroke}" stroke-width="1.25" stroke-linecap="round" opacity="0.55" fill="none">')
+        parts.append(f'<g stroke="{edge_stroke}" stroke-width="1.8" stroke-linecap="round" opacity="0.85" fill="none">')
         for i, j in edges:
             x1, y1 = positions[i]
             x2, y2 = positions[j]
@@ -206,7 +206,7 @@ def _hud_pulse_overlay_html(num_patterns: int = 5) -> str:
                 f'<animate attributeName="r" values="3;42" dur="{pulse_s}s" begin="{pulse_begin:.3f}s" '
                 f'repeatCount="indefinite" calcMode="spline" '
                 f'keyTimes="0;1" keySplines="0.2 0.8 0.2 1"/>'
-                f'<animate attributeName="opacity" values="0.52;0" dur="{pulse_s}s" begin="{pulse_begin:.3f}s" '
+                f'<animate attributeName="opacity" values="0.85;0" dur="{pulse_s}s" begin="{pulse_begin:.3f}s" '
                 f'repeatCount="indefinite" calcMode="spline" '
                 f'keyTimes="0;1" keySplines="0.1 0.9 0.2 1"/>'
                 "</circle></g>"
