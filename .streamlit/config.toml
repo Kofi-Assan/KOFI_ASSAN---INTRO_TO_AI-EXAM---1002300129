@@ -1,0 +1,10 @@
+# Name: Kofi Assan | Index: 10022300129 | IT3241
+# Dark UI — black background, lime accents (matches wave banner)
+
+[theme]
+base = "dark"
+primaryColor = "#DFFF00"
+backgroundColor = "#000000"
+secondaryBackgroundColor = "#0d0d0d"
+textColor = "#f5f5f5"
+font = "sans serif"

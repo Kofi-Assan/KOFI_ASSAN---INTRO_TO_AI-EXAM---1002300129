@@ -1,4 +1,4 @@
-# Student: Kofi Assan | Index: 1002300129 | CS4241-Introduction to Artificial Intelligence
+# Name: Kofi Assan | Index: 10022300129 | IT3241-Introduction to Artificial Intelligence
 """
 Run reproducible RAG experiments and write evidence files.
 
@@ -109,7 +109,7 @@ def main() -> None:
     run_id = _now_id()
 
     results = {
-        "student": {"name": "Kofi Assan", "index": "1002300129"},
+        "student": {"name": "Kofi Assan", "index": "10022300129"},
         "run_id": run_id,
         "index_dir": str(index_dir),
         "settings": {

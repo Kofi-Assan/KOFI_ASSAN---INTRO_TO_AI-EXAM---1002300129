@@ -1,7 +1,7 @@
-# CS4241 — Introduction to Artificial Intelligence (2026)
+# IT3241 — Introduction to Artificial Intelligence (2026)
 
-**Student:** Kofi Assan  
-**Index number:** 1002300129  
+**Name:** Kofi Assan  
+**Index number:** 10022300129  
 **Repository name (submit as):** `ai_10022300129`
 
 Manual RAG for Academic City: Ghana election results (CSV) + 2025 budget PDF.  
@@ -30,7 +30,7 @@ User query
 
 ## Setup
 
-1. **Python**: This repo deploys with `runtime.txt` (**3.11.9**).  
+1. **Python**: This repo deploys with `runtime.txt` (**3.11.9**). That file intentionally contains only the version string (no name/index line), because some hosts parse it strictly; **Name: Kofi Assan** and **Index: 10022300129** appear in `README.md`, source headers, and `render.yaml`.  
    - If you use **Python 3.13**, local `sentence-transformers` may not install (PyTorch support).  
    - The project therefore supports **OpenAI embeddings** as a fallback for building the index on any Python version.
 
@@ -147,10 +147,10 @@ Outputs are written to `experiment_logs/auto_runs/`. You should still write your
 
 ## Submission (from question paper)
 
-- Push to GitHub: repo **`ai_10022300129`** (replace if your index differs).  
+- Push to GitHub: repo **`ai_10022300129`**.  
 - Deploy (this repo includes **Render** via `render.yaml`; or use Streamlit Cloud / Railway) and record the public URL.  
 - Add **GodwinDansoAcity** / `godwin.danso@acity.edu.gh` as collaborator.  
-- Email the lecturer with subject: `CS4241-Introduction to Artificial Intelligence-2026:[your index and name]`.  
+- Email the lecturer with subject: `IT3241-Introduction to Artificial Intelligence-2026:[your index and name]`.  
 - Include: repo link, deployed URL, **video walkthrough (≤2 min)**, **manual** experiment logs, and this documentation.
 
 ## Files

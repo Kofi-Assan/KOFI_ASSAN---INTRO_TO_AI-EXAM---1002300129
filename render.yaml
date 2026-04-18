@@ -1,4 +1,4 @@
-# Student: Kofi Assan | Index: 1002300129 | CS4241
+# Name: Kofi Assan | Index: 10022300129 | IT3241
 # Deploy: New → Blueprint → connect repo → Render loads this file.
 # If the build fails on Render due to embeddings/env, run locally:
 #   python scripts/download_data.py && python scripts/build_index.py

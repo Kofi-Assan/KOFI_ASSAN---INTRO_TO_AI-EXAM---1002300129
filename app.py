@@ -1,4 +1,4 @@
-# Student: Kofi Assan | Index: 1002300129 | CS4241-Introduction to Artificial Intelligence
+# Name: Kofi Assan | Index: 10022300129 | IT3241-Introduction to Artificial Intelligence
 """
 Streamlit UI: query, retrieved chunks, scores, final prompt, answer.
 Run from project root: streamlit run app.py
@@ -10,6 +10,7 @@ import sys
 from pathlib import Path
 
 import streamlit as st
+import streamlit.components.v1 as components
 from dotenv import load_dotenv
 
 ROOT = Path(__file__).resolve().parent
@@ -33,9 +34,237 @@ from rag.store import FaissStore  # noqa: E402
 logging.basicConfig(level=logging.INFO)
 INDEX_DIR = ROOT / "data" / "index"
 
-st.set_page_config(page_title="ACity RAG (CS4241)", layout="wide")
+# SVG: grid scroll; draggable wave peaks (JS); sea motion via translate only (no ball-synced pulse)
+_LIME = "#DFFF00"
+_BALL_DUR_A = 3.2  # seconds — primary ball along path
+_BALL_DUR_B = 4.65  # seconds — second ball (slower lap)
+_BALL_B_BEGIN = 0.85  # seconds — stagger second ball so both are visible
+# Background (ghost / distant) waves — smaller, dimmer balls
+_BG_BALL_DUR_1 = 2.95
+_BG_BALL_DUR_2 = 3.45
+_BG_BALL_DUR_3 = 4.1
+_BG_BALL_B2 = 0.5
+_BG_BALL_B3 = 1.05
+
+_WAVE_PEAK_DRAG_JS = """
+<script>
+(function () {
+  var svg = document.getElementById("waveSvg");
+  var grp = document.getElementById("wavePeakGroup");
+  if (!svg || !grp) return;
+  var KEY = "acity_wave_peak_sy";
+  var MIN = 0.5;
+  var MAX = 1.95;
+  var SENS = 0.0045;
+  var CX = 600;
+  var CY = 100;
+
+  function applyScale(sy) {
+    sy = Math.max(MIN, Math.min(MAX, sy));
+    grp.setAttribute(
+      "transform",
+      "translate(" + CX + "," + CY + ") scale(1," + sy + ") translate(" + -CX + "," + -CY + ")"
+    );
+    try { sessionStorage.setItem(KEY, String(sy)); } catch (e) {}
+  }
+
+  var currentSy = 1;
+  try {
+    var sv = sessionStorage.getItem(KEY);
+    if (sv) {
+      var n = parseFloat(sv);
+      if (!isNaN(n)) currentSy = n;
+    }
+  } catch (e) {}
+  applyScale(currentSy);
+
+  var drag = false;
+  var startY = 0;
+  var startSy = 1;
+
+  function down(e) {
+    if (e.button != null && e.button !== 0) return;
+    drag = true;
+    startY = e.clientY;
+    startSy = currentSy;
+    try { svg.setPointerCapture(e.pointerId); } catch (x) {}
+    e.preventDefault();
+    svg.style.cursor = "grabbing";
+  }
+  function move(e) {
+    if (!drag) return;
+    var dy = startY - e.clientY;
+    currentSy = startSy + dy * SENS;
+    applyScale(currentSy);
+  }
+  function up(e) {
+    if (!drag) return;
+    drag = false;
+    svg.style.cursor = "ns-resize";
+    try { svg.releasePointerCapture(e.pointerId); } catch (x) {}
+  }
+
+  svg.style.cursor = "ns-resize";
+  svg.addEventListener("pointerdown", down);
+  window.addEventListener("pointermove", move);
+  window.addEventListener("pointerup", up);
+  window.addEventListener("pointercancel", up);
+})();
+</script>
+"""
+
+_WAVE_BANNER_HTML = (
+    f"""
+<style>html,body{{margin:0;padding:0;background:#000;height:100%;}}</style>
+<div id="waveBannerShell" style="font-family:'Segoe UI',system-ui,sans-serif;width:100%;
+  margin:0;padding:0;box-sizing:border-box;background:#000000;">
+  <svg id="waveSvg" viewBox="0 0 1200 200" xmlns="http://www.w3.org/2000/svg"
+       preserveAspectRatio="xMidYMid meet" role="img"
+       aria-label="Sea wave banner. Drag vertically on the waves to raise or lower peaks."
+       style="width:100%;height:268px;display:block;background:#000000;touch-action:none;">
+    <defs>
+      <pattern id="gridScroll" width="48" height="48" patternUnits="userSpaceOnUse">
+        <path d="M 48 0 L 0 0 0 48" fill="none" stroke="#1c1c1c" stroke-width="0.55"/>
+      </pattern>
+      <path id="ghostWaveA" d="M 0,58 C 160,18 320,118 480,58 S 800,18 960,58 S 1120,118 1200,58"/>
+      <path id="ghostWaveB" d="M 0,82 C 180,128 360,32 540,82 S 900,128 1080,82 S 1140,38 1200,82"/>
+      <path id="ghostWaveD" d="M 0,22 C 140,92 280,-8 420,68 S 700,-12 840,68 S 1020,22 1200,68"/>
+    </defs>
+    <rect width="1200" height="200" fill="#000000"/>
+    <rect width="1200" height="200" fill="url(#gridScroll)" opacity="0.78">
+      <animateTransform attributeName="transform" type="translate" additive="replace"
+        values="0 0; 48 0" dur="18s" repeatCount="indefinite" calcMode="linear"/>
+    </rect>
+    <g id="wavePeakGroup" transform="translate(600,100) scale(1,1) translate(-600,-100)">
+      <g>
+        <animateTransform attributeName="transform" type="translate"
+          values="0 0; 0 -10; 0 0; 0 9; 0 0"
+          keyTimes="0;0.25;0.5;0.75;1" dur="5.5s" repeatCount="indefinite" calcMode="spline"
+          keySplines="0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
+        <use href="#ghostWaveA" fill="none" stroke="#3d4a2a" stroke-width="1.25" opacity="0.45"
+             stroke-linecap="round"/>
+        <circle r="3.6" fill="{_LIME}" stroke="#0a0a0a" stroke-width="0.85">
+          <animateMotion dur="{_BG_BALL_DUR_1}s" repeatCount="indefinite" rotate="auto">
+            <mpath href="#ghostWaveA"/>
+          </animateMotion>
+          <animate attributeName="opacity" calcMode="linear"
+            values="0;0.40;0.40;0" keyTimes="0;0.06;0.90;1"
+            dur="{_BG_BALL_DUR_1}s" repeatCount="indefinite"/>
+        </circle>
+      </g>
+      <g>
+        <animateTransform attributeName="transform" type="translate"
+          values="0 5; 0 -12; 0 4; 0 11; 0 5"
+          keyTimes="0;0.25;0.5;0.75;1" dur="4.2s" repeatCount="indefinite" calcMode="spline"
+          keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1"/>
+        <use href="#ghostWaveB" fill="none" stroke="#2a3320" stroke-width="1" opacity="0.35"
+             stroke-linecap="round"/>
+        <circle r="3.2" fill="{_LIME}" stroke="#0a0a0a" stroke-width="0.75">
+          <animateMotion dur="{_BG_BALL_DUR_2}s" begin="{_BG_BALL_B2}s" repeatCount="indefinite" rotate="auto">
+            <mpath href="#ghostWaveB"/>
+          </animateMotion>
+          <animate attributeName="opacity" calcMode="linear"
+            values="0;0.34;0.34;0" keyTimes="0;0.08;0.91;1"
+            dur="{_BG_BALL_DUR_2}s" begin="{_BG_BALL_B2}s" repeatCount="indefinite"/>
+        </circle>
+      </g>
+      <g>
+        <animateTransform attributeName="transform" type="translate"
+          values="0 0; 0 -7; 0 6; 0 0"
+          keyTimes="0;0.33;0.66;1" dur="4.8s" repeatCount="indefinite" calcMode="spline"
+          keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1"/>
+        <use href="#ghostWaveD" fill="none" stroke="#2f3824" stroke-width="1.2" opacity="0.4"
+             stroke-linecap="round"/>
+        <circle r="2.8" fill="{_LIME}" stroke="#0a0a0a" stroke-width="0.65">
+          <animateMotion dur="{_BG_BALL_DUR_3}s" begin="{_BG_BALL_B3}s" repeatCount="indefinite" rotate="auto">
+            <mpath href="#ghostWaveD"/>
+          </animateMotion>
+          <animate attributeName="opacity" calcMode="linear"
+            values="0;0.28;0.28;0" keyTimes="0;0.07;0.90;1"
+            dur="{_BG_BALL_DUR_3}s" begin="{_BG_BALL_B3}s" repeatCount="indefinite"/>
+        </circle>
+      </g>
+      <g>
+        <animateTransform attributeName="transform" type="translate"
+          values="0 0; 0 -14; 0 0; 0 12; 0 0"
+          keyTimes="0;0.25;0.5;0.75;1" dur="4s" repeatCount="indefinite" calcMode="spline"
+          keySplines="0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1"/>
+        <path id="ragWavePath"
+              d="M 4,70 C 140,8 280,132 420,70 S 700,8 840,70 S 1020,132 1196,70"
+              fill="none" stroke="{_LIME}" stroke-width="2.25" stroke-linecap="round"/>
+        <circle r="7" fill="{_LIME}" stroke="#000000" stroke-width="1.5">
+          <animateMotion dur="{_BALL_DUR_A}s" repeatCount="indefinite" rotate="auto">
+            <mpath href="#ragWavePath"/>
+          </animateMotion>
+          <animate attributeName="opacity" calcMode="linear"
+            values="0;1;1;0" keyTimes="0;0.055;0.90;1"
+            dur="{_BALL_DUR_A}s" repeatCount="indefinite"/>
+        </circle>
+        <circle r="5.5" fill="{_LIME}" stroke="#000000" stroke-width="1.2">
+          <animateMotion dur="{_BALL_DUR_B}s" begin="{_BALL_B_BEGIN}s" repeatCount="indefinite" rotate="auto">
+            <mpath href="#ragWavePath"/>
+          </animateMotion>
+          <animate attributeName="opacity" calcMode="linear"
+            values="0;1;1;0" keyTimes="0;0.16;0.91;1"
+            dur="{_BALL_DUR_B}s" begin="{_BALL_B_BEGIN}s" repeatCount="indefinite"/>
+        </circle>
+      </g>
+    </g>
+    <text x="28" y="168" fill="#ffffff" font-size="26" font-weight="700" letter-spacing="0.06em"
+          font-family="Segoe UI,system-ui,sans-serif">ACADEMIC</text>
+    <text x="28" y="194" fill="{_LIME}" font-size="26" font-weight="700" letter-spacing="0.06em"
+          font-family="Segoe UI,system-ui,sans-serif">RAG</text>
+  </svg>
+</div>
+"""
+    + _WAVE_PEAK_DRAG_JS
+)
+
+st.set_page_config(page_title="ACity RAG (IT3241)", layout="wide")
+st.markdown(
+    """
+    <style>
+      .stApp { background-color: #000000 !important; }
+      section[data-testid="stSidebar"] { background-color: #0a0a0a !important; }
+      div[data-testid="stToolbar"] { background-color: transparent !important; }
+      /* High-visibility primary — Run RAG */
+      .stApp button[kind="primary"],
+      .stApp button[data-testid="baseButton-primary"] {
+        background: linear-gradient(180deg, #f4ff66 0%, #DFFF00 42%, #b8cf00 100%) !important;
+        color: #0a0a0a !important;
+        border: 2px solid #f8ff99 !important;
+        border-radius: 14px !important;
+        font-weight: 800 !important;
+        font-size: 1.2rem !important;
+        letter-spacing: 0.04em !important;
+        padding: 0.7rem 2rem !important;
+        min-height: 3.1rem !important;
+        box-shadow:
+          0 0 32px rgba(223, 255, 0, 0.65),
+          0 0 60px rgba(223, 255, 0, 0.25),
+          0 8px 24px rgba(0, 0, 0, 0.55) !important;
+        text-shadow: none !important;
+      }
+      .stApp button[kind="primary"]:hover,
+      .stApp button[data-testid="baseButton-primary"]:hover {
+        filter: brightness(1.12) saturate(1.05) !important;
+        box-shadow:
+          0 0 40px rgba(223, 255, 0, 0.85),
+          0 0 80px rgba(223, 255, 0, 0.35),
+          0 10px 28px rgba(0, 0, 0, 0.55) !important;
+      }
+      .stApp button[kind="primary"]:focus-visible,
+      .stApp button[data-testid="baseButton-primary"]:focus-visible {
+        outline: 3px solid #f8ff99 !important;
+        outline-offset: 3px !important;
+      }
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
 st.title("Academic City RAG Assistant")
-st.caption("Kofi Assan · 1002300129 · CS4241 — manual RAG (no LangChain/LlamaIndex)")
+st.caption("Kofi Assan · 10022300129 · IT3241 — manual RAG (no LangChain/LlamaIndex)")
+components.html(_WAVE_BANNER_HTML, height=288, scrolling=False)
 
 if not (INDEX_DIR / "index.faiss").is_file():
     st.error(

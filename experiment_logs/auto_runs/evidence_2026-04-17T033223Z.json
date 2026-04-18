@@ -1,10 +1,10 @@
 {
   "student": {
     "name": "Kofi Assan",
-    "index": "1002300129"
+    "index": "10022300129"
   },
   "run_id": "2026-04-17T033223Z",
-  "index_dir": "C:\\Users\\HP\\OneDrive\\Documents\\GitHub\\KOFI_ASSAN - INTRO_TO_AI EXAM - 1002300129\\data\\index",
+  "index_dir": "C:\\Users\\HP\\OneDrive\\Documents\\GitHub\\ai_10022300129\\data\\index",
   "settings": {
     "top_k": 8,
     "prompt_style": "strict",
