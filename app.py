@@ -136,94 +136,84 @@ def _hud_random_edges(
     return sorted(edges)
 
 
-def _hud_build_random_pattern() -> tuple[
-    list[tuple[float, float, float]],
-    list[tuple[int, int]],
-    float,
-    float,
-    str,
-    str,
-]:
-    """New layout each call — SystemRandom so patterns are not fixed by global random.seed()."""
+def _hud_pulse_overlay_html(num_patterns: int = 5) -> str:
+    """Full-viewport HUD: opacity fades while scale increases; loops through different patterns sequentially."""
     rng = random.SystemRandom()
-    n_nodes = rng.randint(12, 24)
-    margin_lo, margin_hi = rng.uniform(28, 55), rng.uniform(905, 972)
-    nodes = [
-        (
-            rng.uniform(margin_lo, margin_hi),
-            rng.uniform(margin_lo, margin_hi),
-            rng.uniform(0, 2.4),
-        )
-        for _ in range(n_nodes)
-    ]
-    positions = [(x, y) for x, y, _ in nodes]
-    edge_list = _hud_random_edges(rng, positions)
-    max_scale = round(rng.uniform(1.22, 1.55), 3)
-    fade_cycle_s = round(rng.uniform(8.5, 14.0), 2)
-    er, eg, eb = rng.randint(110, 200), rng.randint(20, 85), rng.randint(20, 85)
-    edge_stroke = f"#{er:02x}{eg:02x}{eb:02x}"
-    nr = min(255, er + rng.randint(35, 100))
-    ng = max(0, eg - rng.randint(0, 25))
-    nb = max(0, eb - rng.randint(0, 25))
-    node_fill = f"#{nr:02x}{ng:02x}{nb:02x}"
-    return nodes, edge_list, max_scale, fade_cycle_s, edge_stroke, node_fill
-
-
-def _hud_pulse_overlay_html(
-    nodes: list[tuple[float, float, float]],
-    *,
-    edges: list[tuple[int, int]],
-    max_scale: float = 1.38,
-    fade_cycle_s: float = 11.0,
-    edge_stroke: str = "#993333",
-    node_fill: str = "#cc4433",
-) -> str:
-    """Full-viewport HUD: opacity fades while scale increases; reset invisibly between cycles."""
     vb = 1000.0
     hc = vb / 2.0
-    positions = [(x, y) for x, y, _ in nodes]
-    ring_stroke = "#ff6644"
     pulse_s = 2.35
-    parts: list[str] = [
+    
+    fade_cycle_s = round(rng.uniform(8.5, 12.0), 2)
+    T = fade_cycle_s * num_patterns
+    
+    parts = [
         f'<div class="acity-hud-pulse" aria-hidden="true" data-hud-rev="{secrets.token_hex(8)}">',
         f'<svg width="100%" height="100%" viewBox="0 0 {vb:g} {vb:g}" '
         'preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" '
-        'style="display:block;width:100%;height:100%;">',
-        '<g id="hudNetworkCycle" opacity="0">'
-        f'<animate attributeName="opacity" dur="{fade_cycle_s}s" repeatCount="indefinite" '
-        'calcMode="linear" keyTimes="0;0.05;0.66;0.7;1" '
-        'values="0;0.52;0;0;0"/>',
-        f'<g transform="translate({hc},{hc})">'
-        "<g>"
-        f'<animateTransform attributeName="transform" type="scale" additive="replace" '
-        f'dur="{fade_cycle_s}s" repeatCount="indefinite" calcMode="linear" '
-        'keyTimes="0;0.05;0.66;0.7;1" '
-        f'values="1;1;{max_scale};{max_scale};1"/>'
-        f'<g transform="translate({-hc},{-hc})">',
-        f'<g stroke="{edge_stroke}" stroke-width="1.25" stroke-linecap="round" opacity="0.55" fill="none">',
+        'style="display:block;width:100%;height:100%;">'
     ]
-    for i, j in edges:
-        x1, y1 = positions[i]
-        x2, y2 = positions[j]
+    
+    t1 = f"{0.05 / num_patterns:.4f}"
+    t2 = f"{0.66 / num_patterns:.4f}"
+    t3 = f"{0.70 / num_patterns:.4f}"
+    
+    for k in range(num_patterns):
+        # Enforce at most 6 nodes
+        n_nodes = rng.randint(3, 6)
+        margin_lo, margin_hi = rng.uniform(28, 55), rng.uniform(905, 972)
+        nodes = [(rng.uniform(margin_lo, margin_hi), rng.uniform(margin_lo, margin_hi), rng.uniform(0, 2.4)) for _ in range(n_nodes)]
+        positions = [(x, y) for x, y, _ in nodes]
+        edges = _hud_random_edges(rng, positions)
+        
+        max_scale = round(rng.uniform(1.22, 1.55), 3)
+        er, eg, eb = rng.randint(110, 200), rng.randint(20, 85), rng.randint(20, 85)
+        edge_stroke = f"#{er:02x}{eg:02x}{eb:02x}"
+        nr = min(255, er + rng.randint(35, 100))
+        ng = max(0, eg - rng.randint(0, 25))
+        nb = max(0, eb - rng.randint(0, 25))
+        node_fill = f"#{nr:02x}{ng:02x}{nb:02x}"
+        
+        begin_s = k * fade_cycle_s
+        
+        parts.append('<g opacity="0">')
         parts.append(
-            f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{x2:.1f}" y2="{y2:.1f}"/>'
+            f'<animate attributeName="opacity" dur="{T}s" begin="{begin_s}s" repeatCount="indefinite" '
+            f'calcMode="linear" keyTimes="0;{t1};{t2};{t3};1" '
+            'values="0;0.52;0;0;0"/>'
         )
-    parts.append("</g>")
-    for (cx, cy, begin) in nodes:
+        parts.append(f'<g transform="translate({hc},{hc})"><g>')
         parts.append(
-            f'<g transform="translate({cx:.1f},{cy:.1f})">'
-            f'<circle r="3" fill="{node_fill}" stroke="#1a0505" stroke-width="0.5" opacity="0.92"/>'
-            f'<circle r="3" fill="none" stroke="{ring_stroke}" stroke-width="1.1" vector-effect="non-scaling-stroke" opacity="0.55">'
-            f'<animate attributeName="r" values="3;42" dur="{pulse_s}s" begin="{begin:.3f}s" '
-            f'repeatCount="indefinite" calcMode="spline" '
-            f'keyTimes="0;1" keySplines="0.2 0.8 0.2 1"/>'
-            f'<animate attributeName="opacity" values="0.52;0" dur="{pulse_s}s" begin="{begin:.3f}s" '
-            f'repeatCount="indefinite" calcMode="spline" '
-            f'keyTimes="0;1" keySplines="0.1 0.9 0.2 1"/>'
-            "</circle>"
-            "</g>"
+            f'<animateTransform attributeName="transform" type="scale" additive="replace" '
+            f'dur="{T}s" begin="{begin_s}s" repeatCount="indefinite" calcMode="linear" '
+            f'keyTimes="0;{t1};{t2};{t3};1" '
+            f'values="1;1;{max_scale};{max_scale};1"/>'
         )
-    parts.append("</g></g></g></g></svg></div>")
+        parts.append(f'<g transform="translate({-hc},{-hc})">')
+        parts.append(f'<g stroke="{edge_stroke}" stroke-width="1.25" stroke-linecap="round" opacity="0.55" fill="none">')
+        for i, j in edges:
+            x1, y1 = positions[i]
+            x2, y2 = positions[j]
+            parts.append(f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{x2:.1f}" y2="{y2:.1f}"/>')
+        parts.append("</g>")
+        
+        ring_stroke = "#ff6644"
+        for (cx, cy, begin_node) in nodes:
+            pulse_begin = begin_s + begin_node
+            parts.append(
+                f'<g transform="translate({cx:.1f},{cy:.1f})">'
+                f'<circle r="3" fill="{node_fill}" stroke="#1a0505" stroke-width="0.5" opacity="0.92"/>'
+                f'<circle r="3" fill="none" stroke="{ring_stroke}" stroke-width="1.1" vector-effect="non-scaling-stroke" opacity="0.55">'
+                f'<animate attributeName="r" values="3;42" dur="{pulse_s}s" begin="{pulse_begin:.3f}s" '
+                f'repeatCount="indefinite" calcMode="spline" '
+                f'keyTimes="0;1" keySplines="0.2 0.8 0.2 1"/>'
+                f'<animate attributeName="opacity" values="0.52;0" dur="{pulse_s}s" begin="{pulse_begin:.3f}s" '
+                f'repeatCount="indefinite" calcMode="spline" '
+                f'keyTimes="0;1" keySplines="0.1 0.9 0.2 1"/>'
+                "</circle></g>"
+            )
+        parts.append("</g></g></g></g>")
+
+    parts.append("</svg></div>")
     return "".join(parts)
 
 
@@ -565,18 +555,7 @@ st.markdown(
     """,
     unsafe_allow_html=True,
 )
-_hud_nodes, _hud_edges, _hud_mx, _hud_dur, _hud_edge, _hud_node = _hud_build_random_pattern()
-st.markdown(
-    _hud_pulse_overlay_html(
-        _hud_nodes,
-        edges=_hud_edges,
-        max_scale=_hud_mx,
-        fade_cycle_s=_hud_dur,
-        edge_stroke=_hud_edge,
-        node_fill=_hud_node,
-    ),
-    unsafe_allow_html=True,
-)
+st.markdown(_hud_pulse_overlay_html(num_patterns=5), unsafe_allow_html=True)
 st.markdown(_FLOAT_DASH_HTML, unsafe_allow_html=True)
 st.title("Academic City RAG Assistant")
 st.caption("Kofi Assan · 10022300129 · CS4241 — manual RAG (no LangChain/LlamaIndex)")
